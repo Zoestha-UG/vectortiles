@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leipzig Einkaufen | Willkomen</title>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
+
+
+</head>
+
+<body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text">Leipzig Einkaufen</li>
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li><a href="#">Three</a></li>
+                <li><a href="#">Four</a></li>
+                <li><a href="#">Five</a></li>
+                <li><a href="#">Six</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <div class="row columns">
+
+
+
+        <!--        <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+            <ul class="orbit-container">
+                <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+                <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+                <li class="orbit-slide is-active">
+                    <img src="http://placehold.it/1200x450">
+                </li>
+                <li class="orbit-slide">
+                    <img src="http://placehold.it/1200x450">
+                </li>
+                <li class="orbit-slide">
+                    <img src="http://placehold.it/1200x450">
+                </li>
+                <li class="orbit-slide">
+                    <img src="http://placehold.it/1200x450">
+                </li>
+            </ul>
+        </div>
+    </div>-->
+
+        <div class="row column">
+            <h1>Schönste einkauf Möglichkeiten in Leipzig</h1>
+        </div>
+
+        <!-- map sidebar to display store infos -->
+        <div class='row'>
+
+            <!-- map with stores -->
+            <div class="large-6 columns">
+                <div id='map' class='map pad2'></div>
+            </div>
+
+            <div class="large-6 columns">
+                <div class='sidebar pad2'>
+
+                    <div class='heading'>
+                        <h1>Our locations</h1>
+                    </div>
+                    <div id='listings' class='listings'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="medium-6 large-3 columns">
+            <h3>Lorum</h3>
+            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
+        </div>
+        <div class="medium-6 large-3 columns">
+            <h3>Ipsum</h3>
+            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
+        </div>
+        <div class="medium-6 large-3 columns">
+            <h3>Dolor</h3>
+            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
+        </div>
+        <div class="medium-6 large-3 columns">
+            <h3>Sit Amet</h3>
+            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row column">
+        <div class="callout primary text-center">
+            <h3>Really Great Deals</h3>
+            <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="large-6 columns">
+            <h4>Nulla At Nulla Justo, Eget</h4>
+            <img class="thumbnail" src="http://placehold.it/700x250">
+            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in.</p>
+        </div>
+        <div class="large-6 columns">
+            <h4>Nulla At Nulla Justo, Eget</h4>
+            <img class="thumbnail" src="http://placehold.it/700x250">
+            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row column">
+        <ul class="menu">
+            <li><a href="#">One</a></li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+            <li><a href="#">Four</a></li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    <script src='js/app.js'></script>
+</body>
+
+</html>
