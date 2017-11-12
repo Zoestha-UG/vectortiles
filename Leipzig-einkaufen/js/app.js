@@ -178,8 +178,8 @@ function createPopUp(currentFeature) {
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'json/style-cdn.json',
-    center: [51.3272, 12.3722],
-    zoom: 16,
+    center: [12.3722, 51.3272],
+    zoom: 11,
     attributionControl: true,
     hash: true
 });
