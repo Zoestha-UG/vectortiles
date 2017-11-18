@@ -46,7 +46,7 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "http://localhost/vectortiles/tileserver/tileserver.php?/germany_leipzig.json"
+      "url": "http://localhost/vectortiles/tileserver/tileserver.php?/2017-07-03_germany_leipzig.json"
     }
   },
   "sprite": "http://localhost/vectortiles/json/sprite",
