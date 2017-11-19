@@ -1,4 +1,3 @@
-//mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.0/mapbox-gl-rtl-text.js');
 
 var stores = {
 
@@ -59,7 +58,7 @@ var stores = {
                 "postalCode": "04275",
                 "website": "https://bio-am-fockeberg.de",
                 "Categories": "Biolebensmittel",
-                "icon.className": "maki maki-3x maki-fw maki-bakery",
+                "icon.className": "maki maki-3x maki-fw maki-grocery",
                 "el.className": 'extra-marker extra-marker-circle-green'
             }
         },
@@ -99,7 +98,7 @@ var stores = {
                 "postalCode": "04229",
                 "website": "http://leipspeis.de/",
                 "Categories": "Lebensmittel, Bio, Regional",
-                "icon.className": "maki maki-3x maki-fw maki-bakery",
+                "icon.className": "maki maki-3x maki-fw maki-village",
                 "el.className": 'extra-marker extra-marker-circle-green'
             }
         },
@@ -161,6 +160,86 @@ var stores = {
                 "Categories": "weinladen, feinkost",
                 "icon.className": "maki maki-3x maki-fw maki-alcohol-shop",
                 "el.className": "extra-marker extra-marker-circle-yellow"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12.3282532023983, 51.31739995]
+            },
+            "properties": {
+                "name": "Kräuterladen",
+                "popupContent": "<b>Kräuterladen</b><br />Windorfer Straße 44, 04229 Leipzig",
+                "phone": "0341 225 29 871",
+                "address": "Windorfer Straße 44",
+                "city": "Leipzig",
+                "country": "Germany",
+                "postalCode": "04229",
+                "website": "",
+                "Categories": "lokal, Kräuter, Gewürze, Veranstaltungen, Cafe",
+                "icon.className": "maki maki-3x maki-fw maki-park2",
+                "el.className": "extra-marker extra-marker-circle-green"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12.3282532023983, 51.31739995]
+            },
+            "properties": {
+                "name": "Feinbäckerei Renelt",
+                "popupContent": "<b>Feinbäckerei Renelt</b><br />Naumburger Straße 55, 04229 Leipzig",
+                "phone": "0341 4772900",
+                "address": "Naumburger Straße 55",
+                "city": "Leipzig",
+                "country": "Germany",
+                "postalCode": "04229",
+                "website": "",
+                "Categories": "lokal, bäckerei, Cafe",
+                "icon.className": "maki maki-3x maki-fw maki-bakery",
+                "el.className": "extra-marker extra-marker-circle-yellow"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12.3413334, 51.3219992]
+            },
+            "properties": {
+                "name": "Pro Regional",
+                "popupContent": "<b>Feinbäckerei Renelt</b><br />Schnorrstraße 34, 04229 Leipzig",
+                "phone": "0341 2602515",
+                "address": "Schnorrstraße 34",
+                "city": "Leipzig",
+                "country": "Germany",
+                "postalCode": "04229",
+                "website": "",
+                "Categories": "lebensmittel, regional",
+                "icon.className": "maki maki-3x maki-fw maki-village",
+                "el.className": "extra-marker extra-marker-circle-yellow"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12.3410598, 51.3253279]
+            },
+            "properties": {
+                "name": "RöstGut ",
+                "popupContent": "<b>RöstGut </b><br />Holbeinstraße 29, 04229 Leipzig",
+                "phone": "0341 580 967 58",
+                "address": "Holbeinstraße 29",
+                "city": "Leipzig",
+                "country": "Germany",
+                "postalCode": "04229",
+                "website": "",
+                "Categories": "lebensmittel, regional",
+                "icon.className": "maki maki-3x maki-fw maki-cafe",
+                "el.className": "extra-marker extra-marker-circle-orange-dark"
             }
         }
     ]
@@ -237,13 +316,16 @@ function buildLocationList(data) {
         // with the class 'item' for each store
         var listings = document.getElementById('listings');
         var listing = listings.appendChild(document.createElement('div'));
-        listing.className = 'item';
+        listing.className = 'item accordion-item';
+        //listing.setAttribute(" ", 'data-accordion-item');
+        
         listing.id = 'listing-' + i;
 
         // add info icon 
         var icon = listing.appendChild(document.createElement('i'));
-        icon.className = 'fi-info';
-        icon.style = 'float:right; font-size:48px; color:#00853e; padding-right: 4px';
+        icon.href = '#';
+        icon.className = 'fi-info accordion-title';
+        icon.style = 'float:right; font-size:41px; color:#00853e; padding-right: 4px';
 
 
         // Create a new link with the class 'title' for each store
@@ -253,11 +335,12 @@ function buildLocationList(data) {
         link.className = 'title';
         link.dataPosition = i;
         link.innerHTML = prop.name;
-
-
+        
+        // Add Accordion tab content
         // Create a new div with the class 'details' for each store
         // and fill it with the city and phone number
         var details = listing.appendChild(document.createElement('div'));
+        details.className = 'accordion-content';// data-tab-content';
         details.innerHTML = prop.address;
 
 
@@ -306,24 +389,24 @@ function createPopUp(currentFeature) {
 }
 
 stores.features.forEach(function (marker) {
-    
+
     let shadow = document.createElement('div');
     shadow.className = 'extra-marker extra-marker-shadow';
     //el.insertBefore(shadow, icon);
-    
+
     //On crée un element DOM pour le marker
     let el = document.createElement('div');
     el.className = marker.properties["el.className"];
     shadow.appendChild(el);
-    
+
     let icon = document.createElement('i');
     //icon.className = 'fa fa-circle';
     icon.style.color = 'white';
     icon.className = marker.properties["icon.className"];
     el.appendChild(icon);
-    
-    
-    
+
+
+
     // Create a div element for the marker
     //var el = document.createElement('div');
     // Add a class called 'marker' to each div

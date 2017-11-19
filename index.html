@@ -9,7 +9,7 @@
     <!-- Meta Description -->
     <meta name="description" content="Schöne einkauf Möglichkeiten in Leipzig">
     <html lang="de">
-    
+
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
     <link href="ExtraMarkers/css/extra-markers.css" rel="stylesheet" />
@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="css/app.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
-    <!--link rel="stylesheet" href="foundation-icons/foundation-icons.css" /-->
+    <link href="css/foundation-icons/foundation-icons.css" rel="stylesheet">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 </head>
 
 <body>
@@ -82,10 +84,10 @@
             <div class="large-6 columns">
                 <div class='sidebar pad2'>
 
-                    <div class='heading'>
+                    <!--div class='heading'>
                         <h1>Our locations</h1>
-                    </div>
-                    <div id='listings' class='listings'></div>
+                    </div-->
+                    <div id='listings' class="listings accordion" data-accordion data-allow-all-closed="true"></div>
                 </div>
             </div>
         </div>
@@ -147,8 +149,6 @@
         </ul>
     </div>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
         $(document).foundation();
     </script>
