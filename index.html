@@ -1,158 +1,169 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="de">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leipzig Einkaufen | Willkomen</title>
-    <!-- Meta Description -->
-    <meta name="description" content="Schöne einkauf Möglichkeiten in Leipzig">
-    <html lang="de">
 
-    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
-    <link href="ExtraMarkers/css/extra-markers.css" rel="stylesheet" />
-    <link href="webfont-maki/css/maki-min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/app.css">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Leipzig Einkaufen - Willkomen</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/small-business.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' href="ExtraMarkers/css/extra-markers.css" />
+    <link rel='stylesheet' href="webfont-maki/css/maki-min.css" />
+    <link rel='stylesheet' href='css/app.css' />
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' />
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
-    <link href="css/foundation-icons/foundation-icons.css" rel="stylesheet">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+
+
 </head>
 
 <body>
 
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <ul class="menu">
-                <li class="menu-text">Leipzig Einkaufen</li>
-                <li><a href="#">One</a></li>
-                <li><a href="#">Two</a></li>
-            </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><a href="#">Three</a></li>
-                <li><a href="#">Four</a></li>
-                <li><a href="#">Five</a></li>
-                <li><a href="#">Six</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- End Top Bar -->
+    </nav>
 
-    <div class="row columns">
+    <!-- Page Content -->
+    <div class="container page">
 
 
-
-        <!--        <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-            <ul class="orbit-container">
-                <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-                <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-                <li class="orbit-slide is-active">
-                    <img src="http://placehold.it/1200x450">
-                </li>
-                <li class="orbit-slide">
-                    <img src="http://placehold.it/1200x450">
-                </li>
-                <li class="orbit-slide">
-                    <img src="http://placehold.it/1200x450">
-                </li>
-                <li class="orbit-slide">
-                    <img src="http://placehold.it/1200x450">
-                </li>
-            </ul>
-        </div>
-    </div>-->
-
-        <div class="row column">
-            <h1>Schönste einkauf Möglichkeiten in Leipzig</h1>
-        </div>
-
-        <!-- map sidebar to display store infos -->
-        <div class='row'>
+        <div class="row my-4">
 
             <!-- map with stores -->
-            <div class="large-6 columns">
+            <div class="col-lg-6">
                 <div id='map' class='map pad2'></div>
             </div>
 
-            <div class="large-6 columns">
+            <div class="col-lg-6">
                 <div class='sidebar pad2'>
-
                     <!--div class='heading'>
                         <h1>Our locations</h1>
                     </div-->
-                    <div id='listings' class="listings accordion" data-accordion data-allow-all-closed="true"></div>
+                    <div id='listings' class="listings accordion" role="tablist"></div>
                 </div>
             </div>
         </div>
+        <!-- /.row -->
+
+        <!-- Heading Row -->
+        <div class="row my-4">
+
+            <div class="col-lg-8">
+                <!--img class="img-fluid rounded" src="http://placehold.it/900x400" alt=""-->
+                <img class="img-fluid rounded" src="https://i.pinimg.com/564x/28/58/8d/28588d38a5936649073cb626073407f1.jpg" alt="">
+            </div>
+            <!-- /.col-lg-8 -->
+            <div class="col-lg-4">
+                <h1>Business Name or Tagline</h1>
+                <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+                <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Call to Action Well -->
+        <div class="card text-white bg-secondary my-4 text-center">
+            <div class="card-body">
+                <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+            </div>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Card One</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Card Two</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body"> 
+                        <h2 class="card-title">Card Three</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+
+        </div>
+        <!-- /.row -->
+
     </div>
+    <!-- /.container -->
 
-    <hr>
-
-    <div class="row">
-        <div class="medium-6 large-3 columns">
-            <h3>Lorum</h3>
-            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Zoestha UG 2017</p>
         </div>
-        <div class="medium-6 large-3 columns">
-            <h3>Ipsum</h3>
-            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
-        </div>
-        <div class="medium-6 large-3 columns">
-            <h3>Dolor</h3>
-            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
-        </div>
-        <div class="medium-6 large-3 columns">
-            <h3>Sit Amet</h3>
-            <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.</p>
-        </div>
-    </div>
+        <!-- /.container -->
+    </footer>
 
-    <hr>
-
-    <div class="row column">
-        <div class="callout primary text-center">
-            <h3>Really Great Deals</h3>
-            <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor.</p>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="large-6 columns">
-            <h4>Nulla At Nulla Justo, Eget</h4>
-            <img class="thumbnail" src="http://placehold.it/700x250">
-            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in.</p>
-        </div>
-        <div class="large-6 columns">
-            <h4>Nulla At Nulla Justo, Eget</h4>
-            <img class="thumbnail" src="http://placehold.it/700x250">
-            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in.</p>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="row column">
-        <ul class="menu">
-            <li><a href="#">One</a></li>
-            <li><a href="#">Two</a></li>
-            <li><a href="#">Three</a></li>
-            <li><a href="#">Four</a></li>
-        </ul>
-    </div>
-
-    <script>
-        $(document).foundation();
-    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src='js/app.js'></script>
+
 </body>
 
 </html>

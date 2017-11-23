@@ -309,45 +309,54 @@ function buildLocationList(data) {
     // Iterate through the list of stores
     for (i = 0; i < data.features.length; i++) {
         var currentFeature = data.features[i];
-        // Shorten data.feature.properties to just `prop` so we're not
-        // writing this long form over and over again.
+        // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
         var prop = currentFeature.properties;
-        // Select the listing container in the HTML and append a div
-        // with the class 'item' for each store
+        // Select the listing container in the HTML and append a div  with the class 'item' for each store
         var listings = document.getElementById('listings');
-        var listing = listings.appendChild(document.createElement('div'));
-        listing.className = 'item accordion-item';
-        //listing.setAttribute(" ", 'data-accordion-item');
-        
-        listing.id = 'listing-' + i;
+        var card = listings.appendChild(document.createElement('div'));
+        card.className = 'item card';
+        card.id = i;
 
-        // add info icon 
-        var icon = listing.appendChild(document.createElement('i'));
+        var card_header = card.appendChild(document.createElement('div'));
+        card_header.className = 'card-header';
+        card_header.setAttribute('role', 'tab');
+        card_header.setAttribute('id',  'heading' + card.id);
+        
+                // add info icon 
+        var icon = card_header.appendChild(document.createElement('i'));
         icon.href = '#';
-        icon.className = 'fi-info accordion-title';
-        icon.style = 'float:right; font-size:41px; color:#00853e; padding-right: 4px';
-
-
-        // Create a new link with the class 'title' for each store
-        // and fill it with the store address
-        var link = listing.appendChild(document.createElement('a'));
-        link.href = '#';
-        link.className = 'title';
-        link.dataPosition = i;
+        icon.className = 'fa fa-info-circle list-icon';
+        //icon.style = 'float:right; font-size:41px; color:#00853e; padding-right: 4px margin-top: -40px;';
+        
+        
+        var card_mb0 = card_header.appendChild(document.createElement('h5'));
+        card_mb0.className = 'mb-0';
+               
+        // Create a new link with the class 'title' for each store and fill it with the store address
+        var link = card_mb0.appendChild(document.createElement('a'));
+        link.href = '#collapse' + card.id;
+        link.setAttribute('data-toggle', 'collapse');
+        link.className = 'title';        
+        link.setAttribute('aria-expanded',  'true');
+        link.setAttribute('aria-controls', '#collapse' + card.id);
         link.innerHTML = prop.name;
+        link.dataPosition = i;
         
-        // Add Accordion tab content
-        // Create a new div with the class 'details' for each store
-        // and fill it with the city and phone number
-        var details = listing.appendChild(document.createElement('div'));
-        details.className = 'accordion-content';// data-tab-content';
-        details.innerHTML = prop.address;
-
-
-        /*if (prop.phone) {
-            details.innerHTML += ' &middot; ' + prop.phoneFormatted;
         
-        }*/
+        
+        var card_collapse = card.appendChild(document.createElement('div'));
+        card_collapse.className = 'collapse';
+        card_collapse.setAttribute('id',  'collapse' + card.id);
+        card_collapse.setAttribute('role', 'tabpanel');
+        card_collapse.setAttribute('aria-labelledby', 'heading' + card.id);
+        card_collapse.setAttribute('data-parent', '#accordion');
+
+        var card_body = card_collapse.appendChild(document.createElement('div'));
+        card_collapse.innerHTML = prop.address;
+        
+        
+
+        
 
         // Add an event listener for the links in the sidebar listing
         link.addEventListener('click', function (e) {
@@ -361,8 +370,10 @@ function buildLocationList(data) {
             var activeItem = document.getElementsByClassName('active');
             if (activeItem[0]) {
                 activeItem[0].classList.remove('active');
+                //activeItem[0].classList.remove('is-active');
             }
             this.parentNode.classList.add('active');
+            //this.parentNode.classList.add('is-active');
         });
     }
 }
