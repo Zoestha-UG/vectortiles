@@ -186,7 +186,7 @@ var stores = {
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": [12.3282532023983, 51.31739995]
+                "coordinates": [51.3268638, 12.3249271]
             },
             "properties": {
                 "name": "Feinbäckerei Renelt",
