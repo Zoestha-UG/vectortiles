@@ -11,10 +11,10 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.page{
-padding-top: 37px;    
-}
 
+.page {
+    padding-top: 37px;
+}
 
 div.heading > h1 {
     font-size: 22px;
@@ -107,17 +107,18 @@ a:hover {
     cursor: default;
 }
 
-.card-header{
+.card-header {
     border-bottom: none;
 }
 
-.list-icon{
-    float:right; 
-    font-size:41px; 
-    color:#00853e; 
+.list-icon {
+    float: right;
+    font-size: 41px;
+    color: #00853e;
     padding-right: 0px;
     margin-top: -8px;
 }
+
 .listings .item .title small {
     font-weight: 400;
 }
@@ -223,4 +224,19 @@ a:hover {
 
 .mapboxgl-popup {
     padding-bottom: 50px;
+}
+
+
+/* multicol-menu */
+
+#multicol-menu {
+    color: #fff;
+    padding: 4px;
+}
+
+.dropdown-toggle {
+    color: #fff;
+}
+.dropdown-toggle:hover {
+    color: wheat;
 }

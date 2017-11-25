@@ -40,8 +40,7 @@
     <!-- Next tags are optional but recommended -->
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-        
-        
+
 </head>
 
 <body>
@@ -49,7 +48,34 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+
+            <ul id="multicol-menu" class="nav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">MultiCol Menu <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="row" style="width: 400px;">
+                                <ul class="list-unstyled col-md-4">
+                                    <li><a href="#">test1-1</a></li>
+                                    <li><a href="#">test1-2</a></li>
+                                    <li><a href="#">test1-3</a></li>
+                                </ul>
+                                <ul class="list-unstyled col-md-4">
+                                    <li><a href="#">test2-1</a></li>
+                                    <li><a href="#">test2-2</a></li>
+                                    <li><a href="#">test2-3</a></li>
+                                </ul>
+                                <ul class="list-unstyled col-md-4">
+                                    <li><a href="#">test3-1</a></li>
+                                    <li><a href="#">test3-2</a></li>
+                                    <li><a href="#">test3-3</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--a class="navbar-brand" href="#">Start Bootstrap</a-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
