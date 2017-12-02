@@ -1,5 +1,6 @@
-ErrorDocument 500 "Houston, we have a problem."
-ErrorDocument 404 https://zoestha.de/vectortiles/404.html
+
+ErrorDocument 404 http://leipzig-einkaufen.de/404.html
+#ErrorDocument 404 https://zoestha.de/vectortiles/404.html
 
 <IfModule mod_deflate.c>
 
