@@ -10,6 +10,7 @@ var stores = {
                 "coordinates": [12.373325, 51.323350]
             },
             "properties": {
+                "id": 0,
                 "name": "Café Maître und Pâtisserie",
                 "popupContent": "<b>Café Maître</b><br />Karl-Liebknecht-Straße 62 04275 Leipzig",
                 "address": "Karl-Liebknecht-Straße 62",
@@ -26,9 +27,31 @@ var stores = {
             "type": "Feature",
             "geometry": {
                 "type": "Point",
+                "coordinates": [12.3410598, 51.3253279]
+            },
+            "properties": {
+                "id": 1,
+                "name": "RöstGut ",
+                "popupContent": "<b>RöstGut </b><br />Holbeinstraße 29, 04229 Leipzig",
+                "phone": "0341 580 967 58",
+                "address": "Holbeinstraße 29",
+                "city": "Leipzig",
+                "country": "Germany",
+                "postalCode": "04229",
+                "website": "",
+                "Categories": "lebensmittel, regional",
+                "icon.className": "maki maki-3x maki-fw maki-cafe",
+                "el.className": "extra-marker extra-marker-circle-orange-dark"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
                 "coordinates": [12.3591760, 51.3429270]
             },
             "properties": {
+                "id": 2,
                 "name": "La Chocolaterie",
                 "popupContent": "<b>La Chocolaterie</b><br />Waldstraße 12, 04105 Leipzig",
                 "phone": "0341 5611268",
@@ -49,6 +72,7 @@ var stores = {
                 "coordinates": [12.3668595, 51.316116]
             },
             "properties": {
+                "id": 3,
                 "name": "Bio am Fockeberg",
                 "popupContent": "<b>Bio am Fockeberg</b><br />Brandvorwerkstraße 76, 04275 Leipzig",
                 "phone": "0341 14923081",
@@ -69,6 +93,7 @@ var stores = {
                 "coordinates": [12.336423397064, 51.324118132909]
             },
             "properties": {
+                "id": 4,
                 "name": "Grüne Pforte",
                 "popupContent": "<b>Grüne Pforte</b><br />Erich-Zeigner-Allee 64, 04229 Leipzig",
                 "phone": "",
@@ -89,6 +114,7 @@ var stores = {
                 "coordinates": [12.3334240, 51.3262870]
             },
             "properties": {
+                "id": 5,
                 "name": "Leipspeis",
                 "popupContent": "<b>Leipspeis</b><br />Naumburger Str. 10, 04229 Leipzig",
                 "phone": "0177 2342348",
@@ -109,6 +135,7 @@ var stores = {
                 "coordinates": [12.381953, 51.3439768]
             },
             "properties": {
+                "id": 6,
                 "name": "Kunst, Handwerk & Plauener Spitze",
                 "popupContent": "<b>Kunst, Handwerk & Plauener Spitze</b><br />Willy-Brandt-Platz 7, 04109 Leipzig",
                 "phone": "",
@@ -129,6 +156,7 @@ var stores = {
                 "coordinates": [12.372704819171, 51.32304065]
             },
             "properties": {
+                "id": 7,
                 "name": "HIVYOHIVYO",
                 "popupContent": "<b>HIVYOHIVYO</b><br />Arndtstraße 32, 04275 Leipzig",
                 "phone": "0341 24721480",
@@ -149,6 +177,7 @@ var stores = {
                 "coordinates": [12.373881787062, 51.323389281125]
             },
             "properties": {
+                "id": 8,
                 "name": "Südhang",
                 "popupContent": "<b>Südhang</b><br />Karl-Liebknecht-Straße 79, 04275 Leipzig",
                 "phone": "0341 3011940",
@@ -169,6 +198,7 @@ var stores = {
                 "coordinates": [12.3282532023983, 51.31739995]
             },
             "properties": {
+                "id": 9,
                 "name": "Kräuterladen",
                 "popupContent": "<b>Kräuterladen</b><br />Windorfer Straße 44, 04229 Leipzig",
                 "phone": "0341 225 29 871",
@@ -189,6 +219,7 @@ var stores = {
                 "coordinates": [51.3268638, 12.3249271]
             },
             "properties": {
+                "id": 10,
                 "name": "Feinbäckerei Renelt",
                 "popupContent": "<b>Feinbäckerei Renelt</b><br />Naumburger Straße 55, 04229 Leipzig",
                 "phone": "0341 4772900",
@@ -209,6 +240,7 @@ var stores = {
                 "coordinates": [12.3413334, 51.3219992]
             },
             "properties": {
+                "id": 11,
                 "name": "Pro Regional",
                 "popupContent": "<b>Feinbäckerei Renelt</b><br />Schnorrstraße 34, 04229 Leipzig",
                 "phone": "0341 2602515",
@@ -220,26 +252,6 @@ var stores = {
                 "Categories": "lebensmittel, regional",
                 "icon.className": "maki maki-3x maki-fw maki-village",
                 "el.className": "extra-marker extra-marker-circle-yellow"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [12.3410598, 51.3253279]
-            },
-            "properties": {
-                "name": "RöstGut ",
-                "popupContent": "<b>RöstGut </b><br />Holbeinstraße 29, 04229 Leipzig",
-                "phone": "0341 580 967 58",
-                "address": "Holbeinstraße 29",
-                "city": "Leipzig",
-                "country": "Germany",
-                "postalCode": "04229",
-                "website": "",
-                "Categories": "lebensmittel, regional",
-                "icon.className": "maki maki-3x maki-fw maki-cafe",
-                "el.className": "extra-marker extra-marker-circle-orange-dark"
             }
         }
     ]
@@ -279,27 +291,32 @@ map.on('click', function (e) {
     });
 
     if (features.length) {
+        
         var clickedPoint = features[0];
         // 1. Fly to the point
         flyToStore(clickedPoint);
         // 2. Close all other popups and display popup for clicked store
         createPopUp(clickedPoint);
         // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-        var activeItem = document.getElementsByClassName('active');
+        var activeItem = document.getElementsByClassName('is-active');
         if (activeItem[0]) {
-            activeItem[0].classList.remove('active');
+            activeItem[0].classList.remove('is-active');
         }
         // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
         var selectedFeature = clickedPoint.properties.address;
 
         for (var i = 0; i < stores.features.length; i++) {
             if (stores.features[i].properties.address === selectedFeature) {
-                selectedFeatureIndex = i;
+                selectedFeatureIndex = stores.features[i].properties.id;
             }
         }
         // Select the correct list item using the found index and add the active class
-        var listing = document.getElementById('listing-' + selectedFeatureIndex);
-        listing.classList.add('active');
+        var listing = document.getElementById('heading' + selectedFeatureIndex);
+        listing.classList.add('is-active');
+        /*var listingid = listing.id;
+        $('#' + listing.id).collapse('toggle');*/
+        $('heading' + selectedFeatureIndex).collapse('toggle');
+        
     }
 });
 
@@ -315,7 +332,7 @@ function buildLocationList(data) {
         var listings = document.getElementById('listings');
         var card = listings.appendChild(document.createElement('div'));
         card.className = 'item card';
-        card.id = i;
+        card.id = prop.id;
 
         var card_header = card.appendChild(document.createElement('div'));
         card_header.className = 'card-header';
@@ -323,8 +340,7 @@ function buildLocationList(data) {
         card_header.setAttribute('id',  'heading' + card.id);
         card_header.id = 'heading' + card.id;
 
-        
-                // add info icon 
+        // add info icon 
         var icon = card_header.appendChild(document.createElement('i'));
         icon.href = '#';
         icon.className = 'fa fa-info-circle list-icon';
@@ -342,10 +358,8 @@ function buildLocationList(data) {
         link.setAttribute('aria-controls', 'collapse' + card.id);
         link.className = 'title';        
         link.innerHTML = prop.name;
-        link.dataPosition = i;
-        
-        
-        
+        link.dataPosition = card.id;
+              
         var card_collapse = card.appendChild(document.createElement('div'));
         card_collapse.className = 'collapse';
         card_collapse.setAttribute('id',  'collapse' + card.id);
@@ -358,8 +372,6 @@ function buildLocationList(data) {
         card_body.innerHTML = prop.address;
         
         
-              
-
         // Add an event listener for the links in the sidebar listing
         link.addEventListener('click', function (e) {
             // Update the currentFeature to the store associated with the clicked link
@@ -420,7 +432,6 @@ stores.features.forEach(function (marker) {
     el.appendChild(icon);
 
 
-
     // Create a div element for the marker
     //var el = document.createElement('div');
     // Add a class called 'marker' to each div
@@ -445,8 +456,9 @@ stores.features.forEach(function (marker) {
         if (activeItem[0]) {
             activeItem[0].classList.remove('is-active');
         }
-        var listing = document.getElementById(heading + i);
+        var listing = document.getElementById('heading' + marker.properties.id);
         console.log(listing);
         listing.classList.add('is-active');
+         $('collapse' + marker.properties.id).collapse('toggle');
     });
 });

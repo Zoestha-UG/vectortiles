@@ -87,7 +87,7 @@ a:hover {
     padding-bottom: 60px;
 }
 
-.listings .item {
+/*.listings .item {
     display: block;
     border-bottom: 1px solid #eee;
     padding: 3px;
@@ -97,8 +97,8 @@ a:hover {
 .listings .item:last-child {
     border-bottom: none;
 }
-
-.listings .item .title {
+*/
+.listings .title {
     display: block;
     color: #00853e;
     font-size: 16pt;
@@ -119,16 +119,16 @@ a:hover {
     margin-top: -8px;
 }
 
-.listings .item .title small {
+/*.listings .item .title small {
     font-weight: 400;
-}
+}*/
 
-.listings .item.active .title,
-.listings .item .title:hover {
+.listings .card-header.is-active .title,
+.listings .card-header .title:hover {
     color: #8cc63f;
 }
 
-.listings .item.active {
+.listings .card-header.is-active {
     background-color: #f8f8f8;
 }
 
