@@ -1,7 +1,30 @@
-
+RewriteEngine on
 ErrorDocument 404 http://leipzig-einkaufen.de/404.html
-#ErrorDocument 404 https://zoestha.de/vectortiles/404.html
 
+#Force non-www in a Generic Way
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.
+RewriteCond %{HTTPS}s ^on(s)|off
+RewriteCond http%1://%{HTTP_HOST} ^(https?://)(www\.)?(.+)$
+RewriteRule ^ %1%3%{REQUEST_URI} [R=301,L]
+
+#Remove Trailing Slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+#Force HTTPS
+#RewriteCond %{HTTPS} !on
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+# Note: It’s also recommended to enable HTTP Strict Transport Security (HSTS)
+# on your HTTPS website to help prevent man-in-the-middle attacks.
+# See https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security
+#<IfModule mod_headers.c>
+#    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+#</IfModule>
+
+#Compress Text Files
 <IfModule mod_deflate.c>
 
     # Force compression for mangled headers.

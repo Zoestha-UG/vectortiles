@@ -321,6 +321,8 @@ function buildLocationList(data) {
         card_header.className = 'card-header';
         card_header.setAttribute('role', 'tab');
         card_header.setAttribute('id',  'heading' + card.id);
+        card_header.id = 'heading' + card.id;
+
         
                 // add info icon 
         var icon = card_header.appendChild(document.createElement('i'));
@@ -334,11 +336,11 @@ function buildLocationList(data) {
                
         // Create a new link with the class 'title' for each store and fill it with the store address
         var link = card_mb0.appendChild(document.createElement('a'));
-        link.href = '#collapse' + card.id;
         link.setAttribute('data-toggle', 'collapse');
+        link.href = '#collapse' + card.id;
+        link.setAttribute('aria-expanded',  'false');
+        link.setAttribute('aria-controls', 'collapse' + card.id);
         link.className = 'title';        
-        link.setAttribute('aria-expanded',  'true');
-        link.setAttribute('aria-controls', '#collapse' + card.id);
         link.innerHTML = prop.name;
         link.dataPosition = i;
         
@@ -349,14 +351,14 @@ function buildLocationList(data) {
         card_collapse.setAttribute('id',  'collapse' + card.id);
         card_collapse.setAttribute('role', 'tabpanel');
         card_collapse.setAttribute('aria-labelledby', 'heading' + card.id);
-        card_collapse.setAttribute('data-parent', '#accordion');
+        card_collapse.setAttribute('data-parent', '#listings');
 
         var card_body = card_collapse.appendChild(document.createElement('div'));
-        card_collapse.innerHTML = prop.address;
+        card_body.className = 'card-body';
+        card_body.innerHTML = prop.address;
         
         
-
-        
+              
 
         // Add an event listener for the links in the sidebar listing
         link.addEventListener('click', function (e) {
@@ -367,12 +369,12 @@ function buildLocationList(data) {
             // 2. Close all other popups and display popup for clicked store
             createPopUp(clickedListing);
             // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-            var activeItem = document.getElementsByClassName('active');
+            var activeItem = document.getElementsByClassName('is-active');
             if (activeItem[0]) {
-                activeItem[0].classList.remove('active');
+                activeItem[0].classList.remove('is-active');
                 //activeItem[0].classList.remove('is-active');
             }
-            this.parentNode.classList.add('active');
+            this.classList.add('is-active');
             //this.parentNode.classList.add('is-active');
         });
     }
@@ -386,6 +388,7 @@ function flyToStore(currentFeature) {
 }
 
 function createPopUp(currentFeature) {
+    
     var popUps = document.getElementsByClassName('mapboxgl-popup');
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) popUps[0].remove();
@@ -432,7 +435,7 @@ stores.features.forEach(function (marker) {
         .addTo(map);
 
     el.addEventListener('click', function (e) {
-        var activeItem = document.getElementsByClassName('active');
+        var activeItem = document.getElementsByClassName('is-active');
         // 1. Fly to the point
         flyToStore(marker);
         // 2. Close all other popups and display popup for clicked store
@@ -440,10 +443,10 @@ stores.features.forEach(function (marker) {
         // 3. Highlight listing in sidebar (and remove highlight for all other listings)
         e.stopPropagation();
         if (activeItem[0]) {
-            activeItem[0].classList.remove('active');
+            activeItem[0].classList.remove('is-active');
         }
-        var listing = document.getElementById('listing-' + i);
+        var listing = document.getElementById(heading + i);
         console.log(listing);
-        listing.classList.add('active');
+        listing.classList.add('is-active');
     });
 });

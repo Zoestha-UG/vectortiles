@@ -101,8 +101,8 @@ a:hover {
 .listings .item .title {
     display: block;
     color: #00853e;
-    font-size: 18pt;
-    font-weight: bold;
+    font-size: 16pt;
+    font-weight: 600;
     padding: 0;
     cursor: default;
 }

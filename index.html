@@ -13,6 +13,7 @@
 	<meta name="theme-color" content="#40A535">
     <link rel="icon" type="image/png" href='favicon-32x32.png'>
 
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
     <!-- Bootstrap core CSS -->
 
     <link rel='stylesheet' href="vendor/bootstrap/css/bootstrap.min.css">
@@ -38,64 +39,11 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-
-            <ul id="multicol-menu" class="nav pull-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">MultiCol Menu <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="row" style="width: 400px;">
-                                <ul class="list-unstyled col-md-4">
-                                    <li><a href="#">test1-1</a></li>
-                                    <li><a href="#">test1-2</a></li>
-                                    <li><a href="#">test1-3</a></li>
-                                </ul>
-                                <ul class="list-unstyled col-md-4">
-                                    <li><a href="#">test2-1</a></li>
-                                    <li><a href="#">test2-2</a></li>
-                                    <li><a href="#">test2-3</a></li>
-                                </ul>
-                                <ul class="list-unstyled col-md-4">
-                                    <li><a href="#">test3-1</a></li>
-                                    <li><a href="#">test3-2</a></li>
-                                    <li><a href="#">test3-3</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <!--a class="navbar-brand" href="#">Start Bootstrap</a-->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" w3-include-html="LEnavbar.html"></nav>
+     <!--div w3-include-html="LEnavbar.html"></div--> 
+ 
     <!-- Page Content -->
     <div class="container page">
-
-
         <div class="row my-4">
 
             <!-- map with stores -->
@@ -190,6 +138,10 @@
         </div>
         <!-- /.container -->
     </footer>
+    
+    <script>
+w3.includeHTML();
+</script>
 
     <link rel='stylesheet' href="ExtraMarkers/css/extra-markers.css" />
     <link rel='stylesheet' href="webfont-maki/css/maki-min.css" />
@@ -197,7 +149,8 @@
  
     <!-- Bootstrap core JavaScript -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <!--script src="vendor/jquery/jquery.min.js"></script-->    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src='js/app.js'></script>
 
