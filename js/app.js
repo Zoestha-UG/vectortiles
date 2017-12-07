@@ -1,4 +1,3 @@
-
 var stores = {
 
     "type": "FeatureCollection",

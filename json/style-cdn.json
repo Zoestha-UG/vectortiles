@@ -46,10 +46,10 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "http://localhost/vectortiles/tileserver/tileserver.php?/2017-07-03_germany_leipzig.json"
+      "tiles": ["https://zoestha.de/vectortiles/tileserver/tileserver.php?/LE/{z}/{x}/{y}.pbf"]
     }
   },
-  "sprite": "http://localhost/vectortiles/json/sprite",
+  "sprite": "https://zoestha.de/vectortiles/json/sprite",
   "glyphs": "https://free.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=RiS4gsgZPZqeeMlIyxFo",
   "layers": [
     {
