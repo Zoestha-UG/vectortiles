@@ -21,7 +21,7 @@ stores2 = (function() {
   $.ajax({
     'async': false,
     'global': false,
-    'url': "https://zoestha.de/vectortiles/location.geojson",
+    'url': "https://zoestha.de/vectortiles/location.json",
     'dataType': "json",
     'success': function(data) {
       stores2 = data;
