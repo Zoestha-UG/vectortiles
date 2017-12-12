@@ -1,0 +1,255 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.373325, 51.323350]
+      },
+      "properties": {
+        "id": 0,
+        "name": "Café Maître und Pâtisserie",
+        "popupContent": "<b>Café Maître</b><br />Karl-Liebknecht-Straße 62 04275 Leipzig",
+        "address": "Karl-Liebknecht-Straße 62",
+        "city": " Leipzig",
+        "country": "Germany",
+        "postalCode": "04275",
+        "website": "www.cafe-maitre.de/",
+        "Categories": "Cafe, patisserie, feinkost",
+        "icon.className": "maki maki-3x maki-fw maki-cafe",
+        "el.className": "extra-marker extra-marker-circle-orange-dark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3410598, 51.3253279]
+      },
+      "properties": {
+        "id": 1,
+        "name": "RöstGut ",
+        "popupContent": "<b>RöstGut </b><br />Holbeinstraße 29, 04229 Leipzig",
+        "phone": "0341 580 967 58",
+        "address": "Holbeinstraße 29",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04229",
+        "website": "",
+        "Categories": "lebensmittel, regional",
+        "icon.className": "maki maki-3x maki-fw maki-cafe",
+        "el.className": "extra-marker extra-marker-circle-orange-dark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3591760, 51.3429270]
+      },
+      "properties": {
+        "id": 2,
+        "name": "La Chocolaterie",
+        "popupContent": "<b>La Chocolaterie</b><br />Waldstraße 12, 04105 Leipzig",
+        "phone": "0341 5611268",
+        "address": "Waldstraße 12",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04105",
+        "website": "http://la-chocolaterie.de",
+        "Categories": "Cafe, chocolaterie",
+        "icon.className": "maki maki-3x maki-fw maki-bakery",
+        "el.className": "extra-marker extra-marker-circle-orange-dark"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3668595, 51.316116]
+      },
+      "properties": {
+        "id": 3,
+        "name": "Bio am Fockeberg",
+        "popupContent": "<b>Bio am Fockeberg</b><br />Brandvorwerkstraße 76, 04275 Leipzig",
+        "phone": "0341 14923081",
+        "address": "Brandvorwerkstraße 76",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04275",
+        "website": "https://bio-am-fockeberg.de",
+        "Categories": "Biolebensmittel",
+        "icon.className": "maki maki-3x maki-fw maki-grocery",
+        "el.className": "extra-marker extra-marker-circle-green"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.336423397064, 51.324118132909]
+      },
+      "properties": {
+        "id": 4,
+        "name": "Grüne Pforte",
+        "popupContent": "<b>Grüne Pforte</b><br />Erich-Zeigner-Allee 64, 04229 Leipzig",
+        "phone": "",
+        "address": "Erich-Zeigner-Allee 64",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04229",
+        "website": "http://www.gruene-pforte.de/",
+        "Categories": "Lebensmittel, Regional, Saisonal",
+        "icon.className": "maki maki-3x maki-fw maki-village",
+        "el.className": "extra-marker extra-marker-circle-yellow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3334240, 51.3262870]
+      },
+      "properties": {
+        "id": 5,
+        "name": "Leipspeis",
+        "popupContent": "<b>Leipspeis</b><br />Naumburger Str. 10, 04229 Leipzig",
+        "phone": "0177 2342348",
+        "address": "Naumburger Str. 10",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04229",
+        "website": "http://leipspeis.de/",
+        "Categories": "Lebensmittel, Bio, Regional",
+        "icon.className": "maki maki-3x maki-fw maki-village",
+        "el.className": "extra-marker extra-marker-circle-green"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.381953, 51.3439768]
+      },
+      "properties": {
+        "id": 6,
+        "name": "Kunst, Handwerk & Plauener Spitze",
+        "popupContent": "<b>Kunst, Handwerk & Plauener Spitze</b><br />Willy-Brandt-Platz 7, 04109 Leipzig",
+        "phone": "",
+        "address": "Willy-Brandt-Platz 7",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04109",
+        "website": "",
+        "Categories": "Kunsthandwerk, Regional",
+        "icon.className": "maki maki-3x maki-fw maki-village",
+        "el.className": "extra-marker extra-marker-circle-yellow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.372704819171, 51.32304065]
+      },
+      "properties": {
+        "id": 7,
+        "name": "HIVYOHIVYO",
+        "popupContent": "<b>HIVYOHIVYO</b><br />Arndtstraße 32, 04275 Leipzig",
+        "phone": "0341 24721480",
+        "address": "Arndtstraße 32",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04275",
+        "website": "",
+        "Categories": "modeatelier, Fashion accessories",
+        "icon.className": "maki maki-3x maki-fw maki-clothing-store",
+        "el.className": "extra-marker extra-marker-circle-red"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.373881787062, 51.323389281125]
+      },
+      "properties": {
+        "id": 8,
+        "name": "Südhang",
+        "popupContent": "<b>Südhang</b><br />Karl-Liebknecht-Straße 79, 04275 Leipzig",
+        "phone": "0341 3011940",
+        "address": "Karl-Liebknecht-Straße 79",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04275",
+        "website": "",
+        "Categories": "weinladen, feinkost",
+        "icon.className": "maki maki-3x maki-fw maki-alcohol-shop",
+        "el.className": "extra-marker extra-marker-circle-yellow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3282532023983, 51.31739995]
+      },
+      "properties": {
+        "id": 9,
+        "name": "Kräuterladen",
+        "popupContent": "<b>Kräuterladen</b><br />Windorfer Straße 44, 04229 Leipzig",
+        "phone": "0341 225 29 871",
+        "address": "Windorfer Straße 44",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04229",
+        "website": "",
+        "Categories": "lokal, Kräuter, Gewürze, Veranstaltungen, Cafe",
+        "icon.className": "maki maki-3x maki-fw maki-park2",
+        "el.className": "extra-marker extra-marker-circle-green"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3249271, 51.3268638]
+      },
+      "properties": {
+        "id": 10,
+        "name": "Feinbäckerei Renelt",
+        "popupContent": "<b>Feinbäckerei Renelt</b><br />Naumburger Straße 55, 04229 Leipzig",
+        "phone": "0341 4772900",
+        "address": "Naumburger Straße 55",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04229",
+        "website": "",
+        "Categories": "lokal, bäckerei, Cafe",
+        "icon.className": "maki maki-3x maki-fw maki-bakery",
+        "el.className": "extra-marker extra-marker-circle-yellow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3413334, 51.3219992]
+      },
+      "properties": {
+        "id": 11,
+        "name": "Pro Regional",
+        "popupContent": "<b>Feinbäckerei Renelt</b><br />Schnorrstraße 34, 04229 Leipzig",
+        "phone": "0341 2602515",
+        "address": "Schnorrstraße 34",
+        "city": "Leipzig",
+        "country": "Germany",
+        "postalCode": "04229",
+        "website": "",
+        "Categories": "lebensmittel, regional",
+        "icon.className": "maki maki-3x maki-fw maki-village",
+        "el.className": "extra-marker extra-marker-circle-yellow"
+      }
+    }
+  ]
+}
