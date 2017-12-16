@@ -101,7 +101,7 @@ map.on('load', function(e) {
     if (features) {
 
       //if (features) {
-      var uniqueFeatures = getUniqueFeatures(features, "name");
+      var uniqueFeatures = getUniqueFeatures(features, "Categories");
       // Populate features for the listing overlay.
       buildLocationList(uniqueFeatures);
 
@@ -137,15 +137,15 @@ map.on('load', function(e) {
     // Filter visible features that don't match the input value.
     var filtered = locations.filter(function(feature) {
       var name = normalize(feature.properties.name);
-      var code = normalize(feature.properties.popupContent);
-      return name.indexOf(value) > -1 || code.indexOf(value) > -1;
+      var Categories = normalize(feature.properties.Categories);
+      return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
     });
 
     // Populate the sidebar with filtered results
     buildLocationList(filtered);
 
     // Set the filter to populate features into the layer.
-    map.setFilter('locations', ['in', 'name'].concat(filtered.map(function(feature) {
+    map.setFilter('locations', ['in', 'Categories'].concat(filtered.map(function(feature) {
       return feature.properties.name;
     })));
   });
@@ -179,8 +179,8 @@ function getUniqueFeatures(array, comparatorProperty) {
 // Functions
 function buildLocationList(data) {
   // Iterate through the list of stores
-  if (data.length) {
-    listings.innerHTML = '';
+  listings.innerHTML = '';
+  if (data.length) {  
     data.forEach(function(feature) {
       // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
       var prop = feature.properties;
@@ -244,16 +244,18 @@ function buildLocationList(data) {
       });
 
     })
+    // Show the filter input
+        filterEl.parentNode.style.display = 'block';
   } else {
     var empty = document.createElement('p');
-    empty.textContent = 'Drag the map to populate results';
+    empty.textContent = 'Ziehen Sie die Karte, um die Ergebnisse zu füllen';
     listings.appendChild(empty);
 
     // Hide the filter input
-    //filterEl.parentNode.style.display = 'none';
+    filterEl.parentNode.style.display = 'none';
 
     // remove features filter
-    map.setFilter('locations', ['has', 'name']);
+    map.setFilter('locations', ['has', 'Categories']);
   }
 }
 
