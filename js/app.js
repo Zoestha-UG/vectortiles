@@ -51,7 +51,7 @@ map.on('load', function(e) {
       "icon-image": "{icon.className}-15",
       "text-field": ".",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-      "text-offset": [0, 0.0],
+      "text-offset": [0, -2.0],
       "text-anchor": "top",
       "text-padding": 0,
       "text-allow-overlap": true
@@ -96,11 +96,9 @@ map.on('load', function(e) {
 
   map.on('moveend', function() {
     // Query all the rendered points in the view
-    var features = map.queryRenderedFeatures({
-      layers: ['locations']
-    });
+    var features = map.queryRenderedFeatures({layers: ['locations']});
 
-    if (features.length) {
+    if (features) {
 
       //if (features) {
       var uniqueFeatures = getUniqueFeatures(features, "name");
@@ -112,7 +110,7 @@ map.on('load', function(e) {
 
       // Store the current features in sn `locations_on_map` variable to
       // later use for filtering on `keyup`.
-      locations_on_map = uniqueFeatures;
+      locations = uniqueFeatures;
     }
   });
 
@@ -120,11 +118,11 @@ map.on('load', function(e) {
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = 'pointer';
 
-    // Populate the popup and set its coordinates based on the feature.
-    var feature = e.features[0];
-    popup.setLngLat(feature.geometry.coordinates)
-      .setText(feature.properties.name + ' (' + feature.properties.abbrev + ')')
-      .addTo(map);
+    // // Populate the popup and set its coordinates based on the feature.
+    // var feature = e.features[0];
+    // popup.setLngLat(feature.geometry.coordinates)
+    //   .setText(feature.properties.name + ' (' + feature.properties.abbrev + ')')
+    //   .addTo(map);
   });
 
   map.on('mouseleave', 'locations', function() {
@@ -133,10 +131,11 @@ map.on('load', function(e) {
   });
 
   filterEl.addEventListener('keyup', function(e) {
+
     var value = normalize(e.target.value);
 
     // Filter visible features that don't match the input value.
-    var filtered = locations_on_map.filter(function(feature) {
+    var filtered = locations.filter(function(feature) {
       var name = normalize(feature.properties.name);
       var code = normalize(feature.properties.popupContent);
       return name.indexOf(value) > -1 || code.indexOf(value) > -1;
@@ -146,15 +145,19 @@ map.on('load', function(e) {
     buildLocationList(filtered);
 
     // Set the filter to populate features into the layer.
-    /*      map.setFilter('locations', ['in', 'abbrev'].concat(filtered.map(function(feature) {
-            return feature.properties.abbrev;
-          })));*/
+    map.setFilter('locations', ['in', 'name'].concat(filtered.map(function(feature) {
+      return feature.properties.name;
+    })));
   });
 
   // Call this function on initialization
   // passing an empty array to render an empty state
-  //renderListings([]);
+  buildLocationList([]);
 });
+
+function normalize(string) {
+    return string.trim().toLowerCase();
+}
 
 function getUniqueFeatures(array, comparatorProperty) {
   var existingFeatureKeys = {};
@@ -173,14 +176,12 @@ function getUniqueFeatures(array, comparatorProperty) {
   return uniqueFeatures;
 }
 
-
 // Functions
 function buildLocationList(data) {
   // Iterate through the list of stores
   if (data.length) {
     listings.innerHTML = '';
     data.forEach(function(feature) {
-      //for (i = 0; i < data.features.length; i++) {
       // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
       var prop = feature.properties;
       // Select the listing container in the HTML and append a div  with the class 'item' for each store
@@ -199,8 +200,6 @@ function buildLocationList(data) {
       var icon = card_header.appendChild(document.createElement('i'));
       icon.href = '#';
       icon.className = 'fa fa-info-circle list-icon';
-      //icon.style = 'float:right; font-size:41px; color:#00853e; padding-right: 4px margin-top: -40px;';
-
 
       var card_mb0 = card_header.appendChild(document.createElement('h5'));
       card_mb0.className = 'mb-0';
@@ -226,8 +225,6 @@ function buildLocationList(data) {
       card_body.className = 'card-body';
       card_body.innerHTML = prop.address;
 
-      //addMarker(feature);
-
       // Add an event listener for the links in the sidebar listing
       link.addEventListener('click', function(e) {
         // Update the currentFeature to the store associated with the clicked link
@@ -246,9 +243,17 @@ function buildLocationList(data) {
         //this.parentNode.classList.add('is-active');
       });
 
-      // remove features filter
-      //map.setFilter('locations', ['has', 'abbrev']);
     })
+  } else {
+    var empty = document.createElement('p');
+    empty.textContent = 'Drag the map to populate results';
+    listings.appendChild(empty);
+
+    // Hide the filter input
+    //filterEl.parentNode.style.display = 'none';
+
+    // remove features filter
+    map.setFilter('locations', ['has', 'name']);
   }
 }
 
@@ -275,10 +280,9 @@ function createPopUp(currentFeature) {
 }
 
 stores2.features.forEach(function(marker) {
-  //function addMarker(marker){
+
   let shadow = document.createElement('div');
   shadow.className = 'extra-marker extra-marker-shadow';
-  //el.insertBefore(shadow, icon);
 
   // create a HTML element for each feature
   let el = document.createElement('div');
@@ -286,7 +290,6 @@ stores2.features.forEach(function(marker) {
   shadow.appendChild(el);
 
   let icon = document.createElement('i');
-
   icon.style.color = 'white';
   icon.className = marker.properties["icon.className"];
   el.appendChild(icon);
@@ -305,10 +308,11 @@ stores2.features.forEach(function(marker) {
     .setLngLat(marker.geometry.coordinates)
     .addTo(map);
 
+  el.style.cursor = 'pointer';
+
   el.addEventListener('click', function(e) {
     var activeItem = document.getElementsByClassName('is-active');
-    // 1. Fly to the point
-    //flyToStore(marker);
+
     // 2. Close all other popups and display popup for clicked store
     createPopUp(marker);
     // 3. Highlight listing in sidebar (and remove highlight for all other listings)
@@ -317,7 +321,6 @@ stores2.features.forEach(function(marker) {
       activeItem[0].classList.remove('is-active');
     }
     var listing = document.getElementById('heading' + marker.properties.id);
-    //console.log(listing);
     listing.classList.add('is-active');
     $('collapse' + marker.properties.id).collapse('toggle');
   });

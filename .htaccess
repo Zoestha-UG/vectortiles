@@ -115,7 +115,7 @@ RewriteRule ^ %1 [R=301,L]
 
 #CDN-served webfonts might not work in Firefox or IE due to CORS. This snippet solves the problem.
 <IfModule mod_headers.c>
-    <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2|json|css|js)$">
+    <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2|json|css|js|png)$">
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
 </IfModule>

@@ -87,6 +87,14 @@ a:hover {
     padding-bottom: 60px;
 }
 
+
+.sidebar > fieldset{
+  
+  background: #ddd;
+  border: none;
+  padding: 10px;
+  margin: 0;
+}
 /*.listings .item {
     display: block;
     border-bottom: 1px solid #eee;
@@ -229,7 +237,7 @@ a:hover {
 
 /* multicol-menu */
 
-#multicol-menu {
+/*#multicol-menu {
     color: #fff;
     padding: 4px;
 }
@@ -239,4 +247,4 @@ a:hover {
 }
 .dropdown-toggle:hover {
     color: wheat;
-}
+}*/
