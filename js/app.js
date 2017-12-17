@@ -15,6 +15,7 @@ var popup = new mapboxgl.Popup({
 
 var filterEl = document.getElementById('feature-filter');
 var listings = document.getElementById('listings');
+var mapMarkers = [];
 /*Load stores2*/
 stores2 = (function() {
   var stores2 = null;
@@ -145,9 +146,18 @@ map.on('load', function(e) {
     buildLocationList(filtered);
 
     // Set the filter to populate features into the layer.
-    map.setFilter('locations', ['in', 'Categories'].concat(filtered.map(function(feature) {
+    map.setFilter('locations', ['in', 'name'].concat(filtered.map(function(feature) {
       return feature.properties.name;
     })));
+
+
+    mapMarkers.forEach(function(marker) {
+    marker.remove();
+});
+      
+    // call createMarker forEach filetered
+    filtered.forEach(createMarker);
+    
   });
 
   // Call this function on initialization
@@ -176,11 +186,10 @@ function getUniqueFeatures(array, comparatorProperty) {
   return uniqueFeatures;
 }
 
-// Functions
 function buildLocationList(data) {
   // Iterate through the list of stores
   listings.innerHTML = '';
-  if (data.length) {  
+  if (data.length) {
     data.forEach(function(feature) {
       // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
       var prop = feature.properties;
@@ -281,20 +290,20 @@ function createPopUp(currentFeature) {
     .addTo(map);
 }
 
-stores2.features.forEach(function(marker) {
-
+function createMarker(currentFeature) {
   let shadow = document.createElement('div');
   shadow.className = 'extra-marker extra-marker-shadow';
 
   // create a HTML element for each feature
   let el = document.createElement('div');
-  el.className = marker.properties["el.className"];
+  el.className = currentFeature.properties["el.className"];
   shadow.appendChild(el);
 
   let icon = document.createElement('i');
   icon.style.color = 'white';
-  icon.className = marker.properties["icon.className"];
+  icon.className = currentFeature.properties["icon.className"];
   el.appendChild(icon);
+
 
 
   // Create a div element for the marker
@@ -304,10 +313,11 @@ stores2.features.forEach(function(marker) {
   // By default the image for your custom marker will be anchored
   // by its center. Adjust the position accordingly
   // Create the custom markers, set their position, and add to map
-  new mapboxgl.Marker(shadow, {
+    
+  mapMarkers[currentFeature.properties.id] = new mapboxgl.Marker(shadow, {
       offset: [10, 0]
     })
-    .setLngLat(marker.geometry.coordinates)
+    .setLngLat(currentFeature.geometry.coordinates)
     .addTo(map);
 
   el.style.cursor = 'pointer';
@@ -316,14 +326,16 @@ stores2.features.forEach(function(marker) {
     var activeItem = document.getElementsByClassName('is-active');
 
     // 2. Close all other popups and display popup for clicked store
-    createPopUp(marker);
+    createPopUp(currentFeature);
     // 3. Highlight listing in sidebar (and remove highlight for all other listings)
     e.stopPropagation();
     if (activeItem[0]) {
       activeItem[0].classList.remove('is-active');
     }
-    var listing = document.getElementById('heading' + marker.properties.id);
+    var listing = document.getElementById('heading' + currentFeature.properties.id);
     listing.classList.add('is-active');
-    $('collapse' + marker.properties.id).collapse('toggle');
+    $('collapse' + currentFeature.properties.id).collapse('toggle');
   });
-});
+}
+
+stores2.features.forEach(createMarker);
