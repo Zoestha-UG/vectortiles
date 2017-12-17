@@ -60,44 +60,44 @@ map.on('load', function(e) {
   });
 
   // Add an event listener for when a user clicks on the map
-  map.on('click', function(e) {
-    // Query all the rendered points in the view
-    var features = map.queryRenderedFeatures(e.point, {
-      layers: ['locations']
-    });
+  /*  map.on('click', function(e) {
+      // Query all the rendered points in the view
+      var features = map.queryRenderedFeatures(e.point, {
+        layers: ['locations']
+      });
 
-    if (features.length) {
-      var clickedPoint = features[0];
-      // 1. Fly to the point
-      //flyToStore(clickedPoint);
-      // 2. Close all other popups and display popup for clicked store
-      createPopUp(clickedPoint);
-      // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-      var activeItem = document.getElementsByClassName('is-active');
-      if (activeItem[0]) {
-        activeItem[0].classList.remove('is-active');
-      }
-      // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
-      var selectedFeature = clickedPoint.properties.address;
-
-      for (var i = 0; i < stores2.features.length; i++) {
-        if (stores2.features[i].properties.address === selectedFeature) {
-          selectedFeatureIndex = stores2.features[i].properties.id;
+      if (features.length) {
+        var clickedPoint = features[0];
+        // 1. Fly to the point
+        //flyToStore(clickedPoint);
+        // 2. Close all other popups and display popup for clicked store
+        createPopUp(clickedPoint);
+        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+        var activeItem = document.getElementsByClassName('is-active');
+        if (activeItem[0]) {
+          activeItem[0].classList.remove('is-active');
         }
-      }
-      // Select the correct list item using the found index and add the active class
-      var listing = document.getElementById('heading' + selectedFeatureIndex);
-      listing.classList.add('is-active');
-      /*var listingid = listing.id;
-      $('#' + listing.id).collapse('toggle');*/
-      $('heading' + selectedFeatureIndex).collapse('toggle');
+        // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
+        var selectedFeature = clickedPoint.properties.address;
 
-    }
-  });
+        for (var i = 0; i < stores2.features.length; i++) {
+          if (stores2.features[i].properties.address === selectedFeature) {
+            selectedFeatureIndex = stores2.features[i].properties.id;
+          }
+        }
+        // Select the correct list item using the found index and add the active class
+        var listing = document.getElementById('heading' + selectedFeatureIndex);
+        listing.classList.add('is-active');
+        $('heading' + selectedFeatureIndex).collapse('toggle');
+
+      }
+    });*/
 
   map.on('moveend', function() {
     // Query all the rendered points in the view
-    var features = map.queryRenderedFeatures({layers: ['locations']});
+    var features = map.queryRenderedFeatures({
+      layers: ['locations']
+    });
 
     if (features) {
 
@@ -131,6 +131,40 @@ map.on('load', function(e) {
     popup.remove();
   });
 
+  $('.dropdown-item').click(function() {
+
+    var value = normalize($(this).text());
+
+    var filtered = [];
+    if (value === 'alle') {
+      // Query all source points
+      filtered = map.querySourceFeatures('locations_source');
+    } else {
+      // Filter visible features that don't match the input value.
+      filtered = locations.filter(function(feature) {
+        var name = normalize(feature.properties.name);
+        var Categories = normalize(feature.properties.Categories);
+        return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
+      });
+    }
+
+    // Populate the sidebar with filtered results
+    buildLocationList(filtered);
+
+    // Set the filter to populate features into the layer.
+    map.setFilter('locations', ['in', 'name'].concat(filtered.map(function(feature) {
+      return feature.properties.name;
+    })));
+
+
+    mapMarkers.forEach(function(marker) {
+      marker.remove();
+    });
+
+    // call createMarker forEach filetered
+    filtered.forEach(createMarker);
+  });
+
   filterEl.addEventListener('keyup', function(e) {
 
     var value = normalize(e.target.value);
@@ -152,12 +186,12 @@ map.on('load', function(e) {
 
 
     mapMarkers.forEach(function(marker) {
-    marker.remove();
-});
-      
+      marker.remove();
+    });
+
     // call createMarker forEach filetered
     filtered.forEach(createMarker);
-    
+
   });
 
   // Call this function on initialization
@@ -166,7 +200,7 @@ map.on('load', function(e) {
 });
 
 function normalize(string) {
-    return string.trim().toLowerCase();
+  return string.trim().toLowerCase();
 }
 
 function getUniqueFeatures(array, comparatorProperty) {
@@ -254,7 +288,7 @@ function buildLocationList(data) {
 
     })
     // Show the filter input
-        filterEl.parentNode.style.display = 'block';
+    filterEl.parentNode.style.display = 'block';
   } else {
     var empty = document.createElement('p');
     empty.textContent = 'Ziehen Sie die Karte, um die Ergebnisse zu füllen';
@@ -291,6 +325,7 @@ function createPopUp(currentFeature) {
 }
 
 function createMarker(currentFeature) {
+
   let shadow = document.createElement('div');
   shadow.className = 'extra-marker extra-marker-shadow';
 
@@ -313,7 +348,7 @@ function createMarker(currentFeature) {
   // By default the image for your custom marker will be anchored
   // by its center. Adjust the position accordingly
   // Create the custom markers, set their position, and add to map
-    
+
   mapMarkers[currentFeature.properties.id] = new mapboxgl.Marker(shadow, {
       offset: [10, 0]
     })
@@ -323,6 +358,7 @@ function createMarker(currentFeature) {
   el.style.cursor = 'pointer';
 
   el.addEventListener('click', function(e) {
+
     var activeItem = document.getElementsByClassName('is-active');
 
     // 2. Close all other popups and display popup for clicked store
@@ -332,9 +368,15 @@ function createMarker(currentFeature) {
     if (activeItem[0]) {
       activeItem[0].classList.remove('is-active');
     }
-    var listing = document.getElementById('heading' + currentFeature.properties.id);
-    listing.classList.add('is-active');
-    $('collapse' + currentFeature.properties.id).collapse('toggle');
+    var heading_Element = document.getElementById('heading' + currentFeature.properties.id);
+    if (heading_Element)
+      heading_Element.classList.add('is-active');
+    var collapse_Element = document.getElementById('collapse' + currentFeature.properties.id);
+    if (collapse_Element)
+      $(collapse_Element).collapse('show');
+    // $( collapse_Element).collapse('toggle');
+
+
   });
 }
 

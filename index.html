@@ -57,9 +57,26 @@
           <!--div class='heading'>
               <h1>Our locations</h1>
           </div-->
-          <fieldset>
+          <!--fieldset>
             <input id='feature-filter' type='text' placeholder='Filter results by Name oder Kategorien' />
-          </fieldset>
+          </fieldset-->
+            
+            <div class="dropdown" id='feature-filter'>
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button class="dropdown-item" href="#">Alle</button>  
+                <button class="dropdown-item" href="#">Cafe</button>
+                <button class="dropdown-item" href="#">Feinkost</button>
+                <button class="dropdown-item" href="#">Handwerk</button>
+                <button class="dropdown-item" href="#">Lebensmittel</button>
+                <button class="dropdown-item" href="#">Regional</button>
+                  
+
+              </div>
+            </div>
+            
           <div id='listings' class="listings accordion" role="tablist"></div>
         </div>
       </div>
