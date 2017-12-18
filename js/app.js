@@ -46,6 +46,7 @@ map.on('load', function(e) {
   map.addSource('locations_source', {
     "type": 'geojson',
     "data": stores2 //"http://localhost/vectortiles/location.geojson"
+      
   });
 
   // Add the data to your map as a layer
@@ -56,14 +57,14 @@ map.on('load', function(e) {
     "source": 'locations_source',
     "layout": {
     "visibility": "visible",
-    "icon-image": "icon.image",
-      "text-field": ".",
-      "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-      "text-offset": [0, -2.0],
-      "text-anchor": "top",
-      "text-padding": 0,
-      "text-allow-overlap": true
-    }
+    "icon-image": "marker_11",
+    "icon-allow-overlap": true
+    }/*,
+      "paint": {
+          "icon-halo-width": 15,
+          "icon-halo-blur": 15,
+          "icon-color" : "#ff0000"
+        }*/
   });
 
   // Add an event listener for when a user clicks on the map
@@ -143,24 +144,25 @@ map.on('load', function(e) {
 
     var value = normalize($(this).text());
 
-    var filtered = [];
-    if (value === 'alle') {
-      // Query all source points
-      filtered = map.querySourceFeatures('locations_source');
-    } else {
+    var filtered = map.querySourceFeatures('locations_source');
+    if (value !== 'alle') {
       // Filter visible features that don't match the input value.
-      filtered = locations.filter(function(feature) {
+      filtered = filtered.filter(function(feature) 
+      {
         var name = normalize(feature.properties.name);
         var Categories = normalize(feature.properties.Categories);
         return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
       });
     }
+      if(!filtered)
+          return;
 
+    var uniqueFeatures = getUniqueFeatures(filtered, "Categories");
     // Populate the sidebar with filtered results
-    buildLocationList(filtered);
+    buildLocationList(uniqueFeatures);
 
     // Set the filter to populate features into the layer.
-    map.setFilter('locations', ['in', 'name'].concat(filtered.map(function(feature) {
+    map.setFilter('locations', ['in', 'name'].concat(uniqueFeatures.map(function(feature) {
       return feature.properties.name;
     })));
 
@@ -170,9 +172,9 @@ map.on('load', function(e) {
     });
 
     // call createMarker forEach filetered
-    filtered.forEach(createMarker);
+    uniqueFeatures.forEach(createMarker);
       
-      txtCategories.value = value;
+    txtCategories.value = value;
 
   });
 
