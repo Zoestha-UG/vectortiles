@@ -16,6 +16,7 @@
         "postalCode": "04275",
         "website": "www.cafe-maitre.de/",
         "Categories": "Cafe, patisserie, feinkost",
+        "icon.image": "maki-cafe",
         "icon.className": "maki maki-3x maki-fw maki-cafe",
         "el.className": "extra-marker extra-marker-circle-orange-dark"
       }
@@ -37,6 +38,7 @@
         "postalCode": "04229",
         "website": "",
         "Categories": "lebensmittel, regional",
+        "icon.image": "maki-cafe",
         "icon.className": "maki maki-3x maki-fw maki-cafe",
         "el.className": "extra-marker extra-marker-circle-orange-dark"
       }
@@ -58,6 +60,7 @@
         "postalCode": "04105",
         "website": "http://la-chocolaterie.de",
         "Categories": "Cafe, chocolaterie",
+        "icon.image": "maki-bakery",
         "icon.className": "maki maki-3x maki-fw maki-bakery",
         "el.className": "extra-marker extra-marker-circle-orange-dark"
       }
@@ -79,6 +82,7 @@
         "postalCode": "04275",
         "website": "https://bio-am-fockeberg.de",
         "Categories": "Biolebensmittel",
+        "icon.image": "maki-grocery",
         "icon.className": "maki maki-3x maki-fw maki-grocery",
         "el.className": "extra-marker extra-marker-circle-green"
       }
@@ -100,6 +104,7 @@
         "postalCode": "04229",
         "website": "http://www.gruene-pforte.de/",
         "Categories": "Lebensmittel, Regional, Saisonal",
+        "icon.image": "maki-village",
         "icon.className": "maki maki-3x maki-fw maki-village",
         "el.className": "extra-marker extra-marker-circle-yellow"
       }
@@ -121,6 +126,7 @@
         "postalCode": "04229",
         "website": "http://leipspeis.de/",
         "Categories": "Lebensmittel, Bio, Regional",
+        "icon.image": "maki-village",
         "icon.className": "maki maki-3x maki-fw maki-village",
         "el.className": "extra-marker extra-marker-circle-green"
       }
@@ -142,6 +148,7 @@
         "postalCode": "04109",
         "website": "",
         "Categories": "Kunsthandwerk, Regional",
+        "icon.image": "maki-village",
         "icon.className": "maki maki-3x maki-fw maki-village",
         "el.className": "extra-marker extra-marker-circle-yellow"
       }
@@ -163,6 +170,7 @@
         "postalCode": "04275",
         "website": "",
         "Categories": "modeatelier, Fashion accessories",
+        "icon.image": "maki-clothing-store",
         "icon.className": "maki maki-3x maki-fw maki-clothing-store",
         "el.className": "extra-marker extra-marker-circle-red"
       }
@@ -184,6 +192,7 @@
         "postalCode": "04275",
         "website": "",
         "Categories": "weinladen, feinkost",
+        "icon.image": "maki-alcohol-shop",  
         "icon.className": "maki maki-3x maki-fw maki-alcohol-shop",
         "el.className": "extra-marker extra-marker-circle-yellow"
       }
@@ -204,6 +213,7 @@
         "country": "Germany",
         "postalCode": "04229",
         "website": "",
+        "icon.image": "maki-park2",
         "Categories": "lokal, Kräuter, Gewürze, Veranstaltungen, Cafe",
         "icon.className": "maki maki-3x maki-fw maki-park2",
         "el.className": "extra-marker extra-marker-circle-green"
@@ -226,6 +236,7 @@
         "postalCode": "04229",
         "website": "",
         "Categories": "lokal, bäckerei, Cafe",
+        "icon.image": "maki-bakery",
         "icon.className": "maki maki-3x maki-fw maki-bakery",
         "el.className": "extra-marker extra-marker-circle-yellow"
       }
@@ -247,6 +258,7 @@
         "postalCode": "04229",
         "website": "",
         "Categories": "lebensmittel, regional",
+        "icon.image": "maki-village",
         "icon.className": "maki maki-3x maki-fw maki-village",
         "el.className": "extra-marker extra-marker-circle-yellow"
       }

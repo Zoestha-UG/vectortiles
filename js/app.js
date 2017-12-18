@@ -4,7 +4,7 @@ var map = new mapboxgl.Map({
   center: [12.3722, 51.3272],
   zoom: 11,
   attributionControl: true,
-  hash: true
+  hash: false
 });
 
 
@@ -15,6 +15,9 @@ var popup = new mapboxgl.Popup({
 
 var filterEl = document.getElementById('feature-filter');
 var listings = document.getElementById('listings');
+var txtCategories = document.getElementById('txtCategories');
+
+
 var mapMarkers = [];
 /*Load stores2*/
 stores2 = (function() {
@@ -30,6 +33,9 @@ stores2 = (function() {
   });
   return stores2;
 })();
+
+
+stores2.features.forEach(createMarker);
 
 // Map event listeners
 //map.addControl(new mapboxgl.NavigationControl());
@@ -49,7 +55,8 @@ map.on('load', function(e) {
     // Add a GeoJSON source containing place coordinates and information.
     "source": 'locations_source',
     "layout": {
-      "icon-image": "{icon.className}-15",
+    "visibility": "visible",
+    "icon-image": "icon.image",
       "text-field": ".",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
       "text-offset": [0, -2.0],
@@ -60,9 +67,10 @@ map.on('load', function(e) {
   });
 
   // Add an event listener for when a user clicks on the map
-  /*  map.on('click', function(e) {
+/*    map.on('click', function(e) {
+        
       // Query all the rendered points in the view
-      var features = map.queryRenderedFeatures(e.point, {
+     /* var features = map.queryRenderedFeatures(e.point, {
         layers: ['locations']
       });
 
@@ -163,6 +171,9 @@ map.on('load', function(e) {
 
     // call createMarker forEach filetered
     filtered.forEach(createMarker);
+      
+      txtCategories.value = value;
+
   });
 
   filterEl.addEventListener('keyup', function(e) {
@@ -316,7 +327,7 @@ function createPopUp(currentFeature) {
   if (popUps[0]) popUps[0].remove();
 
   var popup = new mapboxgl.Popup({
-      closeOnClick: false
+      closeOnClick: true
     })
     .setLngLat(currentFeature.geometry.coordinates)
     .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
@@ -355,6 +366,8 @@ function createMarker(currentFeature) {
     .setLngLat(currentFeature.geometry.coordinates)
     .addTo(map);
 
+  //map.addImage("id": "gradient", "HTMLImageElement": shadow);
+    
   el.style.cursor = 'pointer';
 
   el.addEventListener('click', function(e) {
@@ -380,4 +393,3 @@ function createMarker(currentFeature) {
   });
 }
 
-stores2.features.forEach(createMarker);
