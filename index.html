@@ -2,178 +2,211 @@
 <html dir="ltr" lang="de">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Leipzig Einkaufen - Willkomen</title>
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <!-- Meta -->
-  <meta name="description" content="Schöne Einkaufsmöglichkeiten in Leipzig">
-  <meta name="author" content="Sébastien Barré">
-  <meta name="theme-color" content="#40A535">
-  <link rel="icon" type="image/png" href='favicon-32x32.png'>
+    <title>Leipzig Einkaufen - Willkomen</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Meta -->
+    <meta name="description" content="Schöne Einkaufsmöglichkeiten in Leipzig">
+    <meta name="author" content="Sébastien Barré">
+    <meta name="theme-color" content="#40A535">
+    <link rel="icon" type="image/png" href='favicon-32x32.png'>
 
-  <script src="https://www.w3schools.com/lib/w3.js"></script>
-  <!-- Bootstrap core CSS -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <!-- Bootstrap core CSS -->
 
-  <link rel='stylesheet' href="https://zoestha.de/vectortiles/vendor/bootstrap/css/bootstrap.min.css">
-  <link rel='stylesheet' href='https://zoestha.de/vectortiles/css/app.css' />
-  <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' />
+    <link rel='stylesheet' href="https://zoestha.de/vectortiles/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://zoestha.de/vectortiles/css/app.css' />
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300i,400,400i,600,600i' />
+    <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i" rel="stylesheet">
 
 
-  <!-- Facebook open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://leizpig-einkaufen.de/index.html">
-  <meta property="og:title" content="Leipzig Einkaufen - Willkomen">
-  <meta property="og:image" content="https://example.com/image.jpg">
-  <meta property="og:description" content="Schöne Einkaufsmöglichkeiten in Leipzig">
-  <meta property="og:site_name" content="Leipzig Einkaufen">
-  <meta property="og:locale" content="de">
-  <!-- Next tags are optional but recommended -->
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+    <!-- Facebook open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://leizpig-einkaufen.de/index.html">
+    <meta property="og:title" content="Leipzig Einkaufen - Willkomen">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:description" content="Schöne Einkaufsmöglichkeiten in Leipzig">
+    <meta property="og:site_name" content="Leipzig Einkaufen">
+    <meta property="og:locale" content="de">
+    <!-- Next tags are optional but recommended -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <style>
 
+    </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" w3-include-html="LEnavbar.html"></nav>
-  <!--div w3-include-html="LEnavbar.html"></div-->
+    <!-- Page Content -->
+    <div class="container page">
+        <div class="container-fluid" style="height:220px;  margin: 0 auto;">
+            <img src="media/Header.png" class="img-responsive" alt="Leipzig Einkaufen Top">
+        </div>
 
-  <!-- Page Content -->
-  <div class="container page">
-    <div class="row my-4">
+        <!-- Navigation -->
+        <nav id="navbar" class="navbar navbar-light navbar-expand-lg">
 
-      <!-- map with stores -->
-      <div class="col-lg-6">
-        <div id='map' class='map pad2'></div>
-      </div>
+            <div class="container">
 
-      <div class="col-lg-6">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Läden Finden</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Über</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">impressum</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-        <div class='sidebar pad2'>
-          <!--div class='heading'>
+        <!-- Headl above map -->
+        <div class="row my-4 RowAboveMap">
+            <h2>Orientierung via Karte – zur Suche einfach in die Karte klicken</h2>
+        </div>
+
+        <div class="row my-4">
+            <!-- map with stores -->
+            <div class="col-lg-6 pull-right">
+                <div id='map' class='map pad2'></div>
+            </div>
+            <!-- list of stores -->
+            <div class="col-lg-6" style="float: left">
+
+                <div class='sidebar pad2'>
+                    <!--div class='heading'>
               <h1>Our locations</h1>
           </div-->
-          <!--fieldset>
+                    <!--fieldset>
             <input id='feature-filter' type='text' placeholder='Filter results by Name oder Kategorien' />
           </fieldset-->
-            
-            <div class="dropdown" id='feature-filter'>
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Kategories
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <button class="dropdown-item" href="#">Alle</button>  
-                <button class="dropdown-item" href="#">Cafe</button>
-                <button class="dropdown-item" href="#">Feinkost</button>
-                <button class="dropdown-item" href="#">Handwerk</button>
-                <button class="dropdown-item" href="#">Lebensmittel</button>
-                <button class="dropdown-item" href="#">Regional</button>
-              </div>
+
+                    <div class="dropdown" id='feature-filter'>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kategories
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <button class="dropdown-item" href="#">Alle</button>
+                            <button class="dropdown-item" href="#">Cafe</button>
+                            <button class="dropdown-item" href="#">Feinkost</button>
+                            <button class="dropdown-item" href="#">Handwerk</button>
+                            <button class="dropdown-item" href="#">Lebensmittel</button>
+                            <button class="dropdown-item" href="#">Regional</button>
+                        </div>
+                    </div>
+
+                    <input type="text" name="txtCategories" id="txtCategories">
+
+                    <div id='listings' class="listings accordion" role="tablist"></div>
+                </div>
             </div>
-            
-            <input type="text" name="txtCategories" id="txtCategories">
-            
-          <div id='listings' class="listings accordion" role="tablist"></div>
         </div>
-      </div>
-    </div>
-    <!-- /.row -->
+        <!-- /.row -->
 
-    <!-- Heading Row -->
-    <div class="row my-4">
-
-      <div class="col-lg-8">
-        <!--img class="img-fluid rounded" src="http://placehold.it/900x400" alt=""-->
-        <img class="img-fluid rounded" src="https://i.pinimg.com/564x/28/58/8d/28588d38a5936649073cb626073407f1.jpg" alt="">
-      </div>
-      <!-- /.col-lg-8 -->
-      <div class="col-lg-4">
-        <h1>Schöne Kleinhändler Leipzig</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
-      </div>
-      <!-- /.col-md-4 -->
-    </div>
-    <!-- /.row -->
-
-    <!-- Call to Action Well -->
-    <div class="card text-white bg-secondary my-4 text-center">
-      <div class="card-body">
-        <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
-      </div>
-    </div>
-
-    <!-- Content Row -->
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Card One</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
+        <!-- /.row -->
+        <!-- Row above map -->
+        <div class="row my-4 RowAboveMap">
+            <h2>Mach mit und melde dich bei uns</h2>
         </div>
-      </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Card Two</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
+
+        <!-- Row above map -->
+        <div class="row my-4 twocolumn">
+            <p>Leipzig bietet seinen Bewohnern und Besuchern eine große Zahl neuer und auch etablierter kreativer Einzelhändler, kleiner Manufakturen und Cafés, Biolädchen und Co.</p>
+            <p>
+                Sie sind verteilt über die ganze Stadt hinweg – in den kleinen versteckten Ateliers, Nebenstraßen und auch größeren Magistralen jedes Stadtviertels.</p>
+            <p>
+                Zoestha möchte diese Einzelhändler unterstützen und verbinden. Den Zugang für die Kundschaft schaffen. Als zentrales Bindeglied zwischen den Händlern, Handwerkern und Künstlern einen Mehrwert schaffen für ebendiese und deren Kundschaft.</p>
+            <p>
+                Wir stellen euch auf dieser Website eine Karte samt Auflistung der vielen interessanten Läden zur Verfügung. Dabei kann sowohl nach Kategorien gesucht werden, als auch frei im Stadtgebiet.</p>
+            <p>
+                Jeder, der etwas Einzigartiges zu bieten hat, kann sich bei leipzigeinkaufen. de melden und sich auf der Karte anzeigen lassen. Lass es bunt werden mit deinem Eintrag und zeige, wie toll Leipzig ist.
+            </p>
+            <p> Der Service ist kostenlos.
+            </p>
         </div>
-      </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Card Three</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
+
+        <!-- Call to Action Well -->
+        <div class="card text-white bg-secondary my-4 text-center">
+            <div class="card-body">
+                <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+            </div>
         </div>
-      </div>
-      <!-- /.col-md-4 -->
 
-    </div>
-    <!-- /.row -->
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Card One</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Card Two</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Card Three</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
 
-  </div>
-  <!-- /.container -->
+        </div>
+        <!-- /.row -->
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Zoestha UG 2017</p>
+
     </div>
     <!-- /.container -->
-  </footer>
 
-  <script>
-    w3.includeHTML();
-  </script>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Zoestha UG 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
 
-  <link rel='stylesheet' href="https://zoestha.de/vectortiles/ExtraMarkers/css/extra-markers.css" />
-  <link rel='stylesheet' href="https://zoestha.de/vectortiles/webfont-maki/css/maki-min.css" />
-  <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' />
+    <link rel='stylesheet' href="https://zoestha.de/vectortiles/ExtraMarkers/css/extra-markers.css" />
+    <link rel='stylesheet' href="https://zoestha.de/vectortiles/webfont-maki/css/maki-min.css" />
+    <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' />
 
-  <!-- Bootstrap core JavaScript -->
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
-  <!--script src="vendor/jquery/jquery.min.js"></script-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://zoestha.de/vectortiles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src='https://zoestha.de/vectortiles/js/app.js'></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+    <!--script src="vendor/jquery/jquery.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://zoestha.de/vectortiles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src='https://zoestha.de/vectortiles/js/app.js'></script>
 
 </body>
 

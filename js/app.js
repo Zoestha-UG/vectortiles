@@ -1,3 +1,12 @@
+$(window).on('scroll', function (event) {
+    var scrollValue = $(window).scrollTop();
+    if (scrollValue > 220) {
+        $('.navbar').addClass('affix');
+    } else{
+        $('.navbar').removeClass('affix');
+    }
+});
+
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'json/style-cdn.json',
@@ -26,6 +35,8 @@ stores2 = (function() {
     'async': false,
     'global': false,
     'url': "https://zoestha.de/vectortiles/location.json",
+    //'url': "http://localhost/vectortiles/location.json",
+
     'dataType': "json",
     'success': function(data) {
       stores2 = data;
@@ -35,193 +46,158 @@ stores2 = (function() {
 })();
 
 
-stores2.features.forEach(createMarker);
-
-// Map event listeners
-//map.addControl(new mapboxgl.NavigationControl());
-
 map.on('load', function(e) {
 
-  // Add the data to your map as a layer
-  map.addSource('locations_source', {
-    "type": 'geojson',
-    "data": stores2 //"http://localhost/vectortiles/location.geojson"
-      
-  });
+    //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
+    map.loadImage('https://zoestha.de/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
+        if (error) throw error;
+      map.addImage('marker_z', image);
+            
+      // Add the data to your map as a layer
+      map.addSource('locations_source', {
+        "type": 'geojson',
+        "data": stores2 //"http://localhost/vectortiles/location.geojson"
+      });
 
-  // Add the data to your map as a layer
-  map.addLayer({
-    "id": 'locations',
-    "type": 'symbol',
-    // Add a GeoJSON source containing place coordinates and information.
-    "source": 'locations_source',
-    "layout": {
-    "visibility": "visible",
-    "icon-image": "marker_11",
-    "icon-allow-overlap": true
-    }/*,
-      "paint": {
-          "icon-halo-width": 15,
-          "icon-halo-blur": 15,
-          "icon-color" : "#ff0000"
-        }*/
-  });
+      // Add the data to your map as a layer
+      map.addLayer({
+            "id": 'locations',
+            "type": 'symbol',
+            // Add a GeoJSON source containing place coordinates and information.
+            "source": 'locations_source',
+            "layout": {
+              "visibility": "visible",
+              "icon-image": "marker_z",
+              "icon-size": 0.95,
+              "icon-allow-overlap": true
+            }
 
-  // Add an event listener for when a user clicks on the map
-/*    map.on('click', function(e) {
+      });
+
+
+     // When a click event occurs on a feature in the places layer, open a popup at the
+     // location of the feature, with description HTML from its properties.
+     map.on('click', 'locations', function (e) {
+         createPopUp(e);
+     });
         
-      // Query all the rendered points in the view
-     /* var features = map.queryRenderedFeatures(e.point, {
-        layers: ['locations']
+      map.on('moveend', function() {
+        // Query all the rendered points in the view
+        var features = map.queryRenderedFeatures({
+          layers: ['locations']
+        });
+
+        if (features) {
+
+          var uniqueFeatures = getUniqueFeatures(features, "Categories");
+            
+          // Populate features for the listing overlay.
+          buildLocationList(uniqueFeatures);
+
+          // Clear the input container
+          filterEl.value = '';
+
+          // Store the current features in sn `locations_on_map` variable to
+          // later use for filtering on `keyup`.
+          locations = uniqueFeatures;
+        }
       });
 
-      if (features.length) {
-        var clickedPoint = features[0];
-        // 1. Fly to the point
-        //flyToStore(clickedPoint);
-        // 2. Close all other popups and display popup for clicked store
-        createPopUp(clickedPoint);
-        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-        var activeItem = document.getElementsByClassName('is-active');
-        if (activeItem[0]) {
-          activeItem[0].classList.remove('is-active');
-        }
-        // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
-        var selectedFeature = clickedPoint.properties.address;
+      map.on('mousemove', 'locations', function(e) {
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
 
-        for (var i = 0; i < stores2.features.length; i++) {
-          if (stores2.features[i].properties.address === selectedFeature) {
-            selectedFeatureIndex = stores2.features[i].properties.id;
-          }
-        }
-        // Select the correct list item using the found index and add the active class
-        var listing = document.getElementById('heading' + selectedFeatureIndex);
-        listing.classList.add('is-active');
-        $('heading' + selectedFeatureIndex).collapse('toggle');
-
-      }
-    });*/
-
-  map.on('moveend', function() {
-    // Query all the rendered points in the view
-    var features = map.queryRenderedFeatures({
-      layers: ['locations']
-    });
-
-    if (features) {
-
-      //if (features) {
-      var uniqueFeatures = getUniqueFeatures(features, "Categories");
-      // Populate features for the listing overlay.
-      buildLocationList(uniqueFeatures);
-
-      // Clear the input container
-      filterEl.value = '';
-
-      // Store the current features in sn `locations_on_map` variable to
-      // later use for filtering on `keyup`.
-      locations = uniqueFeatures;
-    }
-  });
-
-  map.on('mousemove', 'locations', function(e) {
-    // Change the cursor style as a UI indicator.
-    map.getCanvas().style.cursor = 'pointer';
-
-    // // Populate the popup and set its coordinates based on the feature.
-    // var feature = e.features[0];
-    // popup.setLngLat(feature.geometry.coordinates)
-    //   .setText(feature.properties.name + ' (' + feature.properties.abbrev + ')')
-    //   .addTo(map);
-  });
-
-  map.on('mouseleave', 'locations', function() {
-    map.getCanvas().style.cursor = '';
-    popup.remove();
-  });
-
-  $('.dropdown-item').click(function() {
-
-    var value = normalize($(this).text());
-
-    var filtered = map.querySourceFeatures('locations_source');
-    if (value !== 'alle') {
-      // Filter visible features that don't match the input value.
-      filtered = filtered.filter(function(feature) 
-      {
-        var name = normalize(feature.properties.name);
-        var Categories = normalize(feature.properties.Categories);
-        return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
+        // // Populate the popup and set its coordinates based on the feature.
+        // var feature = e.features[0];
+        // popup.setLngLat(feature.geometry.coordinates)
+        //   .setText(feature.properties.name + ' (' + feature.properties.abbrev + ')')
+        //   .addTo(map);
       });
-    }
-      if(!filtered)
+
+      map.on('mouseleave', 'locations', function() {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+      });
+
+      $('.dropdown-item').click(function() {
+
+        var value = normalize($(this).text());
+
+        var filtered = map.querySourceFeatures('locations_source');
+        if (value !== 'alle') {
+          // Filter visible features that don't match the input value.
+          filtered = filtered.filter(function(feature) {
+            var name = normalize(feature.properties.name);
+            var Categories = normalize(feature.properties.Categories);
+            return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
+          });
+        }
+        if (!filtered)
           return;
 
-    var uniqueFeatures = getUniqueFeatures(filtered, "Categories");
-    // Populate the sidebar with filtered results
-    buildLocationList(uniqueFeatures);
+        var uniqueFeatures = getUniqueFeatures(filtered, "Categories");
+        // Populate the sidebar with filtered results
+        buildLocationList(uniqueFeatures);
 
-    // Set the filter to populate features into the layer.
-    map.setFilter('locations', ['in', 'name'].concat(uniqueFeatures.map(function(feature) {
-      return feature.properties.name;
-    })));
+        // Set the filter to populate features into the layer.
+        map.setFilter('locations', ['in', 'name'].concat(uniqueFeatures.map(function(feature) {
+          return feature.properties.name;
+        })));
 
 
-    mapMarkers.forEach(function(marker) {
-      marker.remove();
+        mapMarkers.forEach(function(marker) {
+          marker.remove();
+        });
+
+        txtCategories.value = value;
+
+      });
+
+      filterEl.addEventListener('keyup', function(e) {
+
+        var value = normalize(e.target.value);
+
+        // Filter visible features that don't match the input value.
+        var filtered = locations.filter(function(feature) {
+            
+          var name = normalize(feature.properties.name);
+          var Categories = normalize(feature.properties.Categories);
+          return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
+        });
+
+        // Populate the sidebar with filtered results
+        buildLocationList(filtered);
+
+        // Set the filter to populate features into the layer.
+        map.setFilter('locations', ['in', 'name'].concat(filtered.map(function(feature) {
+          return feature.properties.name;
+        })));
+
+
+        mapMarkers.forEach(function(marker) {
+          marker.remove();
+        });
+
+      });
+
+      // Call this function on initialization
+      // passing an empty array to render an empty state
+      buildLocationList([]);
     });
-
-    // call createMarker forEach filetered
-    uniqueFeatures.forEach(createMarker);
-      
-    txtCategories.value = value;
-
-  });
-
-  filterEl.addEventListener('keyup', function(e) {
-
-    var value = normalize(e.target.value);
-
-    // Filter visible features that don't match the input value.
-    var filtered = locations.filter(function(feature) {
-      var name = normalize(feature.properties.name);
-      var Categories = normalize(feature.properties.Categories);
-      return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
-    });
-
-    // Populate the sidebar with filtered results
-    buildLocationList(filtered);
-
-    // Set the filter to populate features into the layer.
-    map.setFilter('locations', ['in', 'name'].concat(filtered.map(function(feature) {
-      return feature.properties.name;
-    })));
-
-
-    mapMarkers.forEach(function(marker) {
-      marker.remove();
-    });
-
-    // call createMarker forEach filetered
-    filtered.forEach(createMarker);
-
-  });
-
-  // Call this function on initialization
-  // passing an empty array to render an empty state
-  buildLocationList([]);
 });
 
 function normalize(string) {
   return string.trim().toLowerCase();
 }
 
-function getUniqueFeatures(array, comparatorProperty) {
+function getUniqueFeatures(array, comparatorProperty) 
+{    
   var existingFeatureKeys = {};
   // Because features come from tiled vector data, feature geometries may be split
   // or duplicated across tile boundaries and, as a result, features may appear
   // multiple times in query results.
-  var uniqueFeatures = array.filter(function(el) {
+  var uniqueFeatures = array.filter(function(el) 
+   {
     if (existingFeatureKeys[el.properties[comparatorProperty]]) {
       return false;
     } else {
@@ -233,7 +209,8 @@ function getUniqueFeatures(array, comparatorProperty) {
   return uniqueFeatures;
 }
 
-function buildLocationList(data) {
+function buildLocationList(data) 
+{
   // Iterate through the list of stores
   listings.innerHTML = '';
   if (data.length) {
@@ -251,11 +228,6 @@ function buildLocationList(data) {
       card_header.setAttribute('role', 'tab');
       card_header.setAttribute('id', 'heading' + card.id);
       card_header.id = 'heading' + card.id;
-
-      // add info icon
-      var icon = card_header.appendChild(document.createElement('i'));
-      icon.href = '#';
-      icon.className = 'fa fa-info-circle list-icon';
 
       var card_mb0 = card_header.appendChild(document.createElement('h5'));
       card_mb0.className = 'mb-0';
@@ -282,36 +254,38 @@ function buildLocationList(data) {
       card_body.innerHTML = prop.address;
 
       // Add an event listener for the links in the sidebar listing
-      link.addEventListener('click', function(e) {
-        // Update the currentFeature to the store associated with the clicked link
-        var clickedListing = stores2.features[this.dataPosition];
-        // 1. Fly to the point associated with the clicked link
-        //flyToStore(clickedListing);
-        // 2. Close all other popups and display popup for clicked store
-        createPopUp(clickedListing);
-        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-        var activeItem = document.getElementsByClassName('is-active');
-        if (activeItem[0]) {
-          activeItem[0].classList.remove('is-active');
-          //activeItem[0].classList.remove('is-active');
-        }
-        this.classList.add('is-active');
-        //this.parentNode.classList.add('is-active');
+      link.addEventListener('click', function(e)
+        {
+            // Update the currentFeature to the store associated with the clicked link
+            var clickedListing = stores2.features[this.dataPosition];
+
+            // 1. Close all other popups and display popup for clicked store
+            createPopUp(clickedListing);
+
+            // 2. Highlight listing in sidebar (and remove highlight for all other listings)
+            var activeItem = document.getElementsByClassName('is-active');
+            if (activeItem[0]) {
+              activeItem[0].classList.remove('is-active');
+            }
+            this.classList.add('is-active');
+
       });
 
     })
     // Show the filter input
     filterEl.parentNode.style.display = 'block';
-  } else {
-    var empty = document.createElement('p');
-    empty.textContent = 'Ziehen Sie die Karte, um die Ergebnisse zu füllen';
-    listings.appendChild(empty);
+  }
+    else 
+    {
+        var empty = document.createElement('p');
+        empty.textContent = 'Ziehen Sie die Karte, um die Ergebnisse zu füllen';
+        listings.appendChild(empty);
 
-    // Hide the filter input
-    filterEl.parentNode.style.display = 'none';
+        // Hide the filter input
+        filterEl.parentNode.style.display = 'none';
 
-    // remove features filter
-    map.setFilter('locations', ['has', 'Categories']);
+        // remove features filter
+        map.setFilter('locations', ['has', 'Categories']);
   }
 }
 
@@ -331,67 +305,14 @@ function createPopUp(currentFeature) {
   var popup = new mapboxgl.Popup({
       closeOnClick: true
     })
-    .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
-      '<h4>' + currentFeature.properties.address + '</h4>')
+    .setLngLat(currentFeature.features[0].geometry.coordinates)
+    .setHTML('<h3>' + currentFeature.features[0].properties.name + '</h3>' +
+      '<h4>' + currentFeature.features[0].properties.address + '</h4>')
     .addTo(map);
 }
 
-function createMarker(currentFeature) {
-
-  let shadow = document.createElement('div');
-  shadow.className = 'extra-marker extra-marker-shadow';
-
-  // create a HTML element for each feature
-  let el = document.createElement('div');
-  el.className = currentFeature.properties["el.className"];
-  shadow.appendChild(el);
-
-  let icon = document.createElement('i');
-  icon.style.color = 'white';
-  icon.className = currentFeature.properties["icon.className"];
-  el.appendChild(icon);
 
 
 
-  // Create a div element for the marker
-  //var el = document.createElement('div');
-  // Add a class called 'marker' to each div
-  // el.className = 'marker';
-  // By default the image for your custom marker will be anchored
-  // by its center. Adjust the position accordingly
-  // Create the custom markers, set their position, and add to map
 
-  mapMarkers[currentFeature.properties.id] = new mapboxgl.Marker(shadow, {
-      offset: [10, 0]
-    })
-    .setLngLat(currentFeature.geometry.coordinates)
-    .addTo(map);
-
-  //map.addImage("id": "gradient", "HTMLImageElement": shadow);
-    
-  el.style.cursor = 'pointer';
-
-  el.addEventListener('click', function(e) {
-
-    var activeItem = document.getElementsByClassName('is-active');
-
-    // 2. Close all other popups and display popup for clicked store
-    createPopUp(currentFeature);
-    // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-    e.stopPropagation();
-    if (activeItem[0]) {
-      activeItem[0].classList.remove('is-active');
-    }
-    var heading_Element = document.getElementById('heading' + currentFeature.properties.id);
-    if (heading_Element)
-      heading_Element.classList.add('is-active');
-    var collapse_Element = document.getElementById('collapse' + currentFeature.properties.id);
-    if (collapse_Element)
-      $(collapse_Element).collapse('show');
-    // $( collapse_Element).collapse('toggle');
-
-
-  });
-}
 

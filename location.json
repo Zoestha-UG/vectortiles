@@ -18,7 +18,14 @@
         "Categories": "Cafe, patisserie, feinkost",
         "icon.image": "maki-cafe",
         "icon.className": "maki maki-3x maki-fw maki-cafe",
-        "el.className": "extra-marker extra-marker-circle-orange-dark"
+        "el.className": "extra-marker extra-marker-circle-orange-dark",
+        "icon": {
+              "iconUrl": "http://localhost/vectortiles/media/Marker_with_Shadow.png",
+              "iconSize": [50, 50],
+              "iconAnchor": [25, 25],
+              "popupAnchor": [0, -25],
+              "className": "dot"
+          }
       }
     },
     {

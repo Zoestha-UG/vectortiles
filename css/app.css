@@ -1,3 +1,8 @@
+:root {
+    --cobalt-blue: #0047ab;
+    --cobalt-blue-light: #0047abff;
+}
+
 body {
     color: #404040;
     font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
@@ -11,12 +16,38 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
-.page {
-    padding-top: 37px;
+    .affix {
+    position: sticky;
+    top: 0;
+    z-index: 9999 !important;
 }
 
-div.heading > h1 {
+.navbar {
+  border-top-style: solid;
+    border-top-color: black;
+    border-top-width: 3px;
+    
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+    background-color: white;
+    
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+ .navbar-nav {
+    width: 100%;
+    text-align: center;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+  }
+
+div.heading>h1 {
     font-size: 22px;
     margin: 0;
     font-weight: 400;
@@ -33,17 +64,32 @@ a:hover {
     color: #101010;
 }
 
-
-/*.sidebar {
-  position: absolute;
-  width: 33.3333%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  border-right: 1px solid rgba(0, 0, 0, 0.25);
+.RowAboveMap{
+    background-image: url(../media/Headline_path.png);
+    background-repeat: no-repeat;
+    background-color: #F1F1F1;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    padding: 24px;
+    padding-left: 48px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0px;
 }
-*/
+.RowAboveMap > h2{
+
+    margin-left: 48px;
+
+}
+.twocolumn {
+    padding-right: 15px;
+    padding-left: 15px;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    display: block;
+}
 
 .sidebar {
     width: 100%;
@@ -59,14 +105,9 @@ a:hover {
     border-left: 1px solid #fff;
     width: 100%;
     float: right;
-    /* left: 33.3333%;
-    position: absolute;
-    top: 0;
-    bottom: 0;*/
 }
 
 .pad2 {
-    /*padding: 20px;*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -87,53 +128,43 @@ a:hover {
     padding-bottom: 60px;
 }
 
-
-.sidebar > fieldset{
-  
-  background: #ddd;
-  border: none;
-  padding: 10px;
-  margin: 0;
-}
-/*.listings .item {
-    display: block;
-    border-bottom: 1px solid #eee;
-    padding: 3px;
-    text-decoration: none;
+.sidebar>fieldset {
+    background: #ddd;
+    border: none;
+    padding: 10px;
+    margin: 0;
 }
 
-.listings .item:last-child {
-    border-bottom: none;
-}
-*/
 .listings .title {
     display: block;
-    color: #00853e;
-    font-size: 16pt;
-    font-weight: 600;
+    color: black;
     padding: 0;
     cursor: default;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+}
+
+
+a.title.is-active, /*for the bootstrap accordion*/
+.listings .card-header.is-active .title { /*for the action on marker click*/
+    color: var(--cobalt-blue);
+}
+
+.card {
+    border: none;
 }
 
 .card-header {
-    border-bottom: none;
+    padding: 0.25rem 0.25rem;
+    background-color: white;
+    border-bottom: 2px solid #000000;
 }
 
-.list-icon {
-    float: right;
-    font-size: 41px;
-    color: #00853e;
-    padding-right: 0px;
-    margin-top: -8px;
-}
-
-/*.listings .item .title small {
-    font-weight: 400;
-}*/
-
-.listings .card-header.is-active .title,
 .listings .card-header .title:hover {
-    color: #8cc63f;
+    color: var(--cobalt-blue);
+    text-decoration:none;
 }
 
 .listings .card-header.is-active {
@@ -152,7 +183,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #00853e;
+    background: var(--cobalt-blue);
     border-radius: 0;
 }
 
@@ -180,6 +211,7 @@ a:hover {
     font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
     padding: 0;
     width: 180px;
+    border-radius: 0px !important;
 }
 
 .mapboxgl-popup-content-wrapper {
@@ -187,22 +219,14 @@ a:hover {
 }
 
 .mapboxgl-popup-content h3 {
-    background: #91c949;
-    color: #fff;
-    margin: 0;
-    display: block;
-    padding: 10px;
-    border-radius: 3px 3px 0 0;
-    font-weight: 500;
-    margin-top: -15px;
-    font-size: x-large;
+    font-weight: 600;
+    text-align: center;
 }
 
 .mapboxgl-popup-content h4 {
-    margin: 0;
-    display: block;
-    padding: 10px;
+    padding: 7px;
     font-size: medium;
+    text-align: center;
 }
 
 .mapboxgl-popup-content div {
@@ -213,12 +237,44 @@ a:hover {
     cursor: pointer;
 }
 
-.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
-    margin-top: 15px;
+.mapboxgl-popup-anchor-top-right,
+.mapboxgl-popup-anchor-top-left,
+.mapboxgl-popup-anchor-top .mapboxgl-popup-content {
+    border-top-style: solid;
+    border-top-color: var(--cobalt-blue);
+    border-top-width: 7px;
 }
 
-.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
-    border-bottom-color: #91c949;
+.mapboxgl-popup-anchor-bottom-right,
+.mapboxgl-popup-anchor-bottom-left,
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-content {
+    border-bottom-style: solid;
+    border-bottom-color: var(--cobalt-blue);
+    border-bottom-width: 7px;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+    border-bottom-color: var(--cobalt-blue) !important;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: var(--cobalt-blue) !important;
+}
+
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: var(--cobalt-blue) !important;
+}
+
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
+    border-bottom-color: var(--cobalt-blue) !important;
+}
+
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
+    border-top-color: var(--cobalt-blue) !important;
+}
+
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: var(--cobalt-blue) !important;
 }
 
 .marker {
@@ -233,18 +289,3 @@ a:hover {
 .mapboxgl-popup {
     padding-bottom: 50px;
 }
-
-
-/* multicol-menu */
-
-/*#multicol-menu {
-    color: #fff;
-    padding: 4px;
-}
-
-.dropdown-toggle {
-    color: #fff;
-}
-.dropdown-toggle:hover {
-    color: wheat;
-}*/
