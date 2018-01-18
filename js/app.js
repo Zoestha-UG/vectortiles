@@ -78,7 +78,22 @@ map.on('load', function(e) {
      // When a click event occurs on a feature in the places layer, open a popup at the
      // location of the feature, with description HTML from its properties.
      map.on('click', 'locations', function (e) {
-         createPopUp(e.features[0]);
+         var current_feature = e.features[0];
+         // 1. Create Popup
+         createPopUp(current_feature);
+         
+         // 2. Highlight listing in sidebar (and remove highlight for other listing)
+         var activeItem = document.getElementsByClassName('is-active');
+         if (activeItem[0]) 
+             activeItem[0].classList.remove('is-active');
+         
+         var heading_Element = document.getElementById('heading' + current_feature.properties.id);
+         if (heading_Element)
+             heading_Element.classList.add('is-active');
+         var collapse_Element = document.getElementById('collapse' + current_feature.properties.id);
+         if (collapse_Element)      
+             $(collapse_Element).collapse('show');
+         
      });
         
       map.on('moveend', function() {
@@ -287,13 +302,6 @@ function buildLocationList(data)
         // remove features filter
         map.setFilter('locations', ['has', 'Categories']);
   }
-}
-
-function flyToStore(currentFeature) {
-  map.flyTo({
-    center: currentFeature.geometry.coordinates,
-    zoom: 14
-  });
 }
 
 function createPopUp(currentFeature) {

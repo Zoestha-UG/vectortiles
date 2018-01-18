@@ -10,22 +10,13 @@
         "id": 0,
         "name": "Café Maître und Pâtisserie",
         "popupContent": "<b>Café Maître</b><br />Karl-Liebknecht-Straße 62 04275 Leipzig",
-        "address": "Karl-Liebknecht-Straße 62",
+        "address": "Karl-Liebknecht-Straße, 62",
         "city": " Leipzig",
         "country": "Germany",
         "postalCode": "04275",
         "website": "www.cafe-maitre.de/",
-        "Categories": "Cafe, patisserie, feinkost",
-        "icon.image": "maki-cafe",
-        "icon.className": "maki maki-3x maki-fw maki-cafe",
-        "el.className": "extra-marker extra-marker-circle-orange-dark",
-        "icon": {
-              "iconUrl": "http://localhost/vectortiles/media/Marker_with_Shadow.png",
-              "iconSize": [50, 50],
-              "iconAnchor": [25, 25],
-              "popupAnchor": [0, -25],
-              "className": "dot"
-          }
+        "Categories": "Cafe, patisserie, feinkost"
+
       }
     },
     {
@@ -44,10 +35,7 @@
         "country": "Germany",
         "postalCode": "04229",
         "website": "",
-        "Categories": "lebensmittel, regional",
-        "icon.image": "maki-cafe",
-        "icon.className": "maki maki-3x maki-fw maki-cafe",
-        "el.className": "extra-marker extra-marker-circle-orange-dark"
+        "Categories": "lebensmittel, regional"
       }
     },
     {
@@ -66,10 +54,7 @@
         "country": "Germany",
         "postalCode": "04105",
         "website": "http://la-chocolaterie.de",
-        "Categories": "Cafe, chocolaterie",
-        "icon.image": "maki-bakery",
-        "icon.className": "maki maki-3x maki-fw maki-bakery",
-        "el.className": "extra-marker extra-marker-circle-orange-dark"
+        "Categories": "Cafe, chocolaterie"
       }
     },
     {
@@ -88,10 +73,7 @@
         "country": "Germany",
         "postalCode": "04275",
         "website": "https://bio-am-fockeberg.de",
-        "Categories": "Biolebensmittel",
-        "icon.image": "maki-grocery",
-        "icon.className": "maki maki-3x maki-fw maki-grocery",
-        "el.className": "extra-marker extra-marker-circle-green"
+        "Categories": "Biolebensmittel"
       }
     },
     {
@@ -110,10 +92,7 @@
         "country": "Germany",
         "postalCode": "04229",
         "website": "http://www.gruene-pforte.de/",
-        "Categories": "Lebensmittel, Regional, Saisonal",
-        "icon.image": "maki-village",
-        "icon.className": "maki maki-3x maki-fw maki-village",
-        "el.className": "extra-marker extra-marker-circle-yellow"
+        "Categories": "Lebensmittel, Regional, Saisonal"
       }
     },
     {
@@ -132,10 +111,7 @@
         "country": "Germany",
         "postalCode": "04229",
         "website": "http://leipspeis.de/",
-        "Categories": "Lebensmittel, Bio, Regional",
-        "icon.image": "maki-village",
-        "icon.className": "maki maki-3x maki-fw maki-village",
-        "el.className": "extra-marker extra-marker-circle-green"
+        "Categories": "Lebensmittel, Bio, Regional"
       }
     },
     {
@@ -154,10 +130,7 @@
         "country": "Germany",
         "postalCode": "04109",
         "website": "",
-        "Categories": "Kunsthandwerk, Regional",
-        "icon.image": "maki-village",
-        "icon.className": "maki maki-3x maki-fw maki-village",
-        "el.className": "extra-marker extra-marker-circle-yellow"
+        "Categories": "Kunsthandwerk, Regional"
       }
     },
     {
@@ -176,10 +149,7 @@
         "country": "Germany",
         "postalCode": "04275",
         "website": "",
-        "Categories": "modeatelier, Fashion accessories",
-        "icon.image": "maki-clothing-store",
-        "icon.className": "maki maki-3x maki-fw maki-clothing-store",
-        "el.className": "extra-marker extra-marker-circle-red"
+        "Categories": "modeatelier, Fashion accessories"
       }
     },
     {
@@ -198,10 +168,7 @@
         "country": "Germany",
         "postalCode": "04275",
         "website": "",
-        "Categories": "weinladen, feinkost",
-        "icon.image": "maki-alcohol-shop",  
-        "icon.className": "maki maki-3x maki-fw maki-alcohol-shop",
-        "el.className": "extra-marker extra-marker-circle-yellow"
+        "Categories": "weinladen, feinkost"
       }
     },
     {
@@ -220,10 +187,7 @@
         "country": "Germany",
         "postalCode": "04229",
         "website": "",
-        "icon.image": "maki-park2",
-        "Categories": "lokal, Kräuter, Gewürze, Veranstaltungen, Cafe",
-        "icon.className": "maki maki-3x maki-fw maki-park2",
-        "el.className": "extra-marker extra-marker-circle-green"
+        "Categories": "lokal, Kräuter, Gewürze, Veranstaltungen, Cafe"
       }
     },
     {
@@ -242,10 +206,7 @@
         "country": "Germany",
         "postalCode": "04229",
         "website": "",
-        "Categories": "lokal, bäckerei, Cafe",
-        "icon.image": "maki-bakery",
-        "icon.className": "maki maki-3x maki-fw maki-bakery",
-        "el.className": "extra-marker extra-marker-circle-yellow"
+        "Categories": "lokal, bäckerei, Cafe"
       }
     },
     {
@@ -264,10 +225,7 @@
         "country": "Germany",
         "postalCode": "04229",
         "website": "",
-        "Categories": "lebensmittel, regional",
-        "icon.image": "maki-village",
-        "icon.className": "maki maki-3x maki-fw maki-village",
-        "el.className": "extra-marker extra-marker-circle-yellow"
+        "Categories": "lebensmittel, regional"
       }
     }
   ]
