@@ -34,8 +34,8 @@ stores2 = (function() {
   $.ajax({
     'async': false,
     'global': false,
-    'url': "https://zoestha.de/vectortiles/location.json",
-    //'url': "http://localhost/vectortiles/location.json",
+    //'url': "https://zoestha.de/vectortiles/location.json",
+    'url': "http://localhost/vectortiles/location.json",
 
     'dataType': "json",
     'success': function(data) {
@@ -48,8 +48,8 @@ stores2 = (function() {
 
 map.on('load', function(e) {
 
-    //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
-    map.loadImage('https://zoestha.de/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
+    map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
+    //map.loadImage('https://zoestha.de/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
         if (error) throw error;
       map.addImage('marker_z', image);
             
@@ -78,7 +78,7 @@ map.on('load', function(e) {
      // When a click event occurs on a feature in the places layer, open a popup at the
      // location of the feature, with description HTML from its properties.
      map.on('click', 'locations', function (e) {
-         createPopUp(e);
+         createPopUp(e.features[0]);
      });
         
       map.on('moveend', function() {
@@ -305,9 +305,9 @@ function createPopUp(currentFeature) {
   var popup = new mapboxgl.Popup({
       closeOnClick: true
     })
-    .setLngLat(currentFeature.features[0].geometry.coordinates)
-    .setHTML('<h3>' + currentFeature.features[0].properties.name + '</h3>' +
-      '<h4>' + currentFeature.features[0].properties.address + '</h4>')
+    .setLngLat(currentFeature.geometry.coordinates)
+    .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
+      '<h4>' + currentFeature.properties.address + '</h4>')
     .addTo(map);
 }
 
