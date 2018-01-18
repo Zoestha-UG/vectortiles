@@ -19,9 +19,10 @@
     <!-- Bootstrap core CSS -->
 
     <link rel='stylesheet' href="https://zoestha.de/vectortiles/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel='stylesheet' href='css/app.css' />
+    <link rel='stylesheet' href='https://zoestha.de/vectortiles/css/app.css' />
     <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300i,400,400i,600,600i' />
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=PT+Serif:400i" rel="stylesheet">
     <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i" rel="stylesheet">
 
 
@@ -73,42 +74,38 @@
         </nav>
 
         <!-- Headl above map -->
-        <div id="Finde Laden via Karte" class="row my-4 RowAboveMap">
+        <div id="Finde Laden via Karte" class="row my-4 headings">
             <h1>Orientierung via Karte – zum Ladenfinden einfach die Karte schieben</h1>
         </div>
 
+        <div id="Laeden_Kategorien" class="row my-4">
+            <div id='feature-filter' class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Auswahl Filtern
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item" href="#">Alle</button>
+                    <button class="dropdown-item" href="#">Cafe</button>
+                    <button class="dropdown-item" href="#">Feinkost</button>
+                    <button class="dropdown-item" href="#">Handwerk/Design</button>
+                    <button class="dropdown-item" href="#">Lebensmittel</button>
+                    <button class="dropdown-item" href="#">Geschenke</button>                    
+                    <button class="dropdown-item" href="#">Regional</button>
+                </div>
+            </div>
+            <input type="text" name="txtCategories" id="txtCategories">
+        </div>
+        
         <div class="row my-4">
             <!-- map with stores -->
             <div class="col-lg-6 pull-right">
                 <div id='map' class='map pad2'></div>
             </div>
             <!-- list of stores -->
+            
             <div class="col-lg-6" >
 
-                <div class='sidebar pad2'>
-                    <!--div class='heading'>
-              <h1>Our locations</h1>
-          </div-->
-                    <!--fieldset>
-            <input id='feature-filter' type='text' placeholder='Filter results by Name oder Kategorien' />
-          </fieldset-->
-
-                    <div class="dropdown" id='feature-filter'>
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Kategories
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button class="dropdown-item" href="#">Alle</button>
-                            <button class="dropdown-item" href="#">Cafe</button>
-                            <button class="dropdown-item" href="#">Feinkost</button>
-                            <button class="dropdown-item" href="#">Handwerk</button>
-                            <button class="dropdown-item" href="#">Lebensmittel</button>
-                            <button class="dropdown-item" href="#">Regional</button>
-                        </div>
-                    </div>
-
-                    <input type="text" name="txtCategories" id="txtCategories">
-
+                <div class='sidebar pad2'> 
                     <div id='listings' class="listings accordion" role="tablist"></div>
                 </div>
             </div>
@@ -117,7 +114,7 @@
 
         <!-- /.row -->
         <!-- Row above map -->
-        <div id="About Leipzig Einkaufen" class="row my-4 RowAboveMap">
+        <div id="About Leipzig Einkaufen" class="row my-4 headings">
             <h1>Mach mit und melde dich bei uns</h1>
         </div>
 
@@ -137,7 +134,7 @@
             </p>
         </div>
         
-        <div id="Impressum Leipzig Einkaufen" class="row my-4 RowAboveMap">
+        <div id="Impressum Leipzig Einkaufen" class="row my-4 headings">
             <h1>Impressum</h1>
         </div>
 
@@ -148,71 +145,25 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04275 Leipzig<br /> 
                 <i class="fa fa-envelope" aria-hidden="true"></i> info@zoestha.de<br /> 
                 <!--i class="fa fa-phone" aria-hidden="true"></i> 0176XXXXXXXX<br /><br /></p-->
-            <p>Geschäftsführer: Sébastien Barré</p><p>Registergericht: Leipzig, HRB 32943</p><p>Ust-IdNr: DE308957906</p>
+            <p>Geschäftsführer: Sébastien Barré<br /> Registergericht: Leipzig, HRB 32943<br /> Ust-IdNr: DE308957906</p>
+            
+            <p><strong>Website</strong></p>
+            Verantwortlich für die Website: Sébastien Barré<br />
+            Design: Julia Günther - <a href="https://feineinstellung.de" target="_blank">www.feineinstellung.de</a><br />
+            Programmierung: Sébastien Barré<br />
             <p><strong> Haftung für Inhalte</strong></p>
             <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
             <p><strong> Datenschutz</strong></p><p>Die Nutzung unserer Webseite ist in der Regel ohne eine Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adresse) erhoben werden, erfolgt dies – soweit es möglich ist– immer auf freiwilliger Basis. Wir geben Ihre Daten ohne Ihre ausdrückliche Zustimmung nicht an Dritte weiter. Außerdem weisen wir Sie darauf hin, dass die Datenübertragung im Internet (wie beispielsweise bei der Kommunikation über E-Mail) Sicherheitslücken aufweisen kann. Denn ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. Wir widersprechen hiermit ausdrücklich der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien. Die Betreiber dieser Seiten behalten sich ausdrücklich vor, im Fall der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, rechtliche Schritte einzuleiten.</p>
             <p><strong> Google Analytics</strong></p>
             <p>Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (''Google''). Google Analytics verwendet sog. ''Cookies'', Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Die durch den Cookie erzeugten Informationen über Ihre Benutzung diese Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden. Sie können der Erhebung und Speicherung Ihrer Daten jederzeit widersprechen.</p>
         </div>
-
-        <!-- Call to Action Well -->
-        <div class="card text-white bg-secondary my-4 text-center">
-            <div class="card-body">
-                <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
-            </div>
-        </div>
-
-        <!-- Content Row -->
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">Card One</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">More Info</a>
-                    </div>
-                </div>
-            </div>
-            <!-- /.col-md-4 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">Card Two</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">More Info</a>
-                    </div>
-                </div>
-            </div>
-            <!-- /.col-md-4 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">Card Three</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">More Info</a>
-                    </div>
-                </div>
-            </div>
-            <!-- /.col-md-4 -->
-
-        </div>
-        <!-- /.row -->
-
-
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Zoestha UG 2017</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Zoestha UG 2018</p>
         </div>
         <!-- /.container -->
     </footer>
@@ -224,7 +175,7 @@
     <!--script src="vendor/jquery/jquery.min.js"></script-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://zoestha.de/vectortiles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src='js/app.js'></script>
+    <script src='https://zoestha.de/vectortiles/js/app.js'></script>
 
 </body>
 

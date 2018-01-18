@@ -16,7 +16,7 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-    .affix {
+.affix {
     position: sticky;
     top: 0;
     z-index: 9999 !important;
@@ -55,16 +55,16 @@ body {
     padding: 20px 2px;
 }*/
 
-a {
+/*a {
     color: #404040;
     text-decoration: none;
 }
 
 a:hover {
     color: #101010;
-}
+}*/
 
-.RowAboveMap{
+.headings{
     background-image: url(../media/Headline_path.png);
     background-repeat: no-repeat;
     background-color: #F1F1F1;
@@ -76,13 +76,62 @@ a:hover {
     padding-right: 15px;
     padding-left: 15px;
     margin: 0px;
+    padding-top: 80px; 
+    margin-top: -80px;
 }
-.RowAboveMap > h1{
+.headings > h1{
 
     margin-left: 48px;
-    font-size: 22px;
+    /*font-size: 22px;*/
+    font-weight:300;
+    font-size: 36px;
+    color: #000000;
+    letter-spacing: 0;
 
 }
+
+#Laeden_Kategorien{
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: thin;
+}
+active, .show>.btn-secondary.dropdown-toggle {
+    border-style: none!important;
+    box-shadow: none !important;
+}
+.show>.btn-secondary.dropdown-toggle{
+    border-style: none !important;
+    box-shadow: none !important;
+}
+.btn-secondary.focus, .btn-secondary:focus{
+    border-style: none !important;
+    box-shadow: none !important;
+}
+#dropdownMenuButton
+{
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: white;
+    border-style: none;
+    border-radius: 0;
+}
+
+.dropdown-menu{
+    border-style: none;
+    border-radius: 0
+}
+.dropdown-menu.show{
+    background-color: var(--cobalt-blue);
+    color: white;
+}
+#feature-filter > div > button{
+    color:white;
+}
+#txtCategories{
+    text-transform: capitalize;
+}
+
 .twocolumn {
     padding-right: 15px;
     padding-left: 15px;
@@ -161,8 +210,10 @@ a.title.is-active, /*for the bootstrap accordion*/
     padding: 0.25rem 0.25rem;
     background-color: white;
     border-bottom: 2px solid #000000;
+    
 }
-
+.listings .card-header .title
+{text-transform: capitalize;}
 .listings .card-header .title:hover {
     color: var(--cobalt-blue);
     text-decoration:none;
@@ -203,31 +254,28 @@ a.title.is-active, /*for the bootstrap accordion*/
 
 /* Marker tweaks */
 
-
-/*.mapboxgl-popup-close-button {
-  display: none;
-}*/
-
 .mapboxgl-popup-content {
-    font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
     padding: 0;
     width: 180px;
     border-radius: 0px !important;
+    padding: 10px 10px 5px !important;
+    text-align: center;
+}
+div.mapboxgl-popup-content > h3{
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+
+}
+div.mapboxgl-popup-content > h4{
+    font-size: 14px;
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    padding: 7px;
 }
 
 .mapboxgl-popup-content-wrapper {
     padding: 1%;
-}
-
-.mapboxgl-popup-content h3 {
-    font-weight: 600;
-    text-align: center;
-}
-
-.mapboxgl-popup-content h4 {
-    padding: 7px;
-    font-size: medium;
-    text-align: center;
 }
 
 .mapboxgl-popup-content div {
@@ -243,7 +291,7 @@ a.title.is-active, /*for the bootstrap accordion*/
 .mapboxgl-popup-anchor-top .mapboxgl-popup-content {
     border-top-style: solid;
     border-top-color: var(--cobalt-blue);
-    border-top-width: 7px;
+    border-bottom-width: 9px;
 }
 
 .mapboxgl-popup-anchor-bottom-right,
@@ -251,7 +299,7 @@ a.title.is-active, /*for the bootstrap accordion*/
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-content {
     border-bottom-style: solid;
     border-bottom-color: var(--cobalt-blue);
-    border-bottom-width: 7px;
+    border-bottom-width: 9px;
 }
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
