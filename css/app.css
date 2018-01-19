@@ -125,6 +125,8 @@ a.nav-link{
     border-bottom-style: solid;
     border-bottom-color: black;
     border-bottom-width: thin;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 active, .show>.btn-secondary.dropdown-toggle {
     border-style: none!important;
