@@ -274,6 +274,10 @@ function buildLocationList(data)
             // Update the currentFeature to the store associated with the clicked link
             var clickedListing = stores2.features[this.dataPosition];
 
+            var popUps = document.getElementsByClassName('mapboxgl-popup');
+            // Check if there is already a popup on the map and if so, remove it
+            if (popUps[0]) popUps[0].parentNode.removeChild(popUps[0]);
+          
             // 1. Close all other popups and display popup for clicked store
             createPopUp(clickedListing);
 
@@ -305,10 +309,6 @@ function buildLocationList(data)
 }
 
 function createPopUp(currentFeature) {
-
-  var popUps = document.getElementsByClassName('mapboxgl-popup');
-  // Check if there is already a popup on the map and if so, remove it
-  if (popUps[0]) popUps[0].remove();
 
   var popup = new mapboxgl.Popup({
       closeOnClick: true

@@ -3,52 +3,54 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-58252505-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58252505-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-58252505-2');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-58252505-2');
+    </script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Leipzig Einkaufen - Willkomen</title>
+    <title>Leipzig Einkaufen - Schöne Einkaufsmöglichkeiten</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- Meta -->
     <meta name="description" content="Schöne Einkaufsmöglichkeiten in Leipzig. Kaufe gute Produkte, nachhaltig, wertvoll, ethisch-sozial, bio.">
     <meta name="author" content="Sébastien Barré">
     <meta name="keywords" content="Lokal,Leipzig,einkaufen,geschenk,Einzelhändler,handwerk,wertvoll,regional,anständig,stolz,mutig,nützlich,ethisch-sozial,politischen konsum,nachhaltig,umwelt,online shop,eco online shop,fair trade shop,umweltfreundlich,nachhaltige produkte,wertvolle produkte,haltbar">
-    
-    <meta name="theme-color" content="#40A535">
+
+    <meta name="theme-color" content="#0047ab">
     <link rel="icon" type="image/png" href='favicon-32x32.png'>
 
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <!-- Bootstrap core CSS -->
 
     <link rel='stylesheet' href="https://zoestha.de/vectortiles/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel='stylesheet' href='https://zoestha.de/vectortiles/css/app.css' />
+    <link rel='stylesheet' href='css/app.css' />
     <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300i,400,400i,600,600i' />
     <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=PT+Serif:400i" rel="stylesheet">
-    <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i" rel="stylesheet">
+    <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i" rel="stylesheet"-->
 
 
     <!-- Facebook open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://leizpig-einkaufen.de/index.html">
     <meta property="og:title" content="Leipzig Einkaufen - Willkomen">
-    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:image" content="Leipzig_Einkaufen_Top.png">
     <meta property="og:description" content="Schöne Einkaufsmöglichkeiten in Leipzig. Kaufe gute Produkte, nachhaltig, wertvoll, ethisch-sozial, bio.">
     <meta property="og:site_name" content="Leipzig Einkaufen">
     <meta property="og:locale" content="de">
     <!-- Next tags are optional but recommended -->
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="622">
+    <meta property="og:image:height" content="472">
     <style>
-
     </style>
 </head>
 
@@ -57,7 +59,18 @@
     <!-- Page Content -->
     <div class="container page">
         <div class="container-fluid top-header">
-            <img src="media/Header.png" class="img-responsive" alt="Leipzig Einkaufen Top">
+            <div class="top-right" style="position:relative; float:right; padding: 7px; font-size: 12px;">
+                powered by <a style="font-weight: 600; text-transform: uppercase; color: black; text-decoration: none; font-size: 17px;" href="https://zoestha.de" target="_blank">Zoéstha</a>
+            </div>
+            <div class="col-sm-4" style="position:relative; float:left; margin-top: -16px">
+                <a href="http://leipzig-einkaufen.de">
+                    <img class="img-top-header" src="media/Leipzig_Einkaufen_Top.svg" class="img-responsive" alt="Leipzig Einkaufen Top">
+                </a>
+            </div>
+            <div class="col-sm-8"  style="position:relative; float: right;">
+                <h1> Finde Läden &#38; Leute über ganz Leipzig verteilt.</h1>
+                <!--h1> Stöbern Sie in Leipzigs Schönste Läden</h1-->
+            </div>
         </div>
 
         <!-- Navigation -->
@@ -73,10 +86,13 @@
                             <a class="nav-link" href="#Finde Laden via Karte">Läden Finden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#About Leipzig Einkaufen">Über</a>
+                            <div class="nav-link" style="position: relative;float: left">Über</div>
+                            <a href="#About Leipzig Einkaufen">
+                                <img class="img-leipzig-einkaufen" src="media/Leipzig_Einkaufen.svg" class="img-responsive" alt="Leipzig Einkaufen">
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#Impressum Leipzig Einkaufen">Impressum</a>
+                            <a class="nav-link" href="impressum.html/">Impressum</a>
                         </li>
                     </ul>
                 </div>
@@ -99,36 +115,34 @@
                     <button class="dropdown-item" href="#">Feinkost</button>
                     <button class="dropdown-item" href="#">Handwerk/Design</button>
                     <button class="dropdown-item" href="#">Lebensmittel</button>
-                    <button class="dropdown-item" href="#">Geschenke</button>                    
+                    <button class="dropdown-item" href="#">Geschenke</button>
                     <button class="dropdown-item" href="#">Regional</button>
                 </div>
             </div>
             <input type="text" name="txtCategories" id="txtCategories">
         </div>
-        
+
         <div class="row my-4">
             <!-- map with stores -->
-            <div class="col-lg-6 pull-right">
+            <div class="col-lg-6">
                 <div id='map' class='map pad2'></div>
             </div>
             <!-- list of stores -->
-            
-            <div class="col-lg-6" >
 
-                <div class='sidebar pad2'> 
+            <div class="col-lg-6">
+                <div class='sidebar pad2'>
                     <div id='listings' class="listings accordion" role="tablist"></div>
                 </div>
             </div>
         </div>
         <!-- /.row -->
 
-        <!-- /.row -->
-        <!-- Row above map -->
+
+        <!-- / About -->
         <div id="About Leipzig Einkaufen" class="row my-4 headings">
             <h1>Mach mit und melde dich bei uns</h1>
         </div>
 
-        <!-- Über-->
         <div class="row my-4 twocolumn">
             <p>Leipzig bietet seinen Bewohnern und Besuchern eine große Zahl neuer und auch etablierter kreativer Einzelhändler, kleiner Manufakturen und Cafés, Biolädchen und Co.</p>
             <p>
@@ -143,30 +157,8 @@
             <p> Der Service ist kostenlos.
             </p>
         </div>
-        
-        <div id="Impressum Leipzig Einkaufen" class="row my-4 headings">
-            <h2>Impressum</h1>
-        </div>
+        <!-- /.About -->
 
-        <!-- Impressum -->
-        <div class="row my-4 twocolumn">
-            <p>Zoestha UG (haftungsbeschränkt)<br />
-                <i class="fa fa-address-card-o" aria-hidden="true"></i> Fockestr. 23<br /> 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04275 Leipzig<br /> 
-                <i class="fa fa-envelope" aria-hidden="true"></i> info@zoestha.de<br /> 
-                <!--i class="fa fa-phone" aria-hidden="true"></i> 0176XXXXXXXX<br /><br /></p-->
-            <p>Geschäftsführer: Sébastien Barré<br /> Registergericht: Leipzig, HRB 32943<br /> Ust-IdNr: DE308957906</p>
-            
-            <p><strong>Website</strong></p>
-            Verantwortlich für die Website: Sébastien Barré<br />
-            Design: Julia Günther - <a href="https://feineinstellung.de" target="_blank">www.feineinstellung.de</a><br />
-            Programmierung: Sébastien Barré<br />
-            <p><strong> Haftung für Inhalte</strong></p>
-            <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
-            <p><strong> Datenschutz</strong></p><p>Die Nutzung unserer Webseite ist in der Regel ohne eine Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adresse) erhoben werden, erfolgt dies – soweit es möglich ist– immer auf freiwilliger Basis. Wir geben Ihre Daten ohne Ihre ausdrückliche Zustimmung nicht an Dritte weiter. Außerdem weisen wir Sie darauf hin, dass die Datenübertragung im Internet (wie beispielsweise bei der Kommunikation über E-Mail) Sicherheitslücken aufweisen kann. Denn ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. Wir widersprechen hiermit ausdrücklich der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien. Die Betreiber dieser Seiten behalten sich ausdrücklich vor, im Fall der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, rechtliche Schritte einzuleiten.</p>
-            <p><strong> Google Analytics</strong></p>
-            <p>Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (''Google''). Google Analytics verwendet sog. ''Cookies'', Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Die durch den Cookie erzeugten Informationen über Ihre Benutzung diese Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden. Sie können der Erhebung und Speicherung Ihrer Daten jederzeit widersprechen.</p>
-        </div>
     </div>
     <!-- /.container -->
 
@@ -185,7 +177,7 @@
     <!--script src="vendor/jquery/jquery.min.js"></script-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://zoestha.de/vectortiles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src='https://zoestha.de/vectortiles/js/app.js'></script>
+    <script src='js/app.js'></script>
 
 </body>
 

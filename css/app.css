@@ -1,6 +1,6 @@
 :root {
     --cobalt-blue: #0047ab;
-    --cobalt-blue-light: #0047abff;
+    --cobalt-blue-light: #6991C9;
 }
 
 body {
@@ -10,16 +10,49 @@ body {
     padding: 0;
     -webkit-font-smoothing: antialiased;
 }
-* {
+/* * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
-top-header
-{
-    height:220px;  
+}*/
+
+body > div > div.container-fluid.top-header
+{    height:204px;  
     margin: 0 auto;
 }
+@media only screen and (max-width: 768px) {
+    body > div > div.container-fluid.top-header
+    {
+        display: none;
+    }
+}
+
+.img-top-header{
+    height:220px;
+}
+
+body > div > div.container-fluid.top-header > div.col-sm-8
+{
+    font-style: italic;
+    padding-top: 62px;
+    padding-right: 68px;
+    padding-left: 54px;
+    
+}
+body > div > div.container-fluid.top-header > div.col-sm-8 > h1
+{
+    font-weight: 300;    
+}
+@media only screen and (max-width: 991px) {
+    body > div > div.container-fluid.top-header > div.col-sm-8
+    {
+        text-align: right;
+        padding-right: 8px;
+        padding-top: 14px;
+    }
+}
+
+
 .affix {
     position: sticky;
     top: 0;
@@ -40,6 +73,9 @@ top-header
     font-family: 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
     font-weight: 600;
     font-size: 16px;
+    width: 100%;
+    height: 58px;
+    line-height: 9px;
 }
 
  .navbar-nav {
@@ -50,7 +86,16 @@ top-header
       display: inline-block;
     }
   }
-
+div.nav-link,
+a.nav-link{
+     color:black !important;
+}
+.img-leipzig-einkaufen{
+    position: relative;
+    float: right;
+    height: 24px;
+    padding-right: 9px;
+}
 .headings{
     background-image: url(../media/Headline_path.png);
     background-repeat: no-repeat;
@@ -108,14 +153,19 @@ active, .show>.btn-secondary.dropdown-toggle {
     border-radius: 0
 }
 .dropdown-menu.show{
-    background-color: var(--cobalt-blue);
+    background-color: #0047ab;
     color: white;
+}
+.dropdown-item:hover{
+    background-color: #6991C9;
 }
 #feature-filter > div > button{
     color:white;
 }
 #txtCategories{
     text-transform: capitalize;
+    cursor: default;
+    border-width: 0;
 }
 
 .twocolumn {
@@ -136,18 +186,24 @@ active, .show>.btn-secondary.dropdown-toggle {
     overflow: hidden;
     border-right: 1px solid rgba(0, 0, 0, 0.25);
 }
+@media only screen and (max-width: 768px) {
+    .sidebar
+    {
+        display: none;
+    }
+}
 
 #map {
     border-left: 1px solid #fff;
     width: 100%;
     float: right;
+    height: 567px;
 }
 
 .pad2 {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 567px;
+    box-sizing: border-box;    
 }
 
 .heading {
@@ -185,7 +241,7 @@ active, .show>.btn-secondary.dropdown-toggle {
 
 a.title.is-active, /*for the bootstrap accordion*/
 .listings .card-header.is-active .title { /*for the action on marker click*/
-    color: var(--cobalt-blue);
+    color: #0047ab;
 }
 
 .card {
@@ -201,7 +257,7 @@ a.title.is-active, /*for the bootstrap accordion*/
 .listings .card-header .title
 {text-transform: capitalize;}
 .listings .card-header .title:hover {
-    color: var(--cobalt-blue);
+    color: #0047ab;
     text-decoration:none;
 }
 
@@ -230,7 +286,7 @@ a.title.is-active, /*for the bootstrap accordion*/
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--cobalt-blue);
+    background: #0047ab;
     border-radius: 0;
 }
 
@@ -281,55 +337,46 @@ div.mapboxgl-popup-content > h4{
     cursor: pointer;
 }
 
-.mapboxgl-popup-anchor-top-right,
-.mapboxgl-popup-anchor-top-left,
+/*.mapboxgl-popup-anchor-top-right,
+.mapboxgl-popup-anchor-top-left,*/
 .mapboxgl-popup-anchor-top .mapboxgl-popup-content {
     border-top-style: solid;
-    border-top-color: var(--cobalt-blue);
-    border-bottom-width: 9px;
+    border-top-color: #0047ab;
+    border-top-width: 7px;
 }
 
-.mapboxgl-popup-anchor-bottom-right,
-.mapboxgl-popup-anchor-bottom-left,
+/*.mapboxgl-popup-anchor-bottom-right,
+.mapboxgl-popup-anchor-bottom-left,*/
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-content {
     border-bottom-style: solid;
-    border-bottom-color: var(--cobalt-blue);
-    border-bottom-width: 9px;
+    border-bottom-color: #0047ab;
+    border-bottom-width: 7px;
 }
-
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
-    border-bottom-color: var(--cobalt-blue) !important;
+    border-top-color: #0047ab !important;
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-    border-top-color: var(--cobalt-blue) !important;
+    border-top-color: #0047ab !important;
 }
 
 .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
-    border-bottom-color: var(--cobalt-blue) !important;
+    border-bottom-color: #0047ab !important;
 }
 
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
-    border-bottom-color: var(--cobalt-blue) !important;
+    border-bottom-color: #0047ab !important;
 }
 
 .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
-    border-top-color: var(--cobalt-blue) !important;
+    border-top-color: #0047ab !important;
 }
 
 .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
-    border-top-color: var(--cobalt-blue) !important;
-}
-
-.marker {
-    border: none;
-    cursor: pointer;
-    height: 56px;
-    width: 56px;
-    background-image: url(marker.png);
-    background-color: rgba(0, 0, 0, 0);
+    border-top-color: #0047ab !important;
 }
 
 .mapboxgl-popup {
-    padding-bottom: 50px;
+    padding-bottom: 27px;
+    padding-right: 9px;
 }
