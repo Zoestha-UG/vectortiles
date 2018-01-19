@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="16.535902mm"
+   height="5.7508359mm"
+   viewBox="0 0 58.591779 20.376977"
+   id="svg4748"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Leipzig_Einkaufen.svg">
+  <defs
+     id="defs4750" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-575.70412"
+     inkscape:cy="-232.66866"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4753">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-487.84697,-279.31657)">
+    <text
+       y="45.400352"
+       id="LEIPZIG"
+       font-size="12.821409"
+       font-style="italic"
+       font-weight="bold"
+       x="-347.38162"
+       style="font-style:italic;font-weight:bold;font-size:12.82140923px;font-family:OpenSans-BoldItalic, 'Open Sans';fill:#0047ab">
+      <tspan
+         x="490.61838"
+         y="288.61334"
+         id="tspan213">LEIPZIG</tspan>
+    </text>
+    <text
+       y="45.400352"
+       x="-351.38162"
+       style="font-style:italic;font-weight:normal;font-size:11.89727974px;font-family:OpenSans-Italic, 'Open Sans';fill:#0047ab"
+       id="EINKAUFEN"
+       font-size="11.89728"
+       font-style="italic"
+       font-weight="normal">
+      <tspan
+         x="487.34738"
+         y="299.57736"
+         id="tspan216">EINKAUFEN</tspan>
+    </text>
+  </g>
+</svg>
