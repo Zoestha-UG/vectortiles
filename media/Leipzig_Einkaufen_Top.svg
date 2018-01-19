@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg4745"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Leipzig_Einkaufen_Top.svg">
+  <defs
+     id="defs4747" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="-16.0709"
+     inkscape:cy="601.42981"
+     inkscape:document-units="px"
+     inkscape:current-layer="Group"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1358"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4750">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <polygon
+       transform="translate(-7.0408486,245.79078)"
+       style="fill:#0047ab"
+       id="polygon226"
+       points="23,160.98904 45.078497,34.957621 159.15073,18.398748 278.74259,0 333.93884,160.98904 301,236 159.15073,236 29,236 " />
+    <g
+       style="font-style:italic;fill:#ffffff"
+       id="Logo"
+       transform="translate(41.959151,348.79078)"
+       font-style="italic">
+      <g
+         id="Group"
+         transform="translate(0,0.7)">
+        <text
+           style="font-weight:normal;font-size:24.29999924px;font-family:OpenSans-Italic, 'Open Sans';letter-spacing:-0.0486"
+           id="IN"
+           font-size="24.3"
+           font-weight="normal"
+           letter-spacing="-0.0485999979">
+          <tspan
+             x="19.440001"
+             y="26"
+             id="tspan231">IN</tspan>
+        </text>
+        <text
+           style="font-weight:bold;font-size:42.73802948px;font-family:OpenSans-BoldItalic, 'Open Sans'"
+           id="text233"
+           font-size="42.73803"
+           font-weight="bold"
+           x="10">
+          <tspan
+             x="10"
+             y="63.009998"
+             id="tspan235">LEIPZIG</tspan>
+        </text>
+        <text
+           style="font-weight:normal;font-size:39.6576004px;font-family:OpenSans-Italic, 'Open Sans'"
+           id="text237"
+           font-size="39.6576"
+           font-weight="normal">
+          <tspan
+             x="2.4300001"
+             y="98.889999"
+             id="tspan239">EINKAUFEN</tspan>
+        </text>
+      </g>
+    </g>
+    <g
+       style="fill:#ffffff"
+       id="Stern-weiß"
+       transform="translate(241.95915,350.79078)">
+      <g
+         id="Group-3-Copy">
+        <polygon
+           id="Fill-1"
+           points="47.291062,55.654708 47.88,55.134015 4.2939382,6.7802691 3.705,7.3009622 " />
+        <polygon
+           id="Fill-3"
+           points="57,30.793722 57,29.946188 0,29.946188 0,30.793722 " />
+        <polygon
+           id="Fill-5"
+           points="25.65,47.461883 25.65,3.955157 24.795,3.955157 24.795,47.461883 " />
+        <polygon
+           id="Fill-7"
+           points="2.0683258,63 1.425,62.547764 46.666674,0 47.31,0.45223633 " />
+      </g>
+    </g>
+  </g>
+</svg>
