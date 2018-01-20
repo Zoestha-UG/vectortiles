@@ -390,3 +390,9 @@ div.mapboxgl-popup-content > h4{
     padding-bottom: 27px;
     padding-right: 9px;
 }
+
+.social_buttons{
+    padding-bottom: 12px;
+    margin-left: 2px;
+    max-width: 123px
+}
