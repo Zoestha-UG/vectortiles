@@ -1,7 +1,3 @@
-/*:root {
-    --cobalt-blue: #0047ab;
-    --cobalt-blue-light: #6991C9;
-}*/
 
 body {
     color: #404040;
@@ -10,11 +6,6 @@ body {
     padding: 0;
     -webkit-font-smoothing: antialiased;
 }
-/* * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}*/
 
 body > div > div.container-fluid.top-header
 {    height:204px;  
@@ -39,10 +30,12 @@ body > div > div.container-fluid.top-header > div.col-sm-8
     padding-left: 54px;
     
 }
+
 body > div > div.container-fluid.top-header > div.col-sm-8 > h1
 {
     font-weight: 300;    
 }
+
 @media only screen and (max-width: 991px) {
     body > div > div.container-fluid.top-header > div.col-sm-8
     {
@@ -58,7 +51,7 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1
     top: 0;
     z-index: 9999 !important;
 }
-
+/*navbar*/
 .navbar {
   border-top-style: solid;
     border-top-color: black;
@@ -105,6 +98,7 @@ a.nav-link{
     height: 24px;
     padding-right: 10px;
 }
+/*headings*/
 .headings{
     background-image: url(../media/Headline_path.png);
     background-repeat: no-repeat;
@@ -129,7 +123,7 @@ a.nav-link{
     letter-spacing: 0;
 
 }
-
+/*Dropdown categories*/
 #Laeden_Kategorien{
     border-bottom-style: solid;
     border-bottom-color: black;
@@ -177,15 +171,6 @@ active, .show>.btn-secondary.dropdown-toggle {
     text-transform: capitalize;
     cursor: default;
     border-width: 0;
-}
-
-.twocolumn {
-    padding-right: 15px;
-    padding-left: 15px;
-    -webkit-column-count: 2;    /* Chrome, Safari, Opera */
-    -moz-column-count: 2;       /* Firefox */
-    column-count: 2;
-    display: block;
 }
 
 .sidebar {
@@ -392,6 +377,22 @@ div.mapboxgl-popup-content > h4{
     padding-right: 9px;
 }
 
+/*about us*/
+.twocolumn {
+    padding-right: 15px;
+    padding-left: 15px;
+    -webkit-column-count: 2;    /* Chrome, Safari, Opera */
+    -moz-column-count: 2;       /* Firefox */
+    column-count: 2;
+    display: block;
+}
+
+/*subscription*/
+body > div > div.row.my-4.twocolumn > p.subscribtion{
+    color:#0047ab;
+    text-decoration: underline;
+    font-weight: 600;
+}
 .social_buttons{
     padding-bottom: 12px;
     margin-left: 2px;
