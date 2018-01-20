@@ -1,7 +1,7 @@
-:root {
+/*:root {
     --cobalt-blue: #0047ab;
     --cobalt-blue-light: #6991C9;
-}
+}*/
 
 body {
     color: #404040;
@@ -74,18 +74,21 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1
     font-weight: 600;
     font-size: 16px;
     width: 100%;
-    height: 58px;
+    min-height: 58px;
     line-height: 9px;
 }
 
  .navbar-nav {
     width: 100%;
     text-align: center;
-    > li {
-      float: none;
-      display: inline-block;
-    }
-  }
+}
+.navbar-nav > li
+{
+    float: none;
+    display: inline-block;
+    max-width: 69px;
+}
+
 div.nav-link,
 a.nav-link{
      color:black !important;
@@ -94,7 +97,7 @@ a.nav-link{
     position: relative;
     float: right;
     height: 24px;
-    padding-right: 9px;
+    padding-right: 10px;
 }
 .headings{
     background-image: url(../media/Headline_path.png);
