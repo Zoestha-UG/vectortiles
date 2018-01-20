@@ -89,11 +89,12 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1
 }
 
 @media only screen and (max-width: 991px) {
-    .navbar-nav > li
+    .navbar-nav .nav-link
     {
-        max-width: 133px;
+        line-height: 11px;
     }
 }
+
 div.nav-link,
 a.nav-link{
      color:black !important;
