@@ -35,7 +35,7 @@ stores2 = (function() {
     'async': false,
     'global': false,
     //'url': "https://zoestha.de/vectortiles/location.json",
-    'url': "http://localhost/vectortiles/location.json",
+    'url': "location.json",
 
     'dataType': "json",
     'success': function(data) {
@@ -49,7 +49,7 @@ stores2 = (function() {
 map.on('load', function(e) {
 
     //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
-    map.loadImage('https://zoestha.de/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
+    map.loadImage('media/Marker_with_Shadow.png', function(error, image) {
         if (error) throw error;
       map.addImage('marker_z', image);
             
