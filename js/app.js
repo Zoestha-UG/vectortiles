@@ -34,8 +34,8 @@ stores2 = (function() {
   $.ajax({
     'async': false,
     'global': false,
-    'url': "https://zoestha.de/vectortiles/location.json",
-    //'url': "http://localhost/vectortiles/location.json",
+    //'url': "https://zoestha.de/vectortiles/location.json",
+    'url': "http://localhost/vectortiles/location.json",
 
     'dataType': "json",
     'success': function(data) {
@@ -266,7 +266,8 @@ function buildLocationList(data)
 
       var card_body = card_collapse.appendChild(document.createElement('div'));
       card_body.className = 'card-body';
-      card_body.innerHTML = prop.address;
+      card_body.innerHTML = prop.description;
+      card_body.innerHTML += "</br>" + prop.url;
 
       // Add an event listener for the links in the sidebar listing
       link.addEventListener('click', function(e)
@@ -315,7 +316,7 @@ function createPopUp(currentFeature) {
     })
     .setLngLat(currentFeature.geometry.coordinates)
     .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
-      '<h4>' + currentFeature.properties.address + '</h4>')
+      '<h4>' + currentFeature.properties.description + '</h4>')
     .addTo(map);
 }
 
