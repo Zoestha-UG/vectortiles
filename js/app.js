@@ -35,7 +35,7 @@ stores2 = (function() {
     'async': false,
     'global': false,
     //'url': "https://zoestha.de/vectortiles/location.json",
-    'url': "location.json",
+    'url': "https://leipzig-einkaufen.de/location.json",
 
     'dataType': "json",
     'success': function(data) {
