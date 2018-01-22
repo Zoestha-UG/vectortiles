@@ -27,6 +27,7 @@
 
     <meta name="theme-color" content="#0047ab">
     <link rel="icon" type="image/png" href='favicon-32x32.png'>
+    <link rel="alternate" href="leipzig-einkaufen.de" hreflang="de" />
     
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
@@ -52,6 +53,7 @@
     <meta property="og:description" content="Schöne Einkaufsmöglichkeiten in Leipzig. Kaufe gute Produkte, nachhaltig, wertvoll, ethisch-sozial, bio.">
     <meta property="og:site_name" content="Leipzig Einkaufen">
     <meta property="og:locale" content="de">
+    <meta property="fb:app_id" content="141459739866753">
     <!-- Next tags are optional but recommended -->
     <meta property="og:image:width" content="622">
     <meta property="og:image:height" content="472">
@@ -126,7 +128,77 @@
         <div id="Finde%20Laden%20via%20Karte" class="row my-4 headings">
             <h1>Orientierung via Karte – zum Ladenfinden einfach die Karte schieben</h1>
         </div>
-
+<script type="application/ld+json">
+{
+	"@graph": [
+        {
+			"@context": "http://schema.org",
+			"@type": "LocalBusiness",
+			"address": 
+            {
+				"@type": "PostalAddress",
+				"addressLocality": "Leipzig",
+				"addressRegion": "saxony",
+				"postalCode": "04275",
+				"streetAddress": "Karl-Liebknecht-Str. 62"
+			},
+			"description": "This is your business description.",
+			"name": "Café Maître & Pâtisserie",
+            "url": "www.cafe-maitre.de/",
+			"geo": 
+            {
+				"@type": "GeoCoordinates",
+				"latitude": "12.3410598",
+				"longitude": "51.3253279"
+			}
+		},
+        {
+			"@context": "http://schema.org",
+			"@type": "LocalBusiness",
+			"address": 
+            {
+				"@type": "PostalAddress",
+				"addressLocality": "Leipzig",
+				"addressRegion": "saxony",
+				"postalCode": "04229",
+				"streetAddress": "Holbeinstr. 29"
+			},
+			"description": "This is your business description.",
+			"name": "RöstGut",
+            "url": "",
+            "phone": "0341 580 967 58",
+			"geo": 
+            {
+				"@type": "GeoCoordinates",
+				"latitude": "12.3591760",
+				"longitude": "51.3429270"
+			}
+		},
+        {
+			"@context": "http://schema.org",
+			"@type": "LocalBusiness",
+			"address": 
+            {
+				"@type": "PostalAddress",
+				"addressLocality": "Leipzig",
+				"addressRegion": "saxony",
+				"postalCode": "04229",
+				"streetAddress": "Könneritzstr. 3"
+			},
+			"description": "<b>La Chocolaterie</b><br />Könneritzstr. 3, 04229 Leipzig.",
+			"name": "La Chocolaterie",
+            "url": "https://la-chocolaterie.de",
+            "phone": "0341 5611268",
+			"geo": 
+            {
+				"@type": "GeoCoordinates",
+				"latitude": "12.3668595",
+				"longitude": "51.316116"
+			}
+		}
+    ]
+}
+</script>
         <!-- dropdown categories -->
         <div id="Laeden_Kategorien" class="row my-4">
             <div id='feature-filter' class="dropdown">
@@ -246,7 +318,7 @@ Zoestha möchte diese Einzelhändler unterstützen und verbinden. Den Zugang fü
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://zoestha.de/vectortiles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src='https://zoestha.de/vectortiles/js/app.js'></script>
+    <script src='js/app.js'></script>
 
     <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
     <!--script>window.jQuery || document.write('<script src="js/vendor/jquery.1.10.2.min.js"><\/script>')</script-->
