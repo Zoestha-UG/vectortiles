@@ -34,7 +34,7 @@ stores2 = (function() {
   $.ajax({
     'async': false,
     'global': false,
-    //'url': "https://zoestha.de/vectortiles/location.json",
+    //'url': "http://localhost/vectortiles/location.json",
     'url': "https://leipzig-einkaufen.de/location.json",
 
     'dataType': "json",
@@ -264,10 +264,18 @@ function buildLocationList(data)
       card_collapse.setAttribute('aria-labelledby', 'heading' + card.id);
       card_collapse.setAttribute('data-parent', '#listings');
 
-      var card_body = card_collapse.appendChild(document.createElement('div'));
+      if(prop.image){
+          var card_img = card_collapse.appendChild(document.createElement('img'));
+          card_img.className = 'img-responsive img-listing';
+          card_img.src = prop.image;
+          card_img.alt = prop.name;
+          card_img.title = prop.name;
+      }
+        
+      var card_body = card_collapse.appendChild(document.createElement('div'));  
       card_body.className = 'card-body';
       card_body.innerHTML = prop.description;
-      card_body.innerHTML += "</br>" + prop.url;
+      card_body.innerHTML += "</br><a href='" + prop.url + "' target='_blank' />" + prop.url + "</a>";
 
       // Add an event listener for the links in the sidebar listing
       link.addEventListener('click', function(e)

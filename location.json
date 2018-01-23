@@ -10,14 +10,15 @@
       "properties": {
         "id": 0,
         "name": "Café Maître & Pâtisserie",
-        "description": "Das Maitre ist ein wunderschönes Jugentstilcafe mit Bistro und Patisserie in Leipzig",
+        "description": "Das Maître ist ein wunderschönes Jugentstilcafe mit Bistro und Patisserie in Leipzig.",
         "addressLocality": "Leipzig",
         "addressRegion": "saxony",
         "postalCode": "04275",
         "streetAddress": "Karl-Liebknecht-Str. 62",
-        "url": "www.cafe-maitre.de/",
+        "url": "http://www.cafe-maitre.de/",
         "telephone":"0341 30328924",
-        "Categories": "Cafe, patisserie, feinkost"
+        "Categories": "Cafe, patisserie, feinkost",
+        "image": "media/thumbs/Cafe-Maitre.png"
       }
     },
     {
@@ -28,15 +29,16 @@
       },
       "properties": {
         "id": 1,
-        "name": "RöstGut ",
-        "description": "RöstGut - Leipziger Kaffeerösterei",
+        "name": "RöstGut",
+        "description": "RöstGut - Leipziger Kaffeerösterei.",
         "addressLocality": "Leipzig",
         "addressRegion": "saxony",
         "postalCode": "04229",
         "streetAddress": "Holbeinstr. 29",
         "url": "https://roestgut.de",
         "telephone": "0341 580 967 58",
-        "Categories": "lebensmittel, regional"
+        "Categories": "lebensmittel, regional",
+        "image": "media/thumbs/Roestgut.jpg"
       }
     },
     {
@@ -48,14 +50,15 @@
       "properties": {
         "id": 2,
         "name": "La Chocolaterie",
-        "description": "Cafe, chocolaterie",
+        "description": "Cafe, chocolaterie.",
         "addressLocality": "Leipzig",
         "addressRegion": "saxony",
         "postalCode": "04229",
         "streetAddress": "Könneritzstr. 3",
         "url": "https://la-chocolaterie.de",
         "telephone": "0341 561 12 68",          
-        "Categories": "Cafe, chocolaterie"
+        "Categories": "Cafe, chocolaterie",
+        "image": "media/thumbs/Chocolaterie.png"
       }
     },
     {
@@ -67,14 +70,15 @@
       "properties": {
         "id": 3,
         "name": "Bio am Fockeberg",
-        "description": "Bio, lebensmittel",
+        "description": "Bio, lebensmittel.",
         "addressLocality": "Leipzig",
         "addressRegion": "saxony",
         "postalCode": "04275",
         "streetAddress": "Brandvorwerkstr. 76",
         "url": "https://bio-am-fockeberg.de",
         "telephone": "0341 149 230 81",
-        "Categories": "Bio, lebensmittel"
+        "Categories": "Bio, lebensmittel",
+        "image": "https://naturaum.de/content/images/2017/10/suedvorstadt-1.jpg"
       }
     },
     {
@@ -93,7 +97,8 @@
         "streetAddress": "Erich-Zeigner-Allee 64",
         "url": "http://www.gruene-pforte.de/",
         "telephone": "",  
-        "Categories": "Lebensmittel, Regional, Saisonal"
+        "Categories": "Lebensmittel, Regional, Saisonal",
+        "image": "media/thumbs/Gruene_Pforte.jpg"
       }
     },
     {
@@ -112,7 +117,8 @@
         "streetAddress": "Naumburger Str. 10",
         "url": "http://leipspeis.de/",
         "telephone": "0177 2342348",
-        "Categories": "Lebensmittel, Bio, Regional"
+        "Categories": "Lebensmittel, Bio, Regional",
+        "image": "media/thumbs/leipspeis_logo_footer.svg"
       }
     },
     {
@@ -124,14 +130,15 @@
       "properties": {
         "id": 6,
         "name": "Kunst, Handwerk & Plauener Spitze",
-        "description": "Handwerk/Design, Geschenke, Regional",
+        "description": "Handwerk/Design, Geschenke, Regional.",
         "addressLocality": "Leipzig",
         "addressRegion": "saxony",  
         "postalCode": "04109",
         "streetAddress": "Willy-Brandt-Platz 7",        
         "url": "",
         "telephone": "",
-        "Categories": "Handwerk/Design, Geschenke, Regional"
+        "Categories": "Handwerk/Design, Geschenke, Regional",
+        "image": "media/thumbs/Legler_Logo.png"
       }
     },
     {
@@ -150,7 +157,9 @@
         "streetAddress": "Arndtstr. 32",
         "url": "http://hivyohivyo.de/",
         "telephone": "0341 24721480",
-        "Categories": "modeatelier, Handwerk/Design"
+        "Categories": "modeatelier, Handwerk/Design",
+        "image": "media/thumbs/HivyoHivyo.jpg"
+          
       }
     },
     {
@@ -162,14 +171,15 @@
       "properties": {
         "id": 8,
         "name": "Südhang",
-        "description": "Weinladen & Verkostung",
+        "description": "Weinladen & Verkostung.",
         "addressLocality": "Leipzig",
         "addressRegion": "saxony", 
         "postalCode": "04275",
         "streetAddress": "Karl-Liebknecht-Str. 79",
         "url": "http://www.suedhang-leipzig.de/",
         "telephone": "0341 3011940",
-        "Categories": "weinladen, feinkost"
+        "Categories": "weinladen, feinkost",
+        "image": ""
       }
     },
     {
@@ -181,14 +191,15 @@
       "properties": {
         "id": 9,
         "name": "Kräuterladen",
-        "description": "Regional, Kräuter, Gewürze, Veranstaltungen, Cafe",
+        "description": "Regional, Kräuter, Gewürze, Veranstaltungen, Cafe.",
         "addressLocality": "Leipzig",
         "addressRegion": "saxony",   
         "postalCode": "04229",
         "streetAddress": "Windorfer Str. 44",        
-        "url": "kraeuterladen-leipzig.de",
+        "url": "http://www.xn--kruterladen-leipzig-hwb.de/",
         "telephone": "0341 225 298 71",
-        "Categories": "Regional, Kräuter, Gewürze, Veranstaltungen, Cafe"
+        "Categories": "Regional, Kräuter, Gewürze, Veranstaltungen, Cafe",
+        "image": "media/thumbs/Kraeuterladen.jpg"
       }
     },
       
@@ -201,14 +212,16 @@
       "properties": {
         "id": 10,
         "name": "Feinbäckerei Renelt",
-        "description": "Regional, bäckerei, Cafe",
+        "description": "Regional, bäckerei, Cafe.",
         "addressLocality": "Leipzig",
         "addressRegion": "saxony",   
         "postalCode": "04229",
         "streetAddress": "Naumburger Str. 55",
         "url": "",
         "telephone": "0341 477 2900",
-        "Categories": "Regional, bäckerei, Cafe"
+        "Categories": "Regional, bäckerei, Cafe",
+        "image": ""
+          
       }
     },
       
@@ -228,7 +241,8 @@
         "streetAddress": "Schnorrstr. 34",
         "url": "http://www.proregional-le.de",
         "telephone": "0341 260 25 15",
-        "Categories": "lebensmittel, regional"
+        "Categories": "lebensmittel, regional",
+        "image": "media/thumbs/ProRegional.jpg"
       }
     }
   ]

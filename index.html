@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="css/rrssb.css" />
     <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300i,400,400i,600,600i' />
-    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=PT+Serif:400i" />
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=PT+Serif:400i, 600i" />
 
 
     <!-- Facebook open Graph -->
@@ -86,7 +86,7 @@
             </div>
             <div class="col-sm-4" style="position:relative; float:left; margin-top: -16px">
                 <a href="http://leipzig-einkaufen.de">
-                    <img class="img-responsive img-top-header" src="media/Leipzig_Einkaufen_Top.svg" alt="Leipzig Einkaufen Top">
+                    <img class="img-responsive img-top-header" src="media/Leipzig_Einkaufen_Top.svg" title="Leipzig Einkaufen" alt="Leipzig Einkaufen Top">
                 </a>
             </div>
             <div class="col-sm-8" style="position:relative; float: right;">
@@ -106,18 +106,18 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#Finde%20Laden%20via%20Karte">Läden Finden</a>
+                            <a class="nav-link" href="#Finde%20Laden%20via%20Karte"><strong>Läden Finden</strong></a>
                         </li>
                         <li class="nav-item">
                             <div style="max-width: 136px; margin: auto;">
-                                <div class="nav-link" style="position: relative;float: left">Über</div>
+                                <div class="nav-link" style="position: relative;float: left"><strong>Über</strong></div>
                                 <a href="#About%20Leipzig%20Einkaufen">
-                                    <img class="img-responsive img-leipzig-einkaufen" src="media/Leipzig_Einkaufen.svg" alt="Leipzig Einkaufen">
+                                    <img class="img-responsive img-leipzig-einkaufen" src="media/Leipzig_Einkaufen.svg" title="Leipzig Einkaufen" alt="Leipzig Einkaufen">
                                 </a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="impressum.html/">Impressum</a>
+                            <a class="nav-link" href="impressum.html/"><strong>Impressum</strong></a>
                         </li>
                     </ul>
                 </div>
@@ -145,6 +145,7 @@
 			"description": "This is your business description.",
 			"name": "Café Maître & Pâtisserie",
             "url": "www.cafe-maitre.de/",
+            "telephone":"0341 30328924",
 			"geo": 
             {
 				"@type": "GeoCoordinates",
@@ -203,16 +204,16 @@
         <div id="Laeden_Kategorien" class="row my-4">
             <div id='feature-filter' class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Auswahl Filtern
+                    <strong>Auswahl Filtern</strong>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button class="dropdown-item" data-href="#">Alle</button>
-                    <button class="dropdown-item" data-href="#">Cafe</button>
-                    <button class="dropdown-item" data-href="#">Feinkost</button>
-                    <button class="dropdown-item" data-href="#">Handwerk/Design</button>
-                    <button class="dropdown-item" data-href="#">Lebensmittel</button>
-                    <button class="dropdown-item" data-href="#">Geschenke</button>
-                    <button class="dropdown-item" data-href="#">Regional</button>
+                    <button class="dropdown-item" data-href="#"><strong>Alle</strong></button>
+                    <button class="dropdown-item" data-href="#"><strong>Cafe</strong></button>
+                    <button class="dropdown-item" data-href="#"><strong>Feinkost</strong></button>
+                        <button class="dropdown-item" data-href="#"><strong>Handwerk/Design</strong></button>
+                        <button class="dropdown-item" data-href="#"><strong>Lebensmittel</strong></button>
+                        <button class="dropdown-item" data-href="#"><strong>Geschenke</strong></button>
+                        <button class="dropdown-item" data-href="#"><strong>Regional</strong></button>
                 </div>
             </div>
             <input type="text" name="txtCategories" id="txtCategories">
@@ -255,8 +256,8 @@
             </p>
              <p class="subscribtion"> 
                 <a href="mailto:info@zoestha.de?Subject=Anmeldung%20Leipzig%20Einkaufen" target="_top">
-                    <img class="img-marker" src="media/marker.svg" alt="Leipzig Einkaufen map marker">
-                Ja, wir möchten dabei sein!</a>
+                    <img class="img-marker" src="media/marker.svg" title="Leipzig Einkaufen Anmeldungsanfrage" alt="Leipzig Einkaufen map marker">
+                    <strong>Ja, wir möchten dabei sein!</strong></a>
             </p>
         </div>
         <!-- /.About -->
@@ -270,13 +271,12 @@
             <div class="social_buttons">
                 <!-- Buttons start here. Copy this ul to your document. -->
                 <ul class="rrssb-buttons clearfix">
-                    <li class="rrssb-email">
-                        <!-- Replace subject with your message using URL Encoding: http://meyerweb.com/eric/tools/dencoder/ -->
-                        <a href="mailto:?Subject=your%20subject">
+                    <!--li class="rrssb-email">
+                          <a href="mailto:?Subject=your%20subject">
                             <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M20.11 26.147c-2.335 1.05-4.36 1.4-7.124 1.4C6.524 27.548.84 22.916.84 15.284.84 7.343 6.602.45 15.4.45c6.854 0 11.8 4.7 11.8 11.252 0 5.684-3.193 9.265-7.398 9.3-1.83 0-3.153-.934-3.347-2.997h-.077c-1.208 1.986-2.96 2.997-5.023 2.997-2.532 0-4.36-1.868-4.36-5.062 0-4.75 3.503-9.07 9.11-9.07 1.713 0 3.7.4 4.6.972l-1.17 7.203c-.387 2.298-.115 3.3 1 3.4 1.674 0 3.774-2.102 3.774-6.58 0-5.06-3.27-8.994-9.304-8.994C9.05 2.87 3.83 7.545 3.83 14.97c0 6.5 4.2 10.2 10 10.202 1.987 0 4.09-.43 5.647-1.245l.634 2.22zM16.647 10.1c-.31-.078-.7-.155-1.207-.155-2.572 0-4.596 2.53-4.596 5.53 0 1.5.7 2.4 1.9 2.4 1.44 0 2.96-1.83 3.31-4.088l.592-3.72z"/></svg></span>
                             <span class="rrssb-text">email</span>
                         </a>
-                    </li>
+                    </li-->
                     <li class="rrssb-facebook">
                         <!--  Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header: https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->
                         <a href="https://www.facebook.com/sharer/sharer.php?u=http://leipzig-einkaufen.de" class="popup">
@@ -315,7 +315,8 @@
     <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' />
 
     <!-- Bootstrap core JavaScript -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+    <!--script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.43.0/mapbox-gl.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src='js/app.min.js'></script>

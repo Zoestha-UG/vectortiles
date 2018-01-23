@@ -165,7 +165,12 @@ active, .show>.btn-secondary.dropdown-toggle {
     background-color: #6991C9;
 }
 #feature-filter > div > button{
-    color:white;
+    color:white;   
+    padding-bottom: 0.1rem;
+    padding-top: 0.1rem;
+    padding-left: 0.6rem;
+    padding-right: 1.7rem;
+    
 }
 #txtCategories{
     text-transform: capitalize;
@@ -213,7 +218,8 @@ active, .show>.btn-secondary.dropdown-toggle {
 .listings {
     height: 100%;
     overflow: auto;
-    padding-bottom: 60px;
+    padding-right: 18px;
+    padding-bottom: 60px;    
 }
 
 .sidebar>fieldset {
@@ -269,6 +275,19 @@ a.title.is-active, /*for the bootstrap accordion*/
     padding-top: 4px;
     
 }
+.listings .card-body > a{
+    color: #0047ab;
+    font-weight: 600;
+}
+
+.listings .img-listing{
+    float: left;
+    max-width: 175px;
+    padding: 12px;
+    padding-left: 0px;
+    
+}
+
 
 ::-webkit-scrollbar {
     width: 3px;
@@ -306,7 +325,7 @@ a.title.is-active, /*for the bootstrap accordion*/
     width: 180px;
     border-radius: 0px !important;
     padding: 10px 10px 5px !important;
-    text-align: center;
+    /*text-align: center;*/
 }
 div.mapboxgl-popup-content > h3{
     font-family: 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
@@ -349,7 +368,7 @@ div.mapboxgl-popup-content > h4{
     border-bottom-width: 7px;
 }
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
-    border-top-color: #0047ab !important;
+    border-bottom-color: #0047ab !important;
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
@@ -388,10 +407,10 @@ div.mapboxgl-popup-content > h4{
 }
 
 /*subscription*/
-body > div > div.row.my-4.twocolumn > p.subscribtion{
+body > div > div.row.my-4.twocolumn > p.subscribtion > a{
     color:#0047ab;
     text-decoration: underline;
-    font-weight: 600;
+    
 }
 .social_buttons{
     padding-bottom: 12px;
