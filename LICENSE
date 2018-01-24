@@ -31,15 +31,26 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 Design license: CC-BY 4.0
-The cartography and visual design features of the map tile schema (also known as the "look and feel" of the map) are licensed under the Creative Commons Attribution 4.0 license. To view a copy of the license, visit http://creativecommons.org/licenses/by/4.0/.
+The cartography and visual design features of the map tile schema (also known as
+the "look and feel" of the map) are licensed under the Creative Commons Attribution
+4.0 license. To view a copy of the license, visit http://creativecommons.org/licenses/by/4.0/.
 
-Products or services using maps derived from OpenMapTiles schema need to visibly credit "OpenMapTiles.org" or reference "OpenMapTiles" with a link to http://openmaptiles.org/.
+Products or services using maps derived from OpenMapTiles schema need to visibly 
+credit "OpenMapTiles.org" or reference "OpenMapTiles" with a link to http://openmaptiles.org/.
 
-For a browsable electronic map based on OpenMapTiles and OpenStreetMap data, the credit should appear in the corner of the map. For example:
+For a browsable electronic map based on OpenMapTiles and OpenStreetMap data, the 
+credit should appear in the corner of the map. For example:
 
 © OpenMapTiles © OpenStreetMap contributors
 
-For printed and static maps a similar attribution should be made in a textual description near the image, in the same fashion as if you cite a photograph.
+For printed and static maps a similar attribution should be made in a 
+textual description near the image, in the same fashion as if you cite a photograph.
 
-Exceptions to OpenMapTiles attribution requirement can be in a written form granted by Klokan Technologies GmbH (info@klokantech.com).
+Exceptions to OpenMapTiles attribution requirement can be in a written form granted 
+by Klokan Technologies GmbH (info@klokantech.com).
+
+Vector tiles are purchased by Zoestha UG (haftungsbeschränkt) and licensed only for use
+on website https://leipzig-einkaufen.de. Third-parties requiring the map tiles in 
+their own commercial products or private websites should get their own license 
+from https://openmaptiles.com/.
 
