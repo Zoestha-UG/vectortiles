@@ -1,6 +1,6 @@
-# vectortiles
+# Vectortiles
 Store locator using Mapbox GL and tileserver-php from klokantech.
-It can be hosted on a standard Apache+PHP web hosting
+It can be hosted on a standard Apache+PHP web hosting.
 
 # Tiles
 The original maptiles of Leipzig-Germany has been downloaded from https://openmaptiles.org/
