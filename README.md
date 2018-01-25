@@ -1,5 +1,5 @@
 
-# Vectortiles ![Marker_with_Shadow.png]({{site.baseurl}}/Marker_with_Shadow.png)
+# Vectortiles
 Store locator using Mapbox GL and tileserver-php from klokantech.
 It can be hosted on a standard Apache+PHP web hosting.
 
