@@ -9,7 +9,7 @@ $(window).on('scroll', function (event) {
 
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'json/style-cdn.json',
+  style: 'json/style-local.json',
   center: [12.3722, 51.3272],
   zoom: 11,
   attributionControl: true,
@@ -73,6 +73,7 @@ map.on('load', function(e) {
 
       });
 
+	  map.addControl(new mapboxgl.FullscreenControl());
 
      // When a click event occurs on a feature in the places layer, open a popup at the
      // location of the feature, with description HTML from its properties.
