@@ -9,7 +9,7 @@ $(window).on('scroll', function (event) {
 
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'json/style-cdn.json',
+  style: 'https://leipzig-einkaufen.de/json/style-cdn.json',
   center: [12.3722, 51.3272],
   zoom: 11,
   attributionControl: true,
@@ -48,7 +48,7 @@ stores2 = (function() {
 map.on('load', function(e) {
 
     //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
-    map.loadImage('media/Marker_with_Shadow.png', function(error, image) {
+    map.loadImage('https://leipzig-einkaufen.de/media/Marker_with_Shadow.png', function(error, image) {
         if (error) throw error;
       map.addImage('marker_z', image);
             
