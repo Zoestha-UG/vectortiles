@@ -1,15 +1,17 @@
-$(window).on('scroll', function (event) {
+$(window).on("scroll", function (event) {
     var scrollValue = $(window).scrollTop();
     if (scrollValue > 220) {
-        $('.navbar').addClass('affix');
+        $(".navbar").addClass("affix");
     } else{
-        $('.navbar').removeClass('affix');
+        $(".navbar").removeClass("affix");
     }
 });
 
 var map = new mapboxgl.Map({
+
   container: 'map',
   style: 'https://leipzig-einkaufen.de/json/style-local.json',
+
   center: [12.3722, 51.3272],
   zoom: 11,
   attributionControl: true,
@@ -21,9 +23,9 @@ var popup = new mapboxgl.Popup({
   closeButton: false
 });
 
-var filterEl = document.getElementById('feature-filter');
-var listings = document.getElementById('listings');
-var txtCategories = document.getElementById('txtCategories');
+var filterEl = document.getElementById("feature-filter");
+var listings = document.getElementById("listings");
+var txtCategories = document.getElementById("txtCategories");
 
 
 var mapMarkers = [];
@@ -155,15 +157,15 @@ function buildLocationList(data) {
 
 
 /*Load stores2*/
-stores2 = (function() {
-  var stores2 = null;
+var stores2 = (function() {
+  stores2 = null;
   $.ajax({
-    'async': false,
-    'global': false,
-    'url': "https://leipzig-einkaufen.de/location.json",
+    "async": false,
+    "global": false,
+    "url": "https://leipzig-einkaufen.de/location.json",
     //'url': "http://localhost/vectortiles/location.json",
-    'dataType': "json",
-    'success': function(data) {
+    "dataType": "json",
+    "success": function(data) {
       stores2 = data;
     }
   });
@@ -171,25 +173,27 @@ stores2 = (function() {
 })();
 
 
-map.on('load', function(e) {
+map.on("load", function(e) {
 
     //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
+
     map.loadImage('https://leipzig-einkaufen.de/media/Marker_with_Shadow.png', function(error, image) {
+
         if (error) throw error;
-      map.addImage('marker_z', image);
+      map.addImage("marker_z", image);
             
       // Add the data to your map as a layer
-      map.addSource('locations_source', {
-        "type": 'geojson',
+      map.addSource("locations_source", {
+        "type": "geojson",
         "data": stores2 //"http://localhost/vectortiles/location.geojson"
       });
 
       // Add the data to your map as a layer
       map.addLayer({
-            "id": 'locations',
-            "type": 'symbol',
+            "id": "locations",
+            "type": "symbol",
             // Add a GeoJSON source containing place coordinates and information.
-            "source": 'locations_source',
+            "source": "locations_source",
             "layout": {
               "visibility": "visible",
               "icon-image": "marker_z",
@@ -203,29 +207,32 @@ map.on('load', function(e) {
 
      // When a click event occurs on a feature in the places layer, open a popup at the
      // location of the feature, with description HTML from its properties.
-     map.on('click', 'locations', function (e) {
+     map.on("click", "locations", function (e) {
          var current_feature = e.features[0];
          // 1. Create Popup
          createPopUp(current_feature);
          
          // 2. Highlight listing in sidebar (and remove highlight for other listing)
-         var activeItem = document.getElementsByClassName('is-active');
-         if (activeItem[0]) 
+         var activeItem = document.getElementsByClassName("is-active");
+         if (activeItem[0]){ 
              activeItem[0].classList.remove('is-active');
+         }
          
-         var heading_Element = document.getElementById('heading' + current_feature.properties.id);
-         if (heading_Element)
-             heading_Element.classList.add('is-active');
-         var collapse_Element = document.getElementById('collapse' + current_feature.properties.id);
-         if (collapse_Element)      
-             $(collapse_Element).collapse('show');
+         var heading_Element = document.getElementById("heading" + current_feature.properties.id);
+         if (heading_Element){
+             heading_Element.classList.add("is-active");
+         }
+         var collapse_Element = document.getElementById("collapse" + current_feature.properties.id);
+         if (collapse_Element){
+             $(collapse_Element).collapse("show");
+         }
          
      });
         
-      map.on('moveend', function() {
+      map.on("moveend", function() {
         // Query all the rendered points in the view
         var features = map.queryRenderedFeatures({
-          layers: ['locations']
+          layers: ["locations"]
         });
 
         if (features) {
@@ -236,7 +243,7 @@ map.on('load', function(e) {
           buildLocationList(uniqueFeatures);
 
           // Clear the input container
-          filterEl.value = '';
+          filterEl.value = "";
 
           // Store the current features in sn `locations_on_map` variable to
           // later use for filtering on `keyup`.
@@ -244,9 +251,9 @@ map.on('load', function(e) {
         }
       });
 
-      map.on('mousemove', 'locations', function(e) {
+      map.on("mousemove", "locations", function(e) {
         // Change the cursor style as a UI indicator.
-        map.getCanvas().style.cursor = 'pointer';
+        map.getCanvas().style.cursor = "pointer";
 
         // // Populate the popup and set its coordinates based on the feature.
         // var feature = e.features[0];
@@ -255,7 +262,7 @@ map.on('load', function(e) {
         //   .addTo(map);
       });
 
-      map.on('mouseleave', 'locations', function() {
+      map.on("mouseleave", "locations", function() {
         map.getCanvas().style.cursor = '';
         popup.remove();
       });
