@@ -9,8 +9,8 @@ $(window).on("scroll", function (event) {
 
 var map = new mapboxgl.Map({
 
-  container: 'map',
-  style: 'https://leipzig-einkaufen.de/json/style-local.json',
+  container: "map",
+  style: "https://leipzig-einkaufen.de/json/style-local.json",
 
   center: [12.3722, 51.3272],
   zoom: 11,
@@ -65,63 +65,63 @@ function getUniqueFeatures(array, comparatorProperty) {
 
 function buildLocationList(data) {
   // Iterate through the list of stores
-  listings.innerHTML = '';
+  listings.innerHTML = "";
   if (data.length) {
     data.forEach(function(feature) {
       // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
       var prop = feature.properties;
       // Select the listing container in the HTML and append a div  with the class 'item' for each store
 
-      var card = listings.appendChild(document.createElement('div'));
-      card.className = 'item card';
+      var card = listings.appendChild(document.createElement("div"));
+      card.className = "item card";
       card.id = prop.id;
 
-      var card_header = card.appendChild(document.createElement('div'));
-      card_header.className = 'card-header';
-      card_header.setAttribute('role', 'tab');
-      card_header.setAttribute('id', 'heading' + card.id);
-      card_header.id = 'heading' + card.id;
+      var card_header = card.appendChild(document.createElement("div"));
+      card_header.className = "card-header";
+      card_header.setAttribute("role", "tab");
+      card_header.setAttribute("id", "heading" + card.id);
+      card_header.id = "heading" + card.id;
 
-      var card_mb0 = card_header.appendChild(document.createElement('h5'));
-      card_mb0.className = 'mb-0';
+      var card_mb0 = card_header.appendChild(document.createElement("h5"));
+      card_mb0.className = "mb-0";
 
       // Create a new link with the class 'title' for each store and fill it with the store address
-      var link = card_mb0.appendChild(document.createElement('a'));
-      link.setAttribute('data-toggle', 'collapse');
-      link.href = '#collapse' + card.id;
-      link.setAttribute('aria-expanded', 'false');
-      link.setAttribute('aria-controls', 'collapse' + card.id);
-      link.className = 'title';
+      var link = card_mb0.appendChild(document.createElement("a"));
+      link.setAttribute("data-toggle", "collapse");
+      link.href = "#collapse" + card.id;
+      link.setAttribute("aria-expanded", "false");
+      link.setAttribute("aria-controls", "collapse" + card.id);
+      link.className = "title";
       link.innerHTML = prop.name;
       link.dataPosition = card.id;
 
-      var card_collapse = card.appendChild(document.createElement('div'));
-      card_collapse.className = 'collapse';
-      card_collapse.setAttribute('id', 'collapse' + card.id);
-      card_collapse.setAttribute('role', 'tabpanel');
-      card_collapse.setAttribute('aria-labelledby', 'heading' + card.id);
-      card_collapse.setAttribute('data-parent', '#listings');
+      var card_collapse = card.appendChild(document.createElement("div"));
+      card_collapse.className = "collapse";
+      card_collapse.setAttribute("id", "collapse" + card.id);
+      card_collapse.setAttribute("role", "tabpanel");
+      card_collapse.setAttribute("aria-labelledby", "heading" + card.id);
+      card_collapse.setAttribute("data-parent", "#listings");
 
       if(prop.image){
-          var card_img = card_collapse.appendChild(document.createElement('img'));
-          card_img.className = 'img-responsive img-listing';
+          var card_img = card_collapse.appendChild(document.createElement("img"));
+          card_img.className = "img-responsive img-listing";
           card_img.src = prop.image;
           card_img.alt = prop.name;
           card_img.title = prop.name;
       }
         
-      var card_body = card_collapse.appendChild(document.createElement('div'));  
-      card_body.className = 'card-body';
+      var card_body = card_collapse.appendChild(document.createElement("div"));
+      card_body.className = "card-body";
       card_body.innerHTML = prop.description;
       card_body.innerHTML += "</br><a href='" + prop.url + "' target='_blank' />" + prop.url + "</a>";
 
       // Add an event listener for the links in the sidebar listing
-      link.addEventListener('click', function(e)
+      link.addEventListener("click", function(e)
         {
             // Update the currentFeature to the store associated with the clicked link
             var clickedListing = stores2.features[this.dataPosition];
 
-            var popUps = document.getElementsByClassName('mapboxgl-popup');
+            var popUps = document.getElementsByClassName("mapboxgl-popup");
             // Check if there is already a popup on the map and if so, remove it
             if (popUps[0]) popUps[0].parentNode.removeChild(popUps[0]);
           
@@ -129,11 +129,11 @@ function buildLocationList(data) {
             createPopUp(clickedListing);
 
             // 2. Highlight listing in sidebar (and remove highlight for all other listings)
-            var activeItem = document.getElementsByClassName('is-active');
+            var activeItem = document.getElementsByClassName("is-active");
             if (activeItem[0]) {
-              activeItem[0].classList.remove('is-active');
+              activeItem[0].classList.remove("is-active");
             }
-            this.classList.add('is-active');
+            this.classList.add("is-active");
 
       });
 
@@ -143,15 +143,15 @@ function buildLocationList(data) {
   }
     else 
     {
-        var empty = document.createElement('p');
-        empty.textContent = 'Ziehen Sie die Karte, um die Ergebnisse zu füllen';
+        var empty = document.createElement("p");
+        empty.textContent = "Ziehen Sie die Karte, um die Ergebnisse zu füllen";
         listings.appendChild(empty);
 
         // Hide the filter input
         //filterEl.parentNode.style.display = 'none';
 
         // remove features filter
-        map.setFilter('locations', ['has', 'Categories']);
+        map.setFilter("locations", ["has", "Categories"]);
   }
 }
 
@@ -177,7 +177,7 @@ map.on("load", function(e) {
 
     //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
 
-    map.loadImage('https://leipzig-einkaufen.de/media/Marker_with_Shadow.png', function(error, image) {
+    map.loadImage("https://leipzig-einkaufen.de/media/Marker_with_Shadow.png", function(error, image) {
 
         if (error) throw error;
       map.addImage("marker_z", image);
@@ -215,7 +215,7 @@ map.on("load", function(e) {
          // 2. Highlight listing in sidebar (and remove highlight for other listing)
          var activeItem = document.getElementsByClassName("is-active");
          if (activeItem[0]){ 
-             activeItem[0].classList.remove('is-active');
+             activeItem[0].classList.remove("is-active");
          }
          
          var heading_Element = document.getElementById("heading" + current_feature.properties.id);
@@ -263,16 +263,16 @@ map.on("load", function(e) {
       });
 
       map.on("mouseleave", "locations", function() {
-        map.getCanvas().style.cursor = '';
+        map.getCanvas().style.cursor = "";
         popup.remove();
       });
 
-      $('.dropdown-item').click(function() {
+      $(".dropdown-item").click(function() {
 
         var value = normalize($(this).text());
 
-        var filtered = map.querySourceFeatures('locations_source');
-        if (value !== 'alle') {
+        var filtered = map.querySourceFeatures("locations_source");
+        if (value !== "alle") {
           // Filter visible features that don't match the input value.
           filtered = filtered.filter(function(feature) {
             var name = normalize(feature.properties.name);
@@ -288,7 +288,7 @@ map.on("load", function(e) {
         buildLocationList(uniqueFeatures);
 
         // Set the filter to populate features into the layer.
-        map.setFilter('locations', ['in', 'name'].concat(uniqueFeatures.map(function(feature) {
+        map.setFilter("locations", ["in", "name"].concat(uniqueFeatures.map(function(feature) {
           return feature.properties.name;
         })));
 
@@ -301,7 +301,7 @@ map.on("load", function(e) {
 
       });
 
-      filterEl.addEventListener('keyup', function(e) {
+      filterEl.addEventListener("keyup", function(e) {
 
         var value = normalize(e.target.value);
 
