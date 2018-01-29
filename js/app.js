@@ -9,8 +9,8 @@ $(window).on("scroll", function (event) {
 
 var map = new mapboxgl.Map({
 
-  container: 'map',
-  style: 'https://leipzig-einkaufen.de/json/style-local.json',
+  container: "map",
+  style: "https://leipzig-einkaufen.de/json/style-local.json",
 
   center: [12.3722, 51.3272],
   zoom: 11,
@@ -40,8 +40,8 @@ function createPopUp(currentFeature) {
       closeOnClick: true
     })
     .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
-      '<h4>' + currentFeature.properties.description + '</h4>')
+    .setHTML("<h3>" + currentFeature.properties.name + "</h3>" +
+      "<h4>" + currentFeature.properties.description + "</h4>")
     .addTo(map);
 }
 
@@ -65,20 +65,20 @@ function getUniqueFeatures(array, comparatorProperty) {
 
 function buildLocationList(data) {
   // Iterate through the list of stores
-  listings.innerHTML = '';
+  listings.innerHTML = "";
   if (data.length) {
     data.forEach(function(feature) {
       // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
       var prop = feature.properties;
       // Select the listing container in the HTML and append a div  with the class 'item' for each store
 
-      var card = listings.appendChild(document.createElement('div'));
-      card.className = 'item card';
+      var card = listings.appendChild(document.createElement("div"));
+      card.className = "item card";
       card.id = prop.id;
 
-      var card_header = card.appendChild(document.createElement('div'));
-      card_header.className = 'card-header';
-      card_header.setAttribute('role', 'tab');
+      var card_header = card.appendChild(document.createElement("div"));
+      card_header.className = "card-header";
+      card_header.setAttribute("role", "tab");
       card_header.setAttribute('id', 'heading' + card.id);
       card_header.id = 'heading' + card.id;
 
@@ -177,7 +177,7 @@ map.on("load", function(e) {
 
     //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
 
-    map.loadImage('https://leipzig-einkaufen.de/media/Marker_with_Shadow.png', function(error, image) {
+    map.loadImage("https://leipzig-einkaufen.de/media/Marker_with_Shadow.png", function(error, image) {
 
         if (error) throw error;
       map.addImage("marker_z", image);
@@ -263,11 +263,11 @@ map.on("load", function(e) {
       });
 
       map.on("mouseleave", "locations", function() {
-        map.getCanvas().style.cursor = '';
+        map.getCanvas().style.cursor = "";
         popup.remove();
       });
 
-      $('.dropdown-item').click(function() {
+      $(".dropdown-item").click(function() {
 
         var value = normalize($(this).text());
 
