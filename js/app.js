@@ -40,8 +40,8 @@ function createPopUp(currentFeature) {
       closeOnClick: true
     })
     .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
-      '<h4>' + currentFeature.properties.description + '</h4>')
+    .setHTML("<h3>" + currentFeature.properties.name + "</h3>" +
+      "<h4>" + currentFeature.properties.description + "</h4>")
     .addTo(map);
 }
 
@@ -79,8 +79,10 @@ function buildLocationList(data) {
       var card_header = card.appendChild(document.createElement("div"));
       card_header.className = "card-header";
       card_header.setAttribute("role", "tab");
+
       card_header.setAttribute("id", "heading" + card.id);
       card_header.id = "heading" + card.id;
+
 
       var card_mb0 = card_header.appendChild(document.createElement("h5"));
       card_mb0.className = "mb-0";
