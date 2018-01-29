@@ -9,7 +9,7 @@ $(window).on("scroll", function (event) {
 
 var map = new mapboxgl.Map({
   container: "map",
-  style: "json/style-cdn.json@,
+  style: "json/style-cdn.json",
   center: [12.3722, 51.3272],
   zoom: 11,
   attributionControl: true,
