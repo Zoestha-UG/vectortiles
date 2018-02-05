@@ -3,6 +3,12 @@
 Store locator using Mapbox-GL and tileserver-php from klokantech.
 It can be hosted on a standard Apache+PHP web hosting.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/992d2af0bf6b4704a3ea96791b25cb52)](https://www.codacy.com/app/sheub/vectortiles?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sheub/vectortiles&amp;utm_campaign=Badge_Grade)
+
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://leipzig-einkaufen.de)
+
+
+
 ### Installing
 
 Web Project written in php Javascript css html. Simply clone or download and extract the repository to your host server.
