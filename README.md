@@ -1,6 +1,6 @@
 # Vectortiles ![Marker](https://github.com/sheub/vectortiles/blob/master/media/Marker_with_Shadow.png)
 
-Store locator for local retailers using Mapbox-GL and tileserver-php from klokantech.
+Store locator using Mapbox-GL and tileserver-php from klokantech.
 It can be hosted on a standard Apache+PHP web hosting.
 
 ### Installing
