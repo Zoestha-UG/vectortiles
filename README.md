@@ -7,10 +7,6 @@ It can be hosted on a standard Apache+PHP web hosting.
 
 
 
-### Installing
-
-Web Project written in php Javascript css html. Simply clone or download and extract the repository to your host server.
-
 ### Map rendering and listing
 
 ![Leipzig_Einkaufen_Map_List](https://github.com/sheub/vectortiles/blob/master/media/Leipzig_Einkaufen_Map_List.png)The map rendering is done using mapboxgl.js library. The filtering functionalities have been implemented using the following examples from mapbox:
@@ -33,7 +29,9 @@ Add *Fullscreen button*:
 
 https://www.mapbox.com/mapbox-gl-js/example/fullscreen/
 
+### Installing
 
+Web Project written in php Javascript css html. Simply clone or download and extract the repository to your host server.
 
 ### Vectortiles in xyz format
 
