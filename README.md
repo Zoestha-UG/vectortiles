@@ -1,15 +1,15 @@
-# Vectortiles ![Marker](https://github.com/sheub/vectortiles/blob/master/media/Marker_with_Shadow.png)
+# Vectortiles ![Marker mit Schatten](vectortiles/media/Marker_with_Shadow.png)
 
 Store locator using Mapbox-GL and tileserver-php from klokantech.
 It can be hosted on a standard Apache+PHP web hosting.
 
 ### Installing
 
-Web Project written in php Javascript css html. Simply clone or download and extract the repository to the host server.
+Web Project written in php Javascript css html. Simply clone or download and extract the repository to your host server.
 
 ### Map rendering and listing
 
-The map rendering is done using mapboxgl.js library. The filtering functionalities have been implemented using the following examples from mapbox:
+![Leipzig_Einkaufen_Map_List](vectortiles/media/Leipzig_Einkaufen_Map_List.png)The map rendering is done using mapboxgl.js library. The filtering functionalities have been implemented using the following examples from mapbox:
 
 
 
