@@ -41,6 +41,14 @@ gzip -d -r -S .pbf *
 find . -type f -exec mv '{}' '{}'.pbf \;
 ```
 
-### Tiles
+### Acknowledgement
 
-The original maptiles of Leipzig-Germany has been purchased at https://openmaptiles.org/ . They are subject to license restriction (see [license](https://github.com/sheub/vectortiles/blob/master/LICENSE)).
+This project has been created to ease the localisation of local retail stores in the city of Leipzig-Germany.
+Please feel free to add your comments or any suggestions you may have to improve it functionality.
+
+### License
+
+The original tiles of Leipzig-Germany have been purchased at https://openmaptiles.org/ . They are subject to license restriction (see [license](https://github.com/sheub/vectortiles/blob/master/LICENSE)).
+
+
+Copyright (c) 2018 Sébastien Barré, Licensed under BSD 3-Clause License.
