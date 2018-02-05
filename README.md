@@ -46,7 +46,7 @@ find . -type f -exec mv '{}' '{}'.pbf \;
 ### Acknowledgement
 
 This project has been created to ease the localisation of local retail stores in the city of Leipzig-Germany.
-Please feel free to add your comments or any suggestions you may have to improve it functionality.
+Please feel free to send us your comments or any suggestions you may have to improve it functionality.
 
 ### License
 
