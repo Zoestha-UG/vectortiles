@@ -7,7 +7,7 @@ It can be hosted on a standard Apache+PHP web hosting.
 
 ### Features
 
-- [x] Self-hosted
+- [x] Self-hosted map tiles
 - [x] Filter locations categories with dropdown box
 - [x] Interactive Location Listing
 - [x] Filter Listing within the map view
