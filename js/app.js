@@ -172,6 +172,10 @@ var stores2 = (function() {
 })();
 
 
+    // Call this function on initialization
+    // passing an empty array to render an empty state
+    buildLocationList(stores2["features"]);
+
 map.on("load", function(e) {
 
   //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
@@ -335,8 +339,5 @@ map.on("load", function(e) {
 
     });
 
-    // Call this function on initialization
-    // passing an empty array to render an empty state
-    buildLocationList(stores2["features"]);
   });
 });
