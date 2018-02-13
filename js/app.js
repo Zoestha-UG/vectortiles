@@ -1,3 +1,4 @@
+/*global $ */
 $(window).on("scroll", function(event) {
   var scrollValue = $(window).scrollTop();
   if (scrollValue > 220) {
@@ -7,6 +8,23 @@ $(window).on("scroll", function(event) {
   }
 });
 
+/*Load location (stores2)*/
+var stores2 = (function() {
+  stores2 = null;
+  $.ajax({
+    "async": false,
+    "global": false,
+    "url": "https://leipzig-einkaufen.de/location.json",
+    //'url': "http://localhost/vectortiles/location.json",
+    "dataType": "json",
+    "success": function(data) {
+      stores2 = data;
+    }
+  });
+  return stores2;
+})();
+
+// declare map
 var map = new mapboxgl.Map({
 
   container: "map",
@@ -19,7 +37,28 @@ var map = new mapboxgl.Map({
   maxZoom: 14.9
 });
 
-// Create a popup, but don't add it to the map yet.
+/*Declare MapDirections*/
+var mapDirections = new MapboxDirections();
+/*MapDirections Settings*/
+mapDirections.accessToken = "pk.eyJ1Ijoic2hldWIiLCJhIjoiWGtobTNPNCJ9.v2JwlNSGBm_KxJUKE_WLig";
+mapDirections.unit = "metric";
+mapDirections.proximity = true; /*proximity ??*/
+mapDirections.interactive = true;
+// UI controls
+mapDirections.controls = {
+  inputs: true,
+  instructions: false
+};
+
+/*Add mapDirections Controls*/
+map.addControl(new MapboxDirections(mapDirections), "top-left");
+
+map.addControl(new mapboxgl.ScaleControl({
+  maxWidth: 80,
+  unit: 'metric'
+}));
+
+// Create a popup (but don't add it to the map yet)
 var popup = new mapboxgl.Popup({
   closeButton: false
 });
@@ -28,8 +67,19 @@ var filterEl = document.getElementById("feature-filter");
 var listings = document.getElementById("listings");
 var txtCategories = document.getElementById("txtCategories");
 
-
+// Empty marker array
 var mapMarkers = [];
+// Empty Geojson Data
+var bufferedLinestring = {
+  "id": "0",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [0, 0]
+  },
+  "properties": {}
+};
+
 
 function normalize(string) {
   return string.trim().toLowerCase();
@@ -155,43 +205,25 @@ function buildLocationList(data) {
 }
 
 
-/*Load stores2*/
-var stores2 = (function() {
-  stores2 = null;
-  $.ajax({
-    "async": false,
-    "global": false,
-    "url": "https://leipzig-einkaufen.de/location.json",
-    //'url': "http://localhost/vectortiles/location.json",
-    "dataType": "json",
-    "success": function(data) {
-      stores2 = data;
-    }
-  });
-  return stores2;
-})();
-
-
-    // Call this function on initialization
-    // passing an empty array to render an empty state
-    buildLocationList(stores2["features"]);
+// Call this function on initialization
+// passing an empty array to render an empty state
+buildLocationList(stores2["features"]);
 
 map.on("load", function(e) {
 
   //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
-
   map.loadImage("https://leipzig-einkaufen.de/media/Marker_with_Shadow.png", function(error, image) {
 
     if (error) throw error;
     map.addImage("marker_z", image);
 
-    // Add the data to your map as a layer
+    // Add the stores2 (locations_source) to the map
     map.addSource("locations_source", {
       "type": "geojson",
       "data": stores2
     });
 
-    // Add the data to your map as a layer
+    // Add the locations_source to the map as a layer
     map.addLayer({
       "id": "locations",
       "type": "symbol",
@@ -200,12 +232,29 @@ map.on("load", function(e) {
       "layout": {
         "visibility": "visible",
         "icon-image": "marker_z",
-        "icon-size": 0.95,
+        "icon-size": 0.9,
         "icon-allow-overlap": true
       }
-
     });
 
+    // Add the bufferedLinestring to the map as a layer
+    map.addSource("bufferedTraceSource", {
+      "type": "geojson",
+      "data": bufferedLinestring,
+      "maxzoom": 13
+    });
+    map.addLayer({
+      "id": "bufferedTraceLayer",
+      "type": "fill",
+      "source": "bufferedTraceSource",
+      "layout": {},
+      "paint": {
+        "fill-color": "#888",
+        "fill-opacity": 0.4
+      }
+    });
+
+    // Add Fullscreen control to the map.
     map.addControl(new mapboxgl.FullscreenControl());
 
     // Add geolocate control to the map.
@@ -222,6 +271,35 @@ map.on("load", function(e) {
       var current_feature = e.features[0];
       // 1. Create Popup
       createPopUp(current_feature);
+
+      //var destWayPoints = mapDirections.getWaypoints();
+      var mapDirectionsSource = map.getSource("directions");
+      var radius = 0.6;
+      var unit = 'kilometers';
+      //var pointDeparture = mapDirectionsSource._data.features[0];
+      //var pointDestination = mapDirectionsSource._data.features[1];
+
+      // LineString
+      //var bufferInput = mapDirectionsSource._data.features[2].geometry;
+
+      // buffer the route with a area of radius 'radius'
+      var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
+        units: unit
+      });
+
+      // use featureCollection to convert (stores2["features"] (array of features)) into a collection of features (Object type FeatureCollection);
+      var collection = turf.featureCollection(stores2["features"]);
+
+      // Filter the points to the area around the direction
+      var ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
+
+      // Populate features for the listing overlay.
+      if (ptsWithin) {
+        buildLocationList(ptsWithin["features"]);
+      }
+
+      // update bufferedTraceSource
+      map.getSource('bufferedTraceSource').setData(bufferedLinestring);
 
       // 2. Highlight listing in sidebar (and remove highlight for other listing)
       var activeItem = document.getElementsByClassName("is-active");
