@@ -8,6 +8,49 @@ $(window).on("scroll", function(event) {
   }
 });
 
+$('#btnDisplayControls').on('click', function(e) {
+
+  var directionControl = document.getElementsByClassName("mapboxgl-ctrl-directions");
+  if (directionControl["0"].hidden)
+    directionControl["0"].hidden = false;
+  else {
+    directionControl["0"].hidden = true;
+  }
+})
+
+$('#btnFilterOnRoute').on('click', function(e) {
+
+  //var destWayPoints = mapDirections.getWaypoints();
+  var mapDirectionsSource = map.getSource("directions");
+  var radius = 0.6;
+  var unit = 'kilometers';
+  //var pointDeparture = mapDirectionsSource._data.features[0];
+  //var pointDestination = mapDirectionsSource._data.features[1];
+
+  // LineString
+  //var bufferInput = mapDirectionsSource._data.features[2].geometry;
+
+  // buffer the route with a area of radius 'radius'
+  var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
+    units: unit
+  });
+
+  // use featureCollection to convert (stores2["features"] (array of features)) into a collection of features (Object type FeatureCollection);
+  var collection = turf.featureCollection(stores2["features"]);
+
+  // Filter the points to the area around the direction
+  var ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
+
+  // Populate features for the listing overlay.
+  if (ptsWithin) {
+    buildLocationList(ptsWithin["features"]);
+  }
+
+  // update bufferedTraceSource
+  map.getSource('bufferedTraceSource').setData(bufferedLinestring);
+
+})
+
 /*Load location (stores2)*/
 var stores2 = (function() {
   stores2 = null;
@@ -38,6 +81,7 @@ var map = new mapboxgl.Map({
 });
 
 /*Declare MapDirections*/
+
 var mapDirections = new MapboxDirections();
 /*MapDirections Settings*/
 mapDirections.accessToken = "pk.eyJ1Ijoic2hldWIiLCJhIjoiWGtobTNPNCJ9.v2JwlNSGBm_KxJUKE_WLig";
@@ -271,35 +315,6 @@ map.on("load", function(e) {
       var current_feature = e.features[0];
       // 1. Create Popup
       createPopUp(current_feature);
-
-      //var destWayPoints = mapDirections.getWaypoints();
-      var mapDirectionsSource = map.getSource("directions");
-      var radius = 0.6;
-      var unit = 'kilometers';
-      //var pointDeparture = mapDirectionsSource._data.features[0];
-      //var pointDestination = mapDirectionsSource._data.features[1];
-
-      // LineString
-      //var bufferInput = mapDirectionsSource._data.features[2].geometry;
-
-      // buffer the route with a area of radius 'radius'
-      var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
-        units: unit
-      });
-
-      // use featureCollection to convert (stores2["features"] (array of features)) into a collection of features (Object type FeatureCollection);
-      var collection = turf.featureCollection(stores2["features"]);
-
-      // Filter the points to the area around the direction
-      var ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
-
-      // Populate features for the listing overlay.
-      if (ptsWithin) {
-        buildLocationList(ptsWithin["features"]);
-      }
-
-      // update bufferedTraceSource
-      map.getSource('bufferedTraceSource').setData(bufferedLinestring);
 
       // 2. Highlight listing in sidebar (and remove highlight for other listing)
       var activeItem = document.getElementsByClassName("is-active");

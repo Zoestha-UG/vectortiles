@@ -38,9 +38,9 @@
 
   <!-- Bootstrap core CSS -->
 
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
   <link rel='stylesheet' href="vendor/bootstrap/css/bootstrap.min.css">
-  <!--link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"-->
-  <link rel='stylesheet' href='css/app.min.css' />
+  <link rel='stylesheet' href='css/app.css' />
   <link rel="stylesheet" href="css/rrssb.css" />
   <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,600i' />
@@ -64,9 +64,8 @@
 
 <body>
 
-	<script src='js/mapbox-gl-directions.js'></script>
+  <script src='js/mapbox-gl-directions.js'></script>
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
-	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
 
   <!-- Page Content -->
   <div class="container page">
@@ -108,8 +107,8 @@
 
       <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -119,8 +118,8 @@
               <div style="max-width: 136px; margin: auto;">
                 <div class="nav-link" style="position: relative;float: left"><strong>Über</strong></div>
                 <a href="#About%20Leipzig%20Einkaufen">
-                                    <img class="img-responsive img-leipzig-einkaufen" src="media/Leipzig_Einkaufen.svg" title="Leipzig Einkaufen" alt="Leipzig Einkaufen">
-                                </a>
+                  <img class="img-responsive img-leipzig-einkaufen" src="media/Leipzig_Einkaufen.svg" title="Leipzig Einkaufen" alt="Leipzig Einkaufen">
+                </a>
               </div>
             </li>
             <li class="nav-item">
@@ -226,6 +225,18 @@
       <!-- map with stores -->
       <div class="col-lg-6">
         <div id='map' class='map pad2'></div>
+          <!-- display control buttons -->
+          <div id="btnDisplayControls" class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="checkbox" checked autocomplete="off"> Display Navigation Controls
+            </label>
+          </div>
+          <!-- Filter location on route button -->
+          <div id="btnFilterOnRoute" class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="checkbox" checked autocomplete="off"> Filter locations on route
+            </label>
+          </div>
       </div>
       <!-- list of stores -->
 
@@ -236,6 +247,8 @@
       </div>
     </div>
     <!-- /.map and store listing -->
+
+
 
 
     <!-- / About -->
