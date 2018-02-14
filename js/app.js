@@ -31,12 +31,19 @@ $('#btnFilterOnRoute').on('click', function(e) {
   //var bufferInput = mapDirectionsSource._data.features[2].geometry;
 
   // buffer the route with a area of radius 'radius'
+  if (mapDirectionsSource._data.features.length < 2) {
+    return 0;
+  }
   var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
     units: unit
   });
 
-  // use featureCollection to convert (stores2["features"] (array of features)) into a collection of features (Object type FeatureCollection);
-  var collection = turf.featureCollection(stores2["features"]);
+  var features = map.queryRenderedFeatures({
+    layers: ["locations"]
+  });
+
+  // use featureCollection to convert (features (array of features)) into a collection of features (Object type FeatureCollection);
+  var collection = turf.featureCollection(features);
 
   // Filter the points to the area around the direction
   var ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
@@ -86,8 +93,8 @@ var mapDirections = new MapboxDirections();
 /*MapDirections Settings*/
 mapDirections.accessToken = "pk.eyJ1Ijoic2hldWIiLCJhIjoiWGtobTNPNCJ9.v2JwlNSGBm_KxJUKE_WLig";
 mapDirections.unit = "metric";
-mapDirections.proximity = true; /*proximity ??*/
-mapDirections.interactive = true;
+mapDirections.proximity = false; /*proximity ??*/
+mapDirections.interactive = false;
 // UI controls
 mapDirections.controls = {
   inputs: true,
@@ -255,6 +262,12 @@ buildLocationList(stores2["features"]);
 
 map.on("load", function(e) {
 
+  map.loadImage("http://localhost/vectortiles/media/diagonal-noise.png", function(error, image) {
+
+    if (error) throw error;
+    map.addImage("background_pattern", image);
+  });
+
   //map.loadImage('http://localhost/vectortiles/media/Marker_with_Shadow.png', function(error, image) {
   map.loadImage("https://leipzig-einkaufen.de/media/Marker_with_Shadow.png", function(error, image) {
 
@@ -291,11 +304,20 @@ map.on("load", function(e) {
       "id": "bufferedTraceLayer",
       "type": "fill",
       "source": "bufferedTraceSource",
-      "layout": {},
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
-        "fill-color": "#888",
-        "fill-opacity": 0.4
+        "fill-color": "rgb(0,0,0)",
+        "fill-opacity": 1,
+        "fill-translate": [
+          0,
+          2.5
+        ],
+        "fill-pattern": "background_pattern"
       }
+
+
     });
 
     // Add Fullscreen control to the map.

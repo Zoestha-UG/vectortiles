@@ -223,20 +223,31 @@
     <!-- map and store listing -->
     <div class="row my-4">
       <!-- map with stores -->
+
       <div class="col-lg-6">
-        <div id='map' class='map pad2'></div>
-          <!-- display control buttons -->
-          <div id="btnDisplayControls" class="btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary active">
-              <input type="checkbox" checked autocomplete="off"> Display Navigation Controls
-            </label>
+        <div class="row" style="margin:0">
+          <div id='map' class='map pad2'></div>
+        </div>
+        <!-- display control buttons -->
+        <div class="row my-4" style="margin:0">
+          <div class="col-lg-6">Navigationssteuerelemente
+          <div class="col-sm-5">
+            <button id="btnDisplayControls" type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+              <div class="handle"></div>
+            </button>
           </div>
-          <!-- Filter location on route button -->
-          <div id="btnFilterOnRoute" class="btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary active">
-              <input type="checkbox" checked autocomplete="off"> Filter locations on route
-            </label>
+        </div>
+        </div>
+        <!-- Filter location on route button -->
+          <div class="col-lg-6">
+             <div class="col-sm-5">
+            <button id="btnFilterOnRoute" type="button" class="btn btn-outline-primary">Filter locations</button>
+            <!--button id="btnFilterOnRoute" type="button" class="btn btn-xs btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+              <div class="handle"></div>
+            </button-->
           </div>
+        </div>
+
       </div>
       <!-- list of stores -->
 
