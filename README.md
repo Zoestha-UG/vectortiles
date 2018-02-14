@@ -1,6 +1,6 @@
 # Vectortiles ![Marker mit Schatten](https://github.com/sheub/vectortiles/blob/master/media/Marker_with_Shadow.png)
 
-Store locator using Mapbox-GL and tileserver-php from klokantech.
+Example of store locator using Mapbox-GL and tileserver-php from klokantech.
 It can be hosted on a standard Apache+PHP web hosting.
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/992d2af0bf6b4704a3ea96791b25cb52)](https://www.codacy.com/app/sheub/vectortiles?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sheub/vectortiles&amp;utm_campaign=Badge_Grade) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://leipzig-einkaufen.de)
@@ -8,15 +8,17 @@ It can be hosted on a standard Apache+PHP web hosting.
 ### Features
 
 - [x] Self-hosted map tiles
+- [x] Route calculation with *MapboxDirections*
 - [x] Filter locations categories with dropdown box
-- [x] Interactive Location Listing
-- [x] Filter Listing within the map view
+- [x] Interactive location listing
+- [x] Filter listing within the map view
+- [x] Filter listing along calculated route with turf *buffer* and *pointsWithinPolygon*
 - [x] Custom Markers
 
 
 ### Map rendering and listing
 
-![Leipzig_Einkaufen_Map_List](https://github.com/sheub/vectortiles/blob/master/media/Leipzig_Einkaufen_Map_List.png)The map tiles are served with tileserver-php, the rendering is done using mapboxgl.js library. The listing and filtering features have been implemented using the following examples from mapbox:
+![Leipzig_Einkaufen_Map_List](https://github.com/sheub/vectortiles/blob/master/media/Leipzig_Einkaufen_Map_List.png)The map tiles are served with tileserver-php, the rendering is done using mapboxgl.js library. The Routing is done using the pluggin *MapboxDirections* and the filtering allong the Route is done with Turf.js. The listing and filtering features have been implemented using the following examples from mapbox:
 
 
 
