@@ -262,7 +262,7 @@ buildLocationList(stores2["features"]);
 
 map.on("load", function(e) {
 
-  map.loadImage("http://localhost/vectortiles/media/diagonal-noise.png", function(error, image) {
+  map.loadImage("https://leipzig-einkaufen.de/media/diagonal-noise.png", function(error, image) {
 
     if (error) throw error;
     map.addImage("background_pattern", image);
