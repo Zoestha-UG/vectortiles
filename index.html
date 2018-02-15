@@ -22,8 +22,10 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- Meta -->
   <meta name="description" content="Schöne Einkaufsmöglichkeiten in Leipzig. Kaufe gute Produkte, nachhaltig, wertvoll, ethisch-sozial, bio.">
-  <meta name="author" content="Sébastien Barré">
-  <meta name="keywords" content="Lokal,Leipzig,einkaufen,geschenk,Einzelhändler,handwerk,wertvoll,regional,anständig,stolz,mutig,nützlich,ethisch-sozial,politischen konsum,nachhaltig,umwelt,online shop,eco online shop,fair trade shop,umweltfreundlich,nachhaltige produkte,wertvolle produkte,haltbar">
+  <meta name="keywords" content="Lokal,Leipzig,einkaufen,geschenk,Einzelhändler,handwerk,wertvoll,regional,nützlich,ethisch-sozial,politischen konsum,nachhaltig,umwelt,online shop,eco online shop,fair trade shop,umweltfreundlich,nachhaltige produkte,wertvolle produkte,haltbar">
+  <meta name="geo.region" content="DE-SN" />
+  <meta name="geo.placename" content="Leipzig, Deutschland" />
+
 
   <meta name="theme-color" content="#0047ab">
   <link rel="icon" type="image/png" href='favicon-32x32.png'>
@@ -203,50 +205,58 @@
     </script>
     <!-- dropdown categories -->
     <div id="Laeden_Kategorien" class="row my-4">
-      <div id='feature-filter' class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <strong>Auswahl Filtern</strong>
-                </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <button class="dropdown-item" data-href="#"><strong>Alle</strong></button>
-          <button class="dropdown-item" data-href="#"><strong>Cafe</strong></button>
-          <button class="dropdown-item" data-href="#"><strong>Feinkost</strong></button>
-          <button class="dropdown-item" data-href="#"><strong>Handwerk/Design</strong></button>
-          <button class="dropdown-item" data-href="#"><strong>Lebensmittel</strong></button>
-          <button class="dropdown-item" data-href="#"><strong>Geschenke</strong></button>
-          <button class="dropdown-item" data-href="#"><strong>Regional</strong></button>
-        </div>
+      <!-- display control buttons -->
+      <div id='Navigationssteuerelemente' class="col">
+        <strong>Navigation einschalten </strong>
+        <button id="btnDisplayControls" type="button" class="btn btn-xs btn-toggle" data-toggle="button" aria-pressed="true" autocomplete="off">
+            <div class="handle"></div>
+          </button>
       </div>
-      <input type="text" name="txtCategories" id="txtCategories">
+
+      <div class="col">
+        <div id='feature-filter' class="dropdown">
+          <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <strong>Auswahl Filtern</strong>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item" data-href="#"><strong>Alle</strong></button>
+            <button class="dropdown-item" data-href="#"><strong>Cafe</strong></button>
+            <button class="dropdown-item" data-href="#"><strong>Feinkost</strong></button>
+            <button class="dropdown-item" data-href="#"><strong>Handwerk/Design</strong></button>
+            <button class="dropdown-item" data-href="#"><strong>Lebensmittel</strong></button>
+            <button class="dropdown-item" data-href="#"><strong>Geschenke</strong></button>
+            <button class="dropdown-item" data-href="#"><strong>Regional</strong></button>
+          </div>
+        </div>
+        <input id="txtCategories" type="text" name="txtCategories">
+      </div>
     </div>
 
     <!-- map and store listing -->
     <div class="row my-4">
       <!-- map with stores -->
-
       <div class="col-lg-6">
         <div class="row" style="margin:0">
           <div id='map' class='map pad2'></div>
         </div>
         <!-- display control buttons -->
-        <div class="row my-4" style="margin:0">
+        <!--div class="row my-4" style="margin:0">
           <div class="col-lg-6">Navigationssteuerelemente
-          <div class="col-sm-5">
-            <button id="btnDisplayControls" type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+            <div class="col-sm-5">
+              <button id="btnDisplayControls" type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
               <div class="handle"></div>
             </button>
+            </div>
           </div>
         </div>
-        </div>
-        <!-- Filter location on route button -->
-          <div class="col-lg-6">
-             <div class="col-sm-5">
+        <div class="col-lg-6">
+          <div class="col-sm-5">
             <button id="btnFilterOnRoute" type="button" class="btn btn-outline-primary">Filter locations</button>
             <!--button id="btnFilterOnRoute" type="button" class="btn btn-xs btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
               <div class="handle"></div>
             </button-->
-          </div>
-        </div>
+        <!--/div>
+        </div-->
 
       </div>
       <!-- list of stores -->

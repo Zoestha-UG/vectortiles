@@ -109,6 +109,10 @@ map.addControl(new mapboxgl.ScaleControl({
   unit: 'metric'
 }));
 
+var directionControl = document.getElementsByClassName("mapboxgl-ctrl-directions");
+directionControl["0"].hidden = true;
+
+
 // Create a popup (but don't add it to the map yet)
 var popup = new mapboxgl.Popup({
   closeButton: false
@@ -119,7 +123,7 @@ var listings = document.getElementById("listings");
 var txtCategories = document.getElementById("txtCategories");
 
 // Empty marker array
-var mapMarkers = [];
+//var mapMarkers = [];
 // Empty Geojson Data
 var bufferedLinestring = {
   "id": "0",
@@ -419,9 +423,9 @@ map.on("load", function(e) {
       })));
 
 
-      mapMarkers.forEach(function(marker) {
+/*      mapMarkers.forEach(function(marker) {
         marker.remove();
-      });
+      });*/
 
       txtCategories.value = value;
 
@@ -447,12 +451,10 @@ map.on("load", function(e) {
         return feature.properties.name;
       })));
 
-
-      mapMarkers.forEach(function(marker) {
+/*      mapMarkers.forEach(function(marker) {
         marker.remove();
-      });
+      });*/
 
     });
-
   });
 });

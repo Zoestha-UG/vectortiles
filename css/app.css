@@ -173,13 +173,11 @@ active, .show>.btn-secondary.dropdown-toggle {
   background-color: #6991C9;
 }
 
+#feature-filter,
 #feature-filter>div>button {
   color: white;
-  /*    padding-bottom: 0.1rem;
-    padding-top: 0.1rem;
-    padding-left: 0.6rem;
-    padding-right: 1.7rem;*/
-  padding: 0.1rem 1.7rem 0.6rem;
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
 }
 
 #txtCategories {
@@ -187,7 +185,11 @@ active, .show>.btn-secondary.dropdown-toggle {
   cursor: default;
   border-width: 0;
 }
-
+#Navigationssteuerelemente{
+  text-transform:uppercase;
+  display: inline-block;
+  padding: 0.475rem 0.75rem;
+}
 .sidebar {
   width: 100%;
   float: left;
@@ -440,40 +442,45 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   max-width: 123px
 }
 
-
 /*Button*/
-
 
 .jumbotron {
   background: #6b7381;
   color: #bdc1c8;
 }
+
 .jumbotron h1 {
   color: #fff;
 }
+
 .example {
   margin: 4rem auto;
 }
-.example > .row {
+
+.example>.row {
   margin-top: 2rem;
   height: 5rem;
   vertical-align: middle;
   text-align: center;
   border: 1px solid rgba(189, 193, 200, 0.5);
 }
-.example > .row:first-of-type {
+
+.example>.row:first-of-type {
   border: none;
   height: auto;
   text-align: left;
 }
+
 .example h3 {
   font-weight: 400;
 }
-.example h3 > small {
+
+.example h3>small {
   font-weight: 200;
   font-size: 0.75em;
   color: #9299a4;
 }
+
 .example h6 {
   font-weight: 700;
   font-size: 0.65rem;
@@ -483,10 +490,12 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   margin: 0;
   line-height: 5rem;
 }
+
 .example .btn-toggle {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .btn-toggle {
   margin: 0 4rem;
   padding: 0;
@@ -498,14 +507,12 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   color: #6b7381;
   background: #bdc1c8;
 }
-.btn-toggle:focus,
-.btn-toggle.focus,
-.btn-toggle:focus.active,
-.btn-toggle.focus.active {
+
+.btn-toggle:focus, .btn-toggle.focus, .btn-toggle:focus.active, .btn-toggle.focus.active {
   outline: none;
 }
-.btn-toggle:before,
-.btn-toggle:after {
+
+.btn-toggle:before, .btn-toggle:after {
   line-height: 1.5rem;
   width: 4rem;
   text-align: center;
@@ -517,16 +524,19 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   bottom: 0;
   transition: opacity 0.25s;
 }
+
 .btn-toggle:before {
   content: "Off";
   left: -4rem;
 }
+
 .btn-toggle:after {
   content: "On";
   right: -4rem;
   opacity: 0.5;
 }
-.btn-toggle > .handle {
+
+.btn-toggle>.handle {
   position: absolute;
   top: 0.1875rem;
   left: 0.1875rem;
@@ -536,54 +546,65 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   background: #fff;
   transition: left 0.25s;
 }
+
 .btn-toggle.active {
   transition: background-color 0.25s;
 }
-.btn-toggle.active > .handle {
+
+.btn-toggle.active>.handle {
   left: 1.6875rem;
   transition: left 0.25s;
 }
+
 .btn-toggle.active:before {
   opacity: 0.5;
 }
+
 .btn-toggle.active:after {
   opacity: 1;
 }
-.btn-toggle.btn-sm:before,
-.btn-toggle.btn-sm:after {
+
+.btn-toggle.btn-sm:before, .btn-toggle.btn-sm:after {
   line-height: -0.5rem;
   color: #fff;
   letter-spacing: 0.75px;
   left: 0.4125rem;
   width: 2.325rem;
 }
+
 .btn-toggle.btn-sm:before {
   text-align: right;
 }
+
 .btn-toggle.btn-sm:after {
   text-align: left;
   opacity: 0;
 }
+
 .btn-toggle.btn-sm.active:before {
   opacity: 0;
 }
+
 .btn-toggle.btn-sm.active:after {
   opacity: 1;
 }
-.btn-toggle.btn-xs:before,
-.btn-toggle.btn-xs:after {
+
+.btn-toggle.btn-xs:before, .btn-toggle.btn-xs:after {
   display: none;
 }
-.btn-toggle:before,
-.btn-toggle:after {
+
+.btn-toggle:before, .btn-toggle:after {
   color: #6b7381;
 }
+
 .btn-toggle.active {
   background-color: #0047ab;
 }
-.btn-outline-primary{
+
+.btn-outline-primary {
   background-color: #0047ab;
 }
+
 .btn-toggle.btn-lg {
   margin: 0 5rem;
   padding: 0;
@@ -593,14 +614,12 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   width: 5rem;
   border-radius: 2.5rem;
 }
-.btn-toggle.btn-lg:focus,
-.btn-toggle.btn-lg.focus,
-.btn-toggle.btn-lg:focus.active,
-.btn-toggle.btn-lg.focus.active {
+
+.btn-toggle.btn-lg:focus, .btn-toggle.btn-lg.focus, .btn-toggle.btn-lg:focus.active, .btn-toggle.btn-lg.focus.active {
   outline: none;
 }
-.btn-toggle.btn-lg:before,
-.btn-toggle.btn-lg:after {
+
+.btn-toggle.btn-lg:before, .btn-toggle.btn-lg:after {
   line-height: 2.5rem;
   width: 5rem;
   text-align: center;
@@ -612,16 +631,19 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   bottom: 0;
   transition: opacity 0.25s;
 }
+
 .btn-toggle.btn-lg:before {
   content: "Off";
   left: -5rem;
 }
+
 .btn-toggle.btn-lg:after {
   content: "On";
   right: -5rem;
   opacity: 0.5;
 }
-.btn-toggle.btn-lg > .handle {
+
+.btn-toggle.btn-lg>.handle {
   position: absolute;
   top: 0.3125rem;
   left: 0.3125rem;
@@ -631,44 +653,53 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   background: #fff;
   transition: left 0.25s;
 }
+
 .btn-toggle.btn-lg.active {
   transition: background-color 0.25s;
 }
-.btn-toggle.btn-lg.active > .handle {
+
+.btn-toggle.btn-lg.active>.handle {
   left: 2.8125rem;
   transition: left 0.25s;
 }
+
 .btn-toggle.btn-lg.active:before {
   opacity: 0.5;
 }
+
 .btn-toggle.btn-lg.active:after {
   opacity: 1;
 }
-.btn-toggle.btn-lg.btn-sm:before,
-.btn-toggle.btn-lg.btn-sm:after {
+
+.btn-toggle.btn-lg.btn-sm:before, .btn-toggle.btn-lg.btn-sm:after {
   line-height: 0.5rem;
   color: #fff;
   letter-spacing: 0.75px;
   left: 0.6875rem;
   width: 3.875rem;
 }
+
 .btn-toggle.btn-lg.btn-sm:before {
   text-align: right;
 }
+
 .btn-toggle.btn-lg.btn-sm:after {
   text-align: left;
   opacity: 0;
 }
+
 .btn-toggle.btn-lg.btn-sm.active:before {
   opacity: 0;
 }
+
 .btn-toggle.btn-lg.btn-sm.active:after {
   opacity: 1;
 }
-.btn-toggle.btn-lg.btn-xs:before,
-.btn-toggle.btn-lg.btn-xs:after {
+
+.btn-toggle.btn-lg.btn-xs:before, .btn-toggle.btn-lg.btn-xs:after {
   display: none;
 }
+
 .btn-toggle.btn-sm {
   margin: 0 0.5rem;
   padding: 0;
@@ -678,14 +709,12 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   width: 3rem;
   border-radius: 1.5rem;
 }
-.btn-toggle.btn-sm:focus,
-.btn-toggle.btn-sm.focus,
-.btn-toggle.btn-sm:focus.active,
-.btn-toggle.btn-sm.focus.active {
+
+.btn-toggle.btn-sm:focus, .btn-toggle.btn-sm.focus, .btn-toggle.btn-sm:focus.active, .btn-toggle.btn-sm.focus.active {
   outline: none;
 }
-.btn-toggle.btn-sm:before,
-.btn-toggle.btn-sm:after {
+
+.btn-toggle.btn-sm:before, .btn-toggle.btn-sm:after {
   line-height: 1.5rem;
   width: 0.5rem;
   text-align: center;
@@ -697,16 +726,19 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   bottom: 0;
   transition: opacity 0.25s;
 }
+
 .btn-toggle.btn-sm:before {
   content: "Off";
   left: -0.5rem;
 }
+
 .btn-toggle.btn-sm:after {
   content: "On";
   right: -0.5rem;
   opacity: 0.5;
 }
-.btn-toggle.btn-sm > .handle {
+
+.btn-toggle.btn-sm>.handle {
   position: absolute;
   top: 0.1875rem;
   left: 0.1875rem;
@@ -716,44 +748,53 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   background: #fff;
   transition: left 0.25s;
 }
+
 .btn-toggle.btn-sm.active {
   transition: background-color 0.25s;
 }
-.btn-toggle.btn-sm.active > .handle {
+
+.btn-toggle.btn-sm.active>.handle {
   left: 1.6875rem;
   transition: left 0.25s;
 }
+
 .btn-toggle.btn-sm.active:before {
   opacity: 0.5;
 }
+
 .btn-toggle.btn-sm.active:after {
   opacity: 1;
 }
-.btn-toggle.btn-sm.btn-sm:before,
-.btn-toggle.btn-sm.btn-sm:after {
+
+.btn-toggle.btn-sm.btn-sm:before, .btn-toggle.btn-sm.btn-sm:after {
   line-height: -0.5rem;
   color: #fff;
   letter-spacing: 0.75px;
   left: 0.4125rem;
   width: 2.325rem;
 }
+
 .btn-toggle.btn-sm.btn-sm:before {
   text-align: right;
 }
+
 .btn-toggle.btn-sm.btn-sm:after {
   text-align: left;
   opacity: 0;
 }
+
 .btn-toggle.btn-sm.btn-sm.active:before {
   opacity: 0;
 }
+
 .btn-toggle.btn-sm.btn-sm.active:after {
   opacity: 1;
 }
-.btn-toggle.btn-sm.btn-xs:before,
-.btn-toggle.btn-sm.btn-xs:after {
+
+.btn-toggle.btn-sm.btn-xs:before, .btn-toggle.btn-sm.btn-xs:after {
   display: none;
 }
+
 .btn-toggle.btn-xs {
   margin: 0 0;
   padding: 0;
@@ -763,14 +804,12 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   width: 2rem;
   border-radius: 1rem;
 }
-.btn-toggle.btn-xs:focus,
-.btn-toggle.btn-xs.focus,
-.btn-toggle.btn-xs:focus.active,
-.btn-toggle.btn-xs.focus.active {
+
+.btn-toggle.btn-xs:focus, .btn-toggle.btn-xs.focus, .btn-toggle.btn-xs:focus.active, .btn-toggle.btn-xs.focus.active {
   outline: none;
 }
-.btn-toggle.btn-xs:before,
-.btn-toggle.btn-xs:after {
+
+.btn-toggle.btn-xs:before, .btn-toggle.btn-xs:after {
   line-height: 1rem;
   width: 0;
   text-align: center;
@@ -782,16 +821,19 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   bottom: 0;
   transition: opacity 0.25s;
 }
+
 .btn-toggle.btn-xs:before {
   content: "Off";
   left: 0;
 }
+
 .btn-toggle.btn-xs:after {
   content: "On";
   right: 0;
   opacity: 0.5;
 }
-.btn-toggle.btn-xs > .handle {
+
+.btn-toggle.btn-xs>.handle {
   position: absolute;
   top: 0.125rem;
   left: 0.125rem;
@@ -801,41 +843,49 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   background: #fff;
   transition: left 0.25s;
 }
+
 .btn-toggle.btn-xs.active {
   transition: background-color 0.25s;
 }
-.btn-toggle.btn-xs.active > .handle {
+
+.btn-toggle.btn-xs.active>.handle {
   left: 1.125rem;
   transition: left 0.25s;
 }
+
 .btn-toggle.btn-xs.active:before {
   opacity: 0.5;
 }
+
 .btn-toggle.btn-xs.active:after {
   opacity: 1;
 }
-.btn-toggle.btn-xs.btn-sm:before,
-.btn-toggle.btn-xs.btn-sm:after {
+
+.btn-toggle.btn-xs.btn-sm:before, .btn-toggle.btn-xs.btn-sm:after {
   line-height: -1rem;
   color: #fff;
   letter-spacing: 0.75px;
   left: 0.275rem;
   width: 1.55rem;
 }
+
 .btn-toggle.btn-xs.btn-sm:before {
   text-align: right;
 }
+
 .btn-toggle.btn-xs.btn-sm:after {
   text-align: left;
   opacity: 0;
 }
+
 .btn-toggle.btn-xs.btn-sm.active:before {
   opacity: 0;
 }
+
 .btn-toggle.btn-xs.btn-sm.active:after {
   opacity: 1;
 }
-.btn-toggle.btn-xs.btn-xs:before,
-.btn-toggle.btn-xs.btn-xs:after {
+
+.btn-toggle.btn-xs.btn-xs:before, .btn-toggle.btn-xs.btn-xs:after {
   display: none;
 }
