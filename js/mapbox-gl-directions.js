@@ -6517,7 +6517,7 @@ var Inputs = function () {
 
       this.originInput = new _geocoder2.default(Object.assign({}, {
         flyTo: false,
-        placeholder: 'Choose a starting place',
+        placeholder: 'Startort',
         accessToken: accessToken
       }, geocoder));
 
@@ -6527,7 +6527,7 @@ var Inputs = function () {
 
       this.destinationInput = new _geocoder2.default(Object.assign({}, {
         flyTo: false,
-        placeholder: 'Choose destination',
+        placeholder: 'Zielort',
         accessToken: accessToken
       }, geocoder));
 
@@ -6642,6 +6642,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  // substack/brfs#39
 var instructionsTemplate = (0, _lodash2.default)("<div class='directions-control directions-control-directions'>\n  <div class='mapbox-directions-component mapbox-directions-route-summary<% if (routes > 1) { %> mapbox-directions-multiple<% } %>'>\n    <% if (routes > 1) { %>\n    <div class='mapbox-directions-routes mapbox-directions-clearfix'>\n      <% for (var i = 0; i < routes; i++) { %>\n        <input type='radio' name='routes' id='<%= i %>' <% if (i === routeIndex) { %>checked<% } %>>\n        <label for='<%= i %>' class='mapbox-directions-route'><%= i + 1 %></label>\n      <% } %>\n    </div>\n    <% } %>\n    <h1><%- duration %></h1>\n    <span><%- distance %></span>\n  </div>\n\n  <div class='mapbox-directions-instructions'>\n    <div class='mapbox-directions-instructions-wrapper'>\n      <ol class='mapbox-directions-steps'>\n        <% steps.forEach(function(step) { %>\n          <%\n            var distance = step.distance ? format(step.distance) : false;\n            var icon = step.maneuver.modifier ? step.maneuver.modifier.replace(/\\s+/g, '-').toLowerCase() : step.maneuver.type.replace(/\\s+/g, '-').toLowerCase();\n\n            if (step.maneuver.type === 'arrive' || step.maneuver.type === 'depart') {\n              icon = step.maneuver.type;\n            }\n\n            if (step.maneuver.type === 'roundabout' || step.maneuver.type === 'rotary') {\n              icon= 'roundabout';\n            }\n\n            var lng = step.maneuver.location[0];\n            var lat = step.maneuver.location[1];\n          %>\n          <li\n            data-lat='<%= lat %>'\n            data-lng='<%= lng %>'\n            class='mapbox-directions-step'>\n            <span class='directions-icon directions-icon-<%= icon %>'></span>\n            <div class='mapbox-directions-step-maneuver'>\n              <%= step.maneuver.instruction %>\n            </div>\n            <% if (distance) { %>\n              <div class='mapbox-directions-step-distance'>\n                <%= distance %>\n              </div>\n            <% } %>\n          </li>\n        <% }); %>\n      </ol>\n    </div>\n  </div>\n</div>\n");
 var errorTemplate = (0, _lodash2.default)("<div class='directions-control directions-control-directions'>\n  <div class='mapbox-directions-error'>\n    <%= error %>\n  </div>\n</div>\n");
+
 
 /**
  * Summary/Instructions controller
@@ -7299,6 +7300,35 @@ var MapboxDirections = function () {
     /**
      * Fetch all current waypoints in a route.
      * @returns {Array} waypoints
+     */
+
+  },{
+    key: 'getDistanceAndDuration',
+    value: function getDistanceAndDuration() {
+      var _store$getState8 = store.getState();
+      if(_store$getState8 === null){
+          return null;
+      }
+
+      var directions = _store$getState8.directions;
+      var routeIndex = _store$getState8.routeIndex;
+      var unit = _store$getState8.unit;
+
+      if(directions[routeIndex] === null){
+        return null;
+      }
+
+
+      var duration = _utils2.default.format.duration(directions[routeIndex].duration);
+      var distance = _utils2.default.format[unit](directions[routeIndex].distance);
+
+      return {duration, distance};
+    }
+
+    /**
+     * Removes all routes and waypoints from the map.
+     *
+     * @returns {MapboxDirections} this;
      */
 
   }, {

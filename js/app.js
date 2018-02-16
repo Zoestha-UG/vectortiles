@@ -8,55 +8,7 @@ $(window).on("scroll", function(event) {
   }
 });
 
-$('#btnDisplayControls').on('click', function(e) {
 
-  var directionControl = document.getElementsByClassName("mapboxgl-ctrl-directions");
-  if (directionControl["0"].hidden)
-    directionControl["0"].hidden = false;
-  else {
-    directionControl["0"].hidden = true;
-  }
-})
-
-$('#btnFilterOnRoute').on('click', function(e) {
-
-  //var destWayPoints = mapDirections.getWaypoints();
-  var mapDirectionsSource = map.getSource("directions");
-  var radius = 0.6;
-  var unit = 'kilometers';
-  //var pointDeparture = mapDirectionsSource._data.features[0];
-  //var pointDestination = mapDirectionsSource._data.features[1];
-
-  // LineString
-  //var bufferInput = mapDirectionsSource._data.features[2].geometry;
-
-  // buffer the route with a area of radius 'radius'
-  if (mapDirectionsSource._data.features.length < 2) {
-    return 0;
-  }
-  var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
-    units: unit
-  });
-
-  var features = map.queryRenderedFeatures({
-    layers: ["locations"]
-  });
-
-  // use featureCollection to convert (features (array of features)) into a collection of features (Object type FeatureCollection);
-  var collection = turf.featureCollection(features);
-
-  // Filter the points to the area around the direction
-  var ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
-
-  // Populate features for the listing overlay.
-  if (ptsWithin) {
-    buildLocationList(ptsWithin["features"]);
-  }
-
-  // update bufferedTraceSource
-  map.getSource('bufferedTraceSource').setData(bufferedLinestring);
-
-})
 
 /*Load location (stores2)*/
 var stores2 = (function() {
@@ -82,7 +34,7 @@ var map = new mapboxgl.Map({
 
   center: [12.3722, 51.3272],
   zoom: 11,
-  attributionControl: false,
+  attributionControl: true,
   hash: false,
   maxZoom: 14.9
 });
@@ -95,6 +47,7 @@ mapDirections.accessToken = "pk.eyJ1Ijoic2hldWIiLCJhIjoiWGtobTNPNCJ9.v2JwlNSGBm_
 mapDirections.unit = "metric";
 mapDirections.proximity = false; /*proximity ??*/
 mapDirections.interactive = false;
+mapDirections.profile = "driving"; //, "walking", "cycling";
 // UI controls
 mapDirections.controls = {
   inputs: true,
@@ -111,7 +64,6 @@ map.addControl(new mapboxgl.ScaleControl({
 
 var directionControl = document.getElementsByClassName("mapboxgl-ctrl-directions");
 directionControl["0"].hidden = true;
-
 
 // Create a popup (but don't add it to the map yet)
 var popup = new mapboxgl.Popup({
@@ -135,6 +87,7 @@ var bufferedLinestring = {
   "properties": {}
 };
 
+// Functions
 
 function normalize(string) {
   return string.trim().toLowerCase();
@@ -173,10 +126,11 @@ function buildLocationList(data) {
   listings.innerHTML = "";
   if (data.length) {
     data.forEach(function(feature) {
+
       // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
       var prop = feature.properties;
-      // Select the listing container in the HTML and append a div  with the class 'item' for each store
 
+      // Select the listing container in the HTML and append a div  with the class 'item' for each store
       var card = listings.appendChild(document.createElement("div"));
       card.className = "item card";
       card.id = prop.id;
@@ -187,7 +141,6 @@ function buildLocationList(data) {
 
       card_header.setAttribute("id", "heading" + card.id);
       card_header.id = "heading" + card.id;
-
 
       var card_mb0 = card_header.appendChild(document.createElement("h5"));
       card_mb0.className = "mb-0";
@@ -220,7 +173,7 @@ function buildLocationList(data) {
       var card_body = card_collapse.appendChild(document.createElement("div"));
       card_body.className = "card-body";
       card_body.innerHTML = prop.description;
-      card_body.innerHTML += "</br><a href='" + prop.url + "' target='_blank' />" + prop.url + "</a>";
+      card_body.innerHTML += "</br><a href = '" + prop.url + "' target = '_blank' title = '" + prop.name + "' />" + prop.url + "</a>";
 
       // Add an event listener for the links in the sidebar listing
       link.addEventListener("click", function(e) {
@@ -244,26 +197,91 @@ function buildLocationList(data) {
       });
 
     })
-    // Show the filter input
-    //filterEl.parentNode.style.display = 'block';
+
   } else {
     var empty = document.createElement("p");
     empty.textContent = "Ziehen Sie die Karte, um die Ergebnisse zu füllen";
     listings.appendChild(empty);
-
-    // Hide the filter input
-    //filterEl.parentNode.style.display = 'none';
 
     // remove features filter
     map.setFilter("locations", ["has", "Categories"]);
   }
 }
 
+function displayDirectionControls() {
 
-// Call this function on initialization
-// passing an empty array to render an empty state
+  var directionControl = document.getElementsByClassName("mapboxgl-ctrl-directions");
+  if (directionControl["0"].hidden) {
+    directionControl["0"].hidden = false;
+    map.setLayoutProperty('bufferedTraceLayer', 'visibility', 'visible');
+
+    map.setLayoutProperty('directions-origin-point', 'visibility', 'visible');
+    map.setLayoutProperty('directions-destination-point', 'visibility', 'visible');
+    map.setLayoutProperty('directions-origin-label', 'visibility', 'visible');
+    map.setLayoutProperty('directions-destination-label', 'visibility', 'visible');
+
+    map.setLayoutProperty('directions-hover-point', 'visibility', 'visible');
+    map.setLayoutProperty('directions-waypoint-point', 'visibility', 'visible');
+    map.setLayoutProperty('directions-route-line', 'visibility', 'visible');
+    map.setLayoutProperty('directions-route-line-alt', 'visibility', 'visible');
+  } else {
+    directionControl["0"].hidden = true;
+
+    map.setLayoutProperty('bufferedTraceLayer', 'visibility', 'none');
+    map.setLayoutProperty('directions-origin-point', 'visibility', 'none');
+    map.setLayoutProperty('directions-destination-point', 'visibility', 'none');
+    map.setLayoutProperty('directions-origin-label', 'visibility', 'none');
+    map.setLayoutProperty('directions-destination-label', 'visibility', 'none');
+
+    map.setLayoutProperty('directions-hover-point', 'visibility', 'none');
+    map.setLayoutProperty('directions-waypoint-point', 'visibility', 'none');
+    map.setLayoutProperty('directions-route-line', 'visibility', 'none');
+    map.setLayoutProperty('directions-route-line-alt', 'visibility', 'none');
+  }
+}
+
+function filterOnRoute() {
+
+  var mapDirectionsSource = map.getSource("directions");
+  var radius = 0.6;
+  var unit = 'kilometers';
+
+
+  var distDuration = mapDirections.getDistanceAndDuration();
+
+  // buffer the route with a area of radius 'radius'
+  if (mapDirectionsSource._data.features.length < 2) {
+    return 0;
+  }
+  var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
+    units: unit
+  });
+
+  // update bufferedTraceSource
+  map.getSource('bufferedTraceSource').setData(bufferedLinestring);
+
+  // Get locations rendered on the map
+  var features = map.queryRenderedFeatures({
+    layers: ["locations"]
+  });
+
+  // use featureCollection to convert features (array of features) into a collection of features (Object type FeatureCollection);
+  var collection = turf.featureCollection(features);
+
+  // Filter the points to the area around the direction
+  var ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
+
+  // Populate features for the listing overlay.
+  if (ptsWithin) {
+    buildLocationList(ptsWithin["features"]);
+  }
+
+}
+
+// Call buildlist function on initialization
 buildLocationList(stores2["features"]);
 
+// Load map
 map.on("load", function(e) {
 
   map.loadImage("https://leipzig-einkaufen.de/media/diagonal-noise.png", function(error, image) {
@@ -423,9 +441,9 @@ map.on("load", function(e) {
       })));
 
 
-/*      mapMarkers.forEach(function(marker) {
-        marker.remove();
-      });*/
+      /*      mapMarkers.forEach(function(marker) {
+              marker.remove();
+            });*/
 
       txtCategories.value = value;
 
@@ -451,10 +469,23 @@ map.on("load", function(e) {
         return feature.properties.name;
       })));
 
-/*      mapMarkers.forEach(function(marker) {
-        marker.remove();
-      });*/
+      /*      mapMarkers.forEach(function(marker) {
+              marker.remove();
+            });*/
 
     });
   });
 });
+
+// Direction event Listener
+mapDirections.on('route', function(e) {
+  filterOnRoute();
+});
+
+$('#btnDisplayControls').on('click', function(e) {
+  displayDirectionControls();
+})
+
+$('#btnFilterOnRoute').on('click', function(e) {
+  filterOnRoute();
+})

@@ -177,13 +177,14 @@ active, .show>.btn-secondary.dropdown-toggle {
 #feature-filter>div>button {
   color: white;
   display: inline-block;
-  padding: 0.1rem 0.6rem;
+  /*padding: 0.1rem 0.6rem;*/
 }
 
 #txtCategories {
   text-transform: capitalize;
   cursor: default;
   border-width: 0;
+  padding: 0.1rem 0.75rem;
 }
 #Navigationssteuerelemente{
   text-transform:uppercase;
@@ -797,6 +798,7 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
 
 .btn-toggle.btn-xs {
   margin: 0 0;
+  margin-bottom: 4px;
   padding: 0;
   position: relative;
   border: none;
