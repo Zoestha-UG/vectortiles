@@ -59,7 +59,7 @@ map.addControl(new MapboxDirections(mapDirections), "top-left");
 
 map.addControl(new mapboxgl.ScaleControl({
   maxWidth: 80,
-  unit: 'metric'
+  unit: "metric"
 }));
 
 var directionControl = document.getElementsByClassName("mapboxgl-ctrl-directions");
@@ -136,18 +136,18 @@ function buildLocationList(data) {
       card.className = "item card";
       card.id = prop.id;
 
-      var card_header = card.appendChild(document.createElement("div"));
-      card_header.className = "card-header";
-      card_header.setAttribute("role", "tab");
+      var cardHeader = card.appendChild(document.createElement("div"));
+      cardHeader.className = "card-header";
+      cardHeader.setAttribute("role", "tab");
 
-      card_header.setAttribute("id", "heading" + card.id);
-      card_header.id = "heading" + card.id;
+      cardHeader.setAttribute("id", "heading" + card.id);
+      cardHeader.id = "heading" + card.id;
 
-      var card_mb0 = card_header.appendChild(document.createElement("h5"));
-      card_mb0.className = "mb-0";
+      var cardMb0 = cardHeader.appendChild(document.createElement("h5"));
+      cardMb0.className = "mb-0";
 
       // Create a new link with the class 'title' for each store and fill it with the store address
-      var link = card_mb0.appendChild(document.createElement("a"));
+      var link = cardMb0.appendChild(document.createElement("a"));
       link.setAttribute("data-toggle", "collapse");
       link.href = "#collapse" + card.id;
       link.setAttribute("aria-expanded", "false");
@@ -156,25 +156,25 @@ function buildLocationList(data) {
       link.innerHTML = prop.name;
       link.dataPosition = card.id;
 
-      var card_collapse = card.appendChild(document.createElement("div"));
-      card_collapse.className = "collapse";
-      card_collapse.setAttribute("id", "collapse" + card.id);
-      card_collapse.setAttribute("role", "tabpanel");
-      card_collapse.setAttribute("aria-labelledby", "heading" + card.id);
-      card_collapse.setAttribute("data-parent", "#listings");
+      var cardCollapse = card.appendChild(document.createElement("div"));
+      cardCollapse.className = "collapse";
+      cardCollapse.setAttribute("id", "collapse" + card.id);
+      cardCollapse.setAttribute("role", "tabpanel");
+      cardCollapse.setAttribute("aria-labelledby", "heading" + card.id);
+      cardCollapse.setAttribute("data-parent", "#listings");
 
       if (prop.image) {
-        var card_img = card_collapse.appendChild(document.createElement("img"));
-        card_img.className = "img-responsive img-listing";
-        card_img.src = prop.image;
-        card_img.alt = prop.name;
-        card_img.title = prop.name;
+        var cardImg = cardCollapse.appendChild(document.createElement("img"));
+        cardImg.className = "img-responsive img-listing";
+        cardImg.src = prop.image;
+        cardImg.alt = prop.name;
+        cardImg.title = prop.name;
       }
 
-      var card_body = card_collapse.appendChild(document.createElement("div"));
-      card_body.className = "card-body";
-      card_body.innerHTML = prop.description;
-      card_body.innerHTML += "</br><a href = '" + prop.url + "' target = '_blank' title = '" + prop.name + "' />" + prop.url + "</a>";
+      var cardBody = cardCollapse.appendChild(document.createElement("div"));
+      cardBody.className = "card-body";
+      cardBody.innerHTML = prop.description;
+      cardBody.innerHTML += "</br><a href = '" + prop.url + "' target = '_blank' title = '" + prop.name + "' />" + prop.url + "</a>";
 
       // Add an event listener for the links in the sidebar listing
       link.addEventListener("click", function(e) {
@@ -197,7 +197,7 @@ function buildLocationList(data) {
 
       });
 
-    })
+    });
 
   } else {
     var empty = document.createElement("p");
@@ -460,8 +460,10 @@ map.on("load", function(e) {
           return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
         });
       }
-      if (!filtered)
+      if (!filtered){
         return;
+      }
+
 
       var uniqueFeatures = getUniqueFeatures(filtered, "Categories");
       // Populate the sidebar with filtered results
@@ -493,7 +495,7 @@ map.on("load", function(e) {
       buildLocationList(filtered);
 
       // Set the filter to populate features into the layer.
-      map.setFilter('locations', ['in', 'name'].concat(filtered.map(function(feature) {
+      map.setFilter("locations", ["in", "name"].concat(filtered.map(function(feature) {
         return feature.properties.name;
       })));
 
