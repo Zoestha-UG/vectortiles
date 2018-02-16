@@ -167,6 +167,7 @@ active, .show>.btn-secondary.dropdown-toggle {
 .dropdown-menu.show {
   background-color: #0047ab;
   color: white;
+  margin-top: 3px;
 }
 
 .dropdown-item:hover {

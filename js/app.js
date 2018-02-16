@@ -64,6 +64,7 @@ map.addControl(new mapboxgl.ScaleControl({
 
 var directionControl = document.getElementsByClassName("mapboxgl-ctrl-directions");
 directionControl["0"].hidden = true;
+var ptsWithin = null;
 
 // Create a popup (but don't add it to the map yet)
 var popup = new mapboxgl.Popup({
@@ -206,6 +207,69 @@ function buildLocationList(data) {
     // remove features filter
     map.setFilter("locations", ["has", "Categories"]);
   }
+
+
+  // Populate features for the listing overlay.
+  if (ptsWithin) {
+    colorLocationList(ptsWithin["features"]);
+  }
+}
+
+function colorLocationList(data) {
+  // Iterate through the list of stores
+  // WITHIN THE CALCULATED ROUTE !! and color in green
+
+  if (data.length) {
+    data.forEach(function(feature) {
+
+      // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
+      var prop = feature.properties;
+      var cardHeader = document.getElementById("heading" + prop.id);
+      if (cardHeader === null) {
+        return;
+      }
+
+      var cardTitle = cardHeader.getElementsByClassName("title");
+      cardTitle[0].style.color = "green";
+
+    })
+  }
+}
+
+function filterOnRoute() {
+
+  var mapDirectionsSource = map.getSource("directions");
+  var radius = 0.6;
+  var unit = 'kilometers';
+
+  var distDuration = mapDirections.getDistanceAndDuration();
+
+  // buffer the route with a area of radius 'radius'
+  if (mapDirectionsSource._data.features.length < 2) {
+    return;
+  }
+  var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
+    units: unit
+  });
+
+  // update bufferedTraceSource
+  map.getSource('bufferedTraceSource').setData(bufferedLinestring);
+
+  // Get locations rendered on the map
+  var features = map.queryRenderedFeatures({
+    layers: ["locations"]
+  });
+
+  // use featureCollection to convert features (array of features) into a collection of features (Object type FeatureCollection);
+  var collection = turf.featureCollection(features);
+
+  // Filter the points to the area around the direction
+  ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
+
+  // Populate features for the listing overlay.
+  if (ptsWithin) {
+    buildLocationList(features);
+  }
 }
 
 function displayDirectionControls() {
@@ -224,8 +288,11 @@ function displayDirectionControls() {
     map.setLayoutProperty('directions-waypoint-point', 'visibility', 'visible');
     map.setLayoutProperty('directions-route-line', 'visibility', 'visible');
     map.setLayoutProperty('directions-route-line-alt', 'visibility', 'visible');
+    filterOnRoute();
   } else {
     directionControl["0"].hidden = true;
+    // reinitialize ptsWithin
+    ptsWithin = null;
 
     map.setLayoutProperty('bufferedTraceLayer', 'visibility', 'none');
     map.setLayoutProperty('directions-origin-point', 'visibility', 'none');
@@ -237,46 +304,18 @@ function displayDirectionControls() {
     map.setLayoutProperty('directions-waypoint-point', 'visibility', 'none');
     map.setLayoutProperty('directions-route-line', 'visibility', 'none');
     map.setLayoutProperty('directions-route-line-alt', 'visibility', 'none');
+
+    var features = map.queryRenderedFeatures({
+      layers: ["locations"]
+    });
+
+    if (features) {
+      // Populate features for the listing overlay.
+      buildLocationList(features);
+    }
   }
 }
 
-function filterOnRoute() {
-
-  var mapDirectionsSource = map.getSource("directions");
-  var radius = 0.6;
-  var unit = 'kilometers';
-
-
-  var distDuration = mapDirections.getDistanceAndDuration();
-
-  // buffer the route with a area of radius 'radius'
-  if (mapDirectionsSource._data.features.length < 2) {
-    return 0;
-  }
-  var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
-    units: unit
-  });
-
-  // update bufferedTraceSource
-  map.getSource('bufferedTraceSource').setData(bufferedLinestring);
-
-  // Get locations rendered on the map
-  var features = map.queryRenderedFeatures({
-    layers: ["locations"]
-  });
-
-  // use featureCollection to convert features (array of features) into a collection of features (Object type FeatureCollection);
-  var collection = turf.featureCollection(features);
-
-  // Filter the points to the area around the direction
-  var ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
-
-  // Populate features for the listing overlay.
-  if (ptsWithin) {
-    buildLocationList(ptsWithin["features"]);
-  }
-
-}
 
 // Call buildlist function on initialization
 buildLocationList(stores2["features"]);
@@ -339,7 +378,6 @@ map.on("load", function(e) {
         "fill-pattern": "background_pattern"
       }
 
-
     });
 
     // Add Fullscreen control to the map.
@@ -385,17 +423,16 @@ map.on("load", function(e) {
 
       if (features) {
 
-        var uniqueFeatures = getUniqueFeatures(features, "Categories");
+        //var uniqueFeatures = getUniqueFeatures(features, "Categories");
 
         // Populate features for the listing overlay.
-        buildLocationList(uniqueFeatures);
+        buildLocationList(features);
 
         // Clear the input container
         filterEl.value = "";
 
-        // Store the current features in sn `locations_on_map` variable to
-        // later use for filtering on `keyup`.
-        locations = uniqueFeatures;
+        // Store the current features in sn `locations_on_map` variable to later use for filtering on `keyup`.
+        locations = features;
       }
     });
 
@@ -403,11 +440,6 @@ map.on("load", function(e) {
       // Change the cursor style as a UI indicator.
       map.getCanvas().style.cursor = "pointer";
 
-      // // Populate the popup and set its coordinates based on the feature.
-      // var feature = e.features[0];
-      // popup.setLngLat(feature.geometry.coordinates)
-      //   .setText(feature.properties.name + ' (' + feature.properties.abbrev + ')')
-      //   .addTo(map);
     });
 
     map.on("mouseleave", "locations", function() {
@@ -441,10 +473,6 @@ map.on("load", function(e) {
       })));
 
 
-      /*      mapMarkers.forEach(function(marker) {
-              marker.remove();
-            });*/
-
       txtCategories.value = value;
 
     });
@@ -469,23 +497,16 @@ map.on("load", function(e) {
         return feature.properties.name;
       })));
 
-      /*      mapMarkers.forEach(function(marker) {
-              marker.remove();
-            });*/
-
     });
   });
 });
 
-// Direction event Listener
+// Direction event listener
 mapDirections.on('route', function(e) {
   filterOnRoute();
 });
 
+// Display Direction
 $('#btnDisplayControls').on('click', function(e) {
   displayDirectionControls();
-})
-
-$('#btnFilterOnRoute').on('click', function(e) {
-  filterOnRoute();
 })
