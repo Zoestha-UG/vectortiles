@@ -41,6 +41,7 @@ body>div>div.container-fluid.top-header>div.col-sm-8>h1 {
 }
 
 .affix {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 9999 !important;
@@ -137,17 +138,20 @@ div.nav-link, a.nav-link {
 
 active, .show>.btn-secondary.dropdown-toggle {
   border-style: none !important;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .show>.btn-secondary.dropdown-toggle {
   border-style: none !important;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .btn-secondary.focus, .btn-secondary:focus {
   border-style: none !important;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 #dropdownMenuButton {
@@ -218,7 +222,6 @@ active, .show>.btn-secondary.dropdown-toggle {
 
 .pad2 {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -419,7 +422,6 @@ div.mapboxgl-popup-content>h4 {
   padding-left: 15px;
   -webkit-column-count: 2;
   /* Chrome, Safari, Opera */
-  -moz-column-count: 2;
   /* Firefox */
   column-count: 2;
   display: block;
@@ -495,7 +497,9 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
 
 .example .btn-toggle {
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .btn-toggle {
@@ -524,6 +528,8 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   letter-spacing: 2px;
   position: absolute;
   bottom: 0;
+  -webkit-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 
@@ -546,15 +552,21 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   height: 1.125rem;
   border-radius: 1.125rem;
   background: #fff;
+  -webkit-transition: left 0.25s;
+  -o-transition: left 0.25s;
   transition: left 0.25s;
 }
 
 .btn-toggle.active {
+  -webkit-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
   transition: background-color 0.25s;
 }
 
 .btn-toggle.active>.handle {
   left: 1.6875rem;
+  -webkit-transition: left 0.25s;
+  -o-transition: left 0.25s;
   transition: left 0.25s;
 }
 
@@ -631,6 +643,8 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   letter-spacing: 2px;
   position: absolute;
   bottom: 0;
+  -webkit-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 
@@ -653,15 +667,21 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   height: 1.875rem;
   border-radius: 1.875rem;
   background: #fff;
+  -webkit-transition: left 0.25s;
+  -o-transition: left 0.25s;
   transition: left 0.25s;
 }
 
 .btn-toggle.btn-lg.active {
+  -webkit-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
   transition: background-color 0.25s;
 }
 
 .btn-toggle.btn-lg.active>.handle {
   left: 2.8125rem;
+  -webkit-transition: left 0.25s;
+  -o-transition: left 0.25s;
   transition: left 0.25s;
 }
 
@@ -726,6 +746,8 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   letter-spacing: 2px;
   position: absolute;
   bottom: 0;
+  -webkit-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 
@@ -748,15 +770,21 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   height: 1.125rem;
   border-radius: 1.125rem;
   background: #fff;
+  -webkit-transition: left 0.25s;
+  -o-transition: left 0.25s;
   transition: left 0.25s;
 }
 
 .btn-toggle.btn-sm.active {
+  -webkit-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
   transition: background-color 0.25s;
 }
 
 .btn-toggle.btn-sm.active>.handle {
   left: 1.6875rem;
+  -webkit-transition: left 0.25s;
+  -o-transition: left 0.25s;
   transition: left 0.25s;
 }
 
@@ -822,6 +850,8 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   letter-spacing: 2px;
   position: absolute;
   bottom: 0;
+  -webkit-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 
@@ -844,15 +874,21 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   height: 0.75rem;
   border-radius: 0.75rem;
   background: #fff;
+  -webkit-transition: left 0.25s;
+  -o-transition: left 0.25s;
   transition: left 0.25s;
 }
 
 .btn-toggle.btn-xs.active {
+  -webkit-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
   transition: background-color 0.25s;
 }
 
 .btn-toggle.btn-xs.active>.handle {
   left: 1.125rem;
+  -webkit-transition: left 0.25s;
+  -o-transition: left 0.25s;
   transition: left 0.25s;
 }
 
