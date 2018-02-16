@@ -7,13 +7,13 @@ It can be hosted on a standard Apache+PHP web hosting.
 
 ### Features
 
+- [x] Filter listing within the map view
+- [x] Filter listing along calculated route
 - [x] Self-hosted map tiles
-- [x] Route calculation with *MapboxDirections*
 - [x] Filter locations categories with dropdown box
 - [x] Interactive location listing
-- [x] Filter listing within the map view
-- [x] Filter listing along calculated route with turf *buffer* and *pointsWithinPolygon*
 - [x] Custom Markers
+- [x] Route calculation with *MapboxDirections*
 
 
 ### Map rendering and listing
