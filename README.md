@@ -18,7 +18,32 @@ It can be hosted on a standard Apache+PHP web hosting.
 
 ### Map rendering and listing
 
-![Leipzig_Einkaufen_Map_List](https://github.com/sheub/vectortiles/blob/master/media/Leipzig_Einkaufen_Map_List.png)The map tiles are served with tileserver-php, the rendering is done using mapboxgl.js library. The Routing is done using the pluggin *MapboxDirections* and the filtering allong the Route is done with Turf.js. The listing and filtering features have been implemented using the following examples from mapbox:
+![Leipzig_Einkaufen_Map_List](https://github.com/sheub/vectortiles/blob/master/media/Leipzig_Einkaufen_Map_List.png)The map tiles are served with tileserver-php, the rendering is done using mapboxgl.js library. 
+The pluggin *MapboxDirections* is used for the the navigation.  The filtering allong the Route is done with Turf.js:
+
+```javascript
+  // buffer the route with a area of radius 'radius'
+  var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
+    units: unit
+  });
+
+  // update bufferedTraceSource
+  map.getSource('bufferedTraceSource').setData(bufferedLinestring);
+
+  // Get locations rendered on the map
+  var features = map.queryRenderedFeatures({
+    layers: ["locations"]
+  });
+
+  // use featureCollection to convert features (array of features) into a collection of 
+  // features (Object type FeatureCollection);
+  var collection = turf.featureCollection(features);
+
+  // Filter the points to the area around the direction
+  ptsWithin = turf.pointsWithinPolygon(collection, bufferedLinestring);
+  ```
+  
+The category and within-map-view filters for the listing have been implemented using the excellent examples from mapbox:
 
 
 
@@ -29,14 +54,11 @@ https://www.mapbox.com/mapbox-gl-js/example/filter-markers/
 Filter the store list *within the map view*:
 
  https://www.mapbox.com/mapbox-gl-js/example/filter-features-within-map-view/
-
-Add *Custom Marker*: 
+ 
+ The custom marker have been added using the Add *Custom Marker* example.
 
 https://www.mapbox.com/mapbox-gl-js/example/add-image/
 
-Add *Fullscreen button*:
-
-https://www.mapbox.com/mapbox-gl-js/example/fullscreen/
 
 ### Installing
 
