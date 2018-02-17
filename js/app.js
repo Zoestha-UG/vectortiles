@@ -242,7 +242,7 @@ function filterOnRoute() {
   var radius = 0.6;
   var unit = 'kilometers';
 
-  var distDuration = mapDirections.getDistanceAndDuration();
+  //var distDuration = mapDirections.getDistanceAndDuration();
 
   // buffer the route with a area of radius 'radius'
   if (mapDirectionsSource._data.features.length < 2) {
@@ -479,7 +479,7 @@ map.on("load", function(e) {
 
     });
 
-    filterEl.addEventListener("keyup", function(e) {
+/*    filterEl.addEventListener("keyup", function(e) {
 
       var value = normalize(e.target.value);
 
@@ -499,7 +499,8 @@ map.on("load", function(e) {
         return feature.properties.name;
       })));
 
-    });
+    });*/
+
   });
 });
 
