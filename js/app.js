@@ -153,7 +153,7 @@ function buildLocationList(data) {
       link.setAttribute("aria-expanded", "false");
       link.setAttribute("aria-controls", "collapse" + card.id);
       link.className = "title";
-      link.innerHTML = prop.name;
+      link.textContent = prop.name;
       link.dataPosition = card.id;
 
       var cardCollapse = card.appendChild(document.createElement("div"));
@@ -173,8 +173,13 @@ function buildLocationList(data) {
 
       var cardBody = cardCollapse.appendChild(document.createElement("div"));
       cardBody.className = "card-body";
-      cardBody.innerHTML = prop.description;
-      cardBody.innerHTML += "</br><a href = '" + prop.url + "' target = '_blank' title = '" + prop.name + "' />" + prop.url + "</a>";
+      cardBody.textContent = prop.description;
+      cardBody.appendChild(document.createElement("br"));
+      var linkBody = cardBody.appendChild(document.createElement("a"));
+      linkBody.textContent = prop.url;
+      linkBody.href = prop.url;
+      linkBody.target = '_blank';
+      linkBody.title = prop.name;      
 
       // Add an event listener for the links in the sidebar listing
       link.addEventListener("click", function(e) {
