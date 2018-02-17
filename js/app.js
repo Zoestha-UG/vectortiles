@@ -460,7 +460,7 @@ map.on("load", function(e) {
           return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
         });
       }
-      if (!filtered){
+      if (!filtered) {
         return;
       }
 
@@ -479,27 +479,27 @@ map.on("load", function(e) {
 
     });
 
-/*    filterEl.addEventListener("keyup", function(e) {
+    /*    filterEl.addEventListener("keyup", function(e) {
 
-      var value = normalize(e.target.value);
+          var value = normalize(e.target.value);
 
-      // Filter visible features that don't match the input value.
-      var filtered = locations.filter(function(feature) {
+          // Filter visible features that don't match the input value.
+          var filtered = locations.filter(function(feature) {
 
-        var name = normalize(feature.properties.name);
-        var Categories = normalize(feature.properties.Categories);
-        return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
-      });
+            var name = normalize(feature.properties.name);
+            var Categories = normalize(feature.properties.Categories);
+            return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
+          });
 
-      // Populate the sidebar with filtered results
-      buildLocationList(filtered);
+          // Populate the sidebar with filtered results
+          buildLocationList(filtered);
 
-      // Set the filter to populate features into the layer.
-      map.setFilter("locations", ["in", "name"].concat(filtered.map(function(feature) {
-        return feature.properties.name;
-      })));
+          // Set the filter to populate features into the layer.
+          map.setFilter("locations", ["in", "name"].concat(filtered.map(function(feature) {
+            return feature.properties.name;
+          })));
 
-    });*/
+        });*/
 
   });
 });
