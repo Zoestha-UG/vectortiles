@@ -1,9 +1,9 @@
 body {
+  -webkit-font-smoothing: antialiased;
   font-family: 'Open Sans', 'Helvetica Neue', Sans-serif;
   /*font: 300 15px/20px 'Open Sans', 'Helvetica Neue', Sans-serif;*/
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
 }
 
 body>div>div.container-fluid.top-header {
@@ -23,9 +23,7 @@ body>div>div.container-fluid.top-header {
 
 body>div>div.container-fluid.top-header>div.col-sm-8 {
   font-style: italic;
-  padding-top: 41px;
-  padding-right: 56px;
-  padding-left: 54px;
+  padding: 41px 56px 0 54px;
 }
 
 body>div>div.container-fluid.top-header>div.col-sm-8>h1 {
@@ -37,6 +35,7 @@ body>div>div.container-fluid.top-header>div.col-sm-8>h1 {
     text-align: right;
     padding-right: 8px;
     padding-top: 14px;
+
   }
 }
 
@@ -89,26 +88,25 @@ div.nav-link, a.nav-link {
 }
 
 .img-leipzig-einkaufen {
-  position: relative;
   float: right;
   height: 24px;
   padding-right: 10px;
+  position: relative;
+
 }
 
 /*headings*/
 
 .headings {
+  background-color: #F1F1F1;
   background-image: url(../media/Headline_path.png);
   background-repeat: no-repeat;
-  background-color: #F1F1F1;
   font-style: italic;
+  margin: 0;
+  margin-bottom: 61px !important;
   padding: 24px;
-  padding-left: 48px;
-  padding-right: 15px;
   padding-left: 15px;
-  margin: 0px;
-  margin-bottom: 61px !important;
-  margin-bottom: 61px !important;
+  padding-right: 15px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -117,29 +115,28 @@ div.nav-link, a.nav-link {
   }
 }
 
-.headings>h2, .headings>h1 {
-  margin-left: 48px;
+.headings>.headingTitle {
+  color: #000000;
   font-size: 34px;
   font-weight: 300;
-  /*font-size: 36px;*/
-  color: #000000;
   letter-spacing: 0;
+  margin-left: 48px;
 }
 
 /*Dropdown categories*/
 
 #Laeden_Kategorien {
-  border-bottom-style: solid;
   border-bottom-color: black;
+  border-bottom-style: solid;
   border-bottom-width: thin;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 active, .show>.btn-secondary.dropdown-toggle {
+  box-shadow: none !important;
   border-style: none !important;
   -webkit-box-shadow: none !important;
-  box-shadow: none !important;
 }
 
 .show>.btn-secondary.dropdown-toggle {
@@ -155,17 +152,17 @@ active, .show>.btn-secondary.dropdown-toggle {
 }
 
 #dropdownMenuButton {
+  background-color: white;
+  border-radius: 0;
+  border-style: none;
   color: black;
   font-weight: 600;
   text-transform: uppercase;
-  background-color: white;
-  border-style: none;
-  border-radius: 0;
 }
 
 .dropdown-menu {
+  border-radius: 0;
   border-style: none;
-  border-radius: 0
 }
 
 .dropdown-menu.show {
@@ -181,7 +178,6 @@ active, .show>.btn-secondary.dropdown-toggle {
 #feature-filter, #feature-filter>div>button {
   color: white;
   display: inline-block;
-  /*padding: 0.1rem 0.6rem;*/
 }
 
 #txtCategories {
@@ -198,13 +194,12 @@ active, .show>.btn-secondary.dropdown-toggle {
 }
 
 .sidebar {
-  width: 100%;
   float: left;
   height: 100%;
-  top: 0;
-  left: 0;
+  width: 100%;
   overflow: hidden;
-  /*border-right: 1px solid rgba(0, 0, 0, 0.25);*/
+  left: 0;
+  top: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -215,10 +210,10 @@ active, .show>.btn-secondary.dropdown-toggle {
 
 #map {
   border-left: 1px solid #fff;
-  width: 100%;
   float: right;
   height: 567px;
   margin-bottom: 12px;
+  width: 100%;
 }
 
 .pad2 {
@@ -226,37 +221,24 @@ active, .show>.btn-secondary.dropdown-toggle {
   box-sizing: border-box;
 }
 
-/*.heading {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  height: 60px;
-  line-height: 60px;
-  padding: 0 10px;
-}*/
 
 .listings {
   height: 100%;
   overflow: auto;
-  padding-right: 18px;
   padding-bottom: 60px;
+  padding-right: 18px;
 }
 
-/*.sidebar>fieldset {
-  background: #ddd;
-  border: none;
-  padding: 10px;
-  margin: 0;
-}*/
 
 .listings .title {
-  display: block;
   color: black;
-  padding: 0;
   cursor: default;
-  font-weight: bold;
+  display: block;
   font-size: 20px;
+  font-weight: bold;
   letter-spacing: 0.5px;
   line-height: 20px;
+  padding: 0;
 }
 
 a.title.is-active,
@@ -267,15 +249,15 @@ a.title.is-active,
   color: #0047ab;
 }
 
-.card {
+.card.cardList {
   border: none;
   border-bottom: 2px solid black;
 }
 
 .card-header {
-  padding: 0.25rem 0.25rem;
   background-color: white;
   border-bottom: none;
+  padding: 0.25rem 0.25rem;
 }
 
 .listings .card-header .title {
@@ -292,8 +274,7 @@ a.title.is-active,
 }
 
 .listings .card-body {
-  font-size: 14px;
-  font-family: 'PT Serif', serif;
+  font: 14px 'PT Serif', serif;
   font-style: italic;
   padding-left: 4px;
   padding-top: 4px;
@@ -308,14 +289,15 @@ a.title.is-active,
   float: left;
   max-width: 175px;
   padding: 12px;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-  border-left: 0;
+  background: #000;
   background: rgba(0, 0, 0, 0.1);
+  border-left: 0;
+  height: 3px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -332,58 +314,44 @@ a.title.is-active,
 }
 
 .clearfix::after {
+  clear: both;
   content: '.';
   display: block;
   height: 0;
-  clear: both;
   visibility: hidden;
 }
 
 /* Marker tweaks */
 
 .mapboxgl-popup-content {
-  padding: 0;
-  width: 180px;
-  border-radius: 0px !important;
+  border-radius: 0 !important;
   padding: 10px 10px 5px !important;
-  /*text-align: center;*/
+  width: 180px;
 }
 
 div.mapboxgl-popup-content>h3 {
-  font-size: 14px;
   color: #000000;
-  letter-spacing: 0.5px;
+  font-size: 14px;
   font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 div.mapboxgl-popup-content>h4 {
-  font-size: 14px;
   font-family: 'PT Serif', serif;
+  font-size: 14px;
   font-style: italic;
   padding: 7px 0;
 }
 
-/*.mapboxgl-popup-content-wrapper {
-  padding: 1%;
-}
-
-.mapboxgl-popup-content div {
-  padding: 10px;
-}
-
-.mapboxgl-container .leaflet-marker-icon {
-  cursor: pointer;
-}*/
-
 .mapboxgl-popup-anchor-top .mapboxgl-popup-content {
-  border-top-style: solid;
   border-top-color: #0047ab;
+  border-top-style: solid;
   border-top-width: 7px;
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-content {
-  border-bottom-style: solid;
   border-bottom-color: #0047ab;
+  border-bottom-style: solid;
   border-bottom-width: 7px;
 }
 
@@ -417,34 +385,36 @@ div.mapboxgl-popup-content>h4 {
 }
 
 /*about us*/
-
 .twocolumn {
-  padding-right: 15px;
-  padding-left: 15px;
   -webkit-column-count: 2;
-  /* Chrome, Safari, Opera */
-  /* Firefox */
+  -moz-column-count: 2;
+  -ms-column-count: 2;
   column-count: 2;
+
   display: block;
   font-size: 16px;
-  letter-spacing: 0.41px;
   font-weight: 400;
+  letter-spacing: 0.41px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /*subscription*/
 
-body>div>div.row.my-4.twocolumn>p.subscribtion>a {
+/*body>div>div.row.my-4.twocolumn>p*/
+.subscribtion>a {
   color: #0047ab;
-  text-decoration: underline;
   font-size: 18px;
   letter-spacing: 0.5px;
   line-height: 22px;
+  text-decoration: underline;
 }
 
 .social_buttons {
-  padding-bottom: 12px;
   margin-left: 2px;
-  max-width: 123px
+  max-width:  123px;
+  padding-bottom: 12px;
+
 }
 
 /*Button*/
@@ -505,15 +475,16 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
 }*/
 
 .btn-toggle {
+  background: #bdc1c8;
+  border: none;
+  border-radius: 1.5rem;
+  color: #6b7381;
+  height: 1.5rem;
   margin: 0 4rem;
   padding: 0;
   position: relative;
-  border: none;
-  height: 1.5rem;
   width: 3rem;
-  border-radius: 1.5rem;
-  color: #6b7381;
-  background: #bdc1c8;
+
 }
 
 .btn-toggle:focus, .btn-toggle.focus, .btn-toggle:focus.active, .btn-toggle.focus.active {
@@ -542,21 +513,21 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
 
 .btn-toggle:after {
   content: "On";
-  right: -4rem;
   opacity: 0.5;
+  right: -4rem;
 }
 
 .btn-toggle>.handle {
-  position: absolute;
-  top: 0.1875rem;
-  left: 0.1875rem;
-  width: 1.125rem;
-  height: 1.125rem;
-  border-radius: 1.125rem;
-  background: #fff;
   -webkit-transition: left 0.25s;
   -o-transition: left 0.25s;
+  background: #fff;
+  border-radius: 1.125rem;
+  height: 1.125rem;
+  left: 0.1875rem;
+  position: absolute;
+  top: 0.1875rem;
   transition: left 0.25s;
+  width: 1.125rem;
 }
 
 .btn-toggle.active {
@@ -619,218 +590,6 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   background-color: #0047ab;
 }
 
-/*
-.btn-outline-primary {
-  background-color: #0047ab;
-}
-
-.btn-toggle.btn-lg {
-  margin: 0 5rem;
-  padding: 0;
-  position: relative;
-  border: none;
-  height: 2.5rem;
-  width: 5rem;
-  border-radius: 2.5rem;
-}
-
-.btn-toggle.btn-lg:focus, .btn-toggle.btn-lg.focus, .btn-toggle.btn-lg:focus.active, .btn-toggle.btn-lg.focus.active {
-  outline: none;
-}
-
-.btn-toggle.btn-lg:before, .btn-toggle.btn-lg:after {
-  line-height: 2.5rem;
-  width: 5rem;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: absolute;
-  bottom: 0;
-  -webkit-transition: opacity 0.25s;
-  -o-transition: opacity 0.25s;
-  transition: opacity 0.25s;
-}
-
-.btn-toggle.btn-lg:before {
-  content: "Off";
-  left: -5rem;
-}
-
-.btn-toggle.btn-lg:after {
-  content: "On";
-  right: -5rem;
-  opacity: 0.5;
-}
-
-.btn-toggle.btn-lg>.handle {
-  position: absolute;
-  top: 0.3125rem;
-  left: 0.3125rem;
-  width: 1.875rem;
-  height: 1.875rem;
-  border-radius: 1.875rem;
-  background: #fff;
-  -webkit-transition: left 0.25s;
-  -o-transition: left 0.25s;
-  transition: left 0.25s;
-}
-
-.btn-toggle.btn-lg.active {
-  -webkit-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-
-.btn-toggle.btn-lg.active>.handle {
-  left: 2.8125rem;
-  -webkit-transition: left 0.25s;
-  -o-transition: left 0.25s;
-  transition: left 0.25s;
-}
-
-.btn-toggle.btn-lg.active:before {
-  opacity: 0.5;
-}
-
-.btn-toggle.btn-lg.active:after {
-  opacity: 1;
-}
-
-.btn-toggle.btn-lg.btn-sm:before, .btn-toggle.btn-lg.btn-sm:after {
-  line-height: 0.5rem;
-  color: #fff;
-  letter-spacing: 0.75px;
-  left: 0.6875rem;
-  width: 3.875rem;
-}
-
-.btn-toggle.btn-lg.btn-sm:before {
-  text-align: right;
-}
-
-.btn-toggle.btn-lg.btn-sm:after {
-  text-align: left;
-  opacity: 0;
-}
-
-.btn-toggle.btn-lg.btn-sm.active:before {
-  opacity: 0;
-}
-
-.btn-toggle.btn-lg.btn-sm.active:after {
-  opacity: 1;
-}
-
-.btn-toggle.btn-lg.btn-xs:before, .btn-toggle.btn-lg.btn-xs:after {
-  display: none;
-}
-
-.btn-toggle.btn-sm {
-  margin: 0 0.5rem;
-  padding: 0;
-  position: relative;
-  border: none;
-  height: 1.5rem;
-  width: 3rem;
-  border-radius: 1.5rem;
-}
-
-.btn-toggle.btn-sm:focus, .btn-toggle.btn-sm.focus, .btn-toggle.btn-sm:focus.active, .btn-toggle.btn-sm.focus.active {
-  outline: none;
-}
-
-.btn-toggle.btn-sm:before, .btn-toggle.btn-sm:after {
-  line-height: 1.5rem;
-  width: 0.5rem;
-  text-align: center;
-  font-weight: 600;
-  font-size: 0.55rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: absolute;
-  bottom: 0;
-  -webkit-transition: opacity 0.25s;
-  -o-transition: opacity 0.25s;
-  transition: opacity 0.25s;
-}
-
-.btn-toggle.btn-sm:before {
-  content: "Off";
-  left: -0.5rem;
-}
-
-.btn-toggle.btn-sm:after {
-  content: "On";
-  right: -0.5rem;
-  opacity: 0.5;
-}
-
-.btn-toggle.btn-sm>.handle {
-  position: absolute;
-  top: 0.1875rem;
-  left: 0.1875rem;
-  width: 1.125rem;
-  height: 1.125rem;
-  border-radius: 1.125rem;
-  background: #fff;
-  -webkit-transition: left 0.25s;
-  -o-transition: left 0.25s;
-  transition: left 0.25s;
-}
-
-.btn-toggle.btn-sm.active {
-  -webkit-transition: background-color 0.25s;
-  -o-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-
-.btn-toggle.btn-sm.active>.handle {
-  left: 1.6875rem;
-  -webkit-transition: left 0.25s;
-  -o-transition: left 0.25s;
-  transition: left 0.25s;
-}
-
-.btn-toggle.btn-sm.active:before {
-  opacity: 0.5;
-}
-
-.btn-toggle.btn-sm.active:after {
-  opacity: 1;
-}
-
-.btn-toggle.btn-sm.btn-sm:before, .btn-toggle.btn-sm.btn-sm:after {
-  line-height: -0.5rem;
-  color: #fff;
-  letter-spacing: 0.75px;
-  left: 0.4125rem;
-  width: 2.325rem;
-}
-
-.btn-toggle.btn-sm.btn-sm:before {
-  text-align: right;
-}
-
-.btn-toggle.btn-sm.btn-sm:after {
-  text-align: left;
-  opacity: 0;
-}
-
-.btn-toggle.btn-sm.btn-sm.active:before {
-  opacity: 0;
-}
-
-.btn-toggle.btn-sm.btn-sm.active:after {
-  opacity: 1;
-}
-
-.btn-toggle.btn-sm.btn-xs:before, .btn-toggle.btn-sm.btn-xs:after {
-  display: none;
-}
-*/
-
 .btn-toggle.btn-xs {
   margin: 0 0;
   margin-bottom: 4px;
@@ -868,8 +627,8 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
 
 .btn-toggle.btn-xs:after {
   content: "On";
-  right: 0;
   opacity: 0.5;
+  right: 0;
 }
 
 .btn-toggle.btn-xs>.handle {
@@ -906,33 +665,24 @@ body>div>div.row.my-4.twocolumn>p.subscribtion>a {
   opacity: 1;
 }
 
-/*
-.btn-toggle.btn-xs.btn-sm:before, .btn-toggle.btn-xs.btn-sm:after {
-  line-height: -1rem;
-  color: #fff;
-  letter-spacing: 0.75px;
-  left: 0.275rem;
-  width: 1.55rem;
-}
-
-.btn-toggle.btn-xs.btn-sm:before {
-  text-align: right;
-}
-
-.btn-toggle.btn-xs.btn-sm:after {
-  text-align: left;
-  opacity: 0;
-}
-
-.btn-toggle.btn-xs.btn-sm.active:before {
-  opacity: 0;
-}
-
-.btn-toggle.btn-xs.btn-sm.active:after {
-  opacity: 1;
-}
-*/
 
 .btn-toggle.btn-xs.btn-xs:before, .btn-toggle.btn-xs.btn-xs:after {
   display: none;
+}
+
+
+/* Cards Area*/
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .card-columns {column-count: 4;}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+ .card-columns {column-count: 4;}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+   .card-columns {column-count: 5;}
 }

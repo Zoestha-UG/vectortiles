@@ -106,6 +106,7 @@ function createPopUp(currentFeature) {
 }
 
 function getUniqueFeatures(array, comparatorProperty) {
+
   var existingFeatureKeys = {};
   // Because features come from tiled vector data, feature geometries may be split
   // or duplicated across tile boundaries and, as a result, features may appear
@@ -122,6 +123,27 @@ function getUniqueFeatures(array, comparatorProperty) {
   return uniqueFeatures;
 }
 
+function colorLocationList(data) {
+
+  // Iterate through the list of stores
+  // WITHIN THE CALCULATED ROUTE !! and color in green
+  if (data.length) {
+    data.forEach(function(feature) {
+
+      // Shorten data.feature.properties to just `prop`.
+      var prop = feature.properties;
+      var cardHeader = document.getElementById("heading" + prop.id);
+      if (cardHeader === null) {
+        return;
+      }
+
+      var cardTitle = cardHeader.getElementsByClassName("title");
+      cardTitle[0].style.color = "green";
+
+    })
+  }
+}
+
 function buildLocationList(data) {
   // Iterate through the list of stores
   listings.innerHTML = "";
@@ -133,7 +155,7 @@ function buildLocationList(data) {
 
       // Select the listing container in the HTML and append a div  with the class 'item' for each store
       var card = listings.appendChild(document.createElement("div"));
-      card.className = "item card";
+      card.className = "item card cardList";
       card.id = prop.id;
 
       var cardHeader = card.appendChild(document.createElement("div"));
@@ -220,27 +242,6 @@ function buildLocationList(data) {
   }
 }
 
-function colorLocationList(data) {
-  // Iterate through the list of stores
-  // WITHIN THE CALCULATED ROUTE !! and color in green
-
-  if (data.length) {
-    data.forEach(function(feature) {
-
-      // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
-      var prop = feature.properties;
-      var cardHeader = document.getElementById("heading" + prop.id);
-      if (cardHeader === null) {
-        return;
-      }
-
-      var cardTitle = cardHeader.getElementsByClassName("title");
-      cardTitle[0].style.color = "green";
-
-    })
-  }
-}
-
 function filterOnRoute() {
 
   var mapDirectionsSource = map.getSource("directions");
@@ -282,17 +283,17 @@ function displayDirectionControls() {
   var directionControl = document.getElementsByClassName("mapboxgl-ctrl-directions");
   if (directionControl["0"].hidden) {
     directionControl["0"].hidden = false;
-    map.setLayoutProperty('bufferedTraceLayer', 'visibility', 'visible');
+    map.setLayoutProperty("bufferedTraceLayer", "visibility", "visible");
 
-    map.setLayoutProperty('directions-origin-point', 'visibility', 'visible');
-    map.setLayoutProperty('directions-destination-point', 'visibility', 'visible');
-    map.setLayoutProperty('directions-origin-label', 'visibility', 'visible');
-    map.setLayoutProperty('directions-destination-label', 'visibility', 'visible');
+    map.setLayoutProperty("directions-origin-point", "visibility", "visible");
+    map.setLayoutProperty("directions-destination-point", "visibility", "visible");
+    map.setLayoutProperty("directions-origin-label", 'visibility', "visible");
+    map.setLayoutProperty("directions-destination-label", "visibility", "visible");
 
-    map.setLayoutProperty('directions-hover-point', 'visibility', 'visible');
-    map.setLayoutProperty('directions-waypoint-point', 'visibility', 'visible');
-    map.setLayoutProperty('directions-route-line', 'visibility', 'visible');
-    map.setLayoutProperty('directions-route-line-alt', 'visibility', 'visible');
+    map.setLayoutProperty("directions-hover-point", "visibility", "visible");
+    map.setLayoutProperty("directions-waypoint-point", "visibility", "visible");
+    map.setLayoutProperty("directions-route-line", "visibility", "visible");
+    map.setLayoutProperty("directions-route-line-alt", "visibility", "visible");
     filterOnRoute();
   } else {
     directionControl["0"].hidden = true;
@@ -399,9 +400,9 @@ map.on("load", function(e) {
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on("click", "locations", function(e) {
-      var current_feature = e.features[0];
+      var currentFeature = e.features[0];
       // 1. Create Popup
-      createPopUp(current_feature);
+      createPopUp(currentFeature);
 
       // 2. Highlight listing in sidebar (and remove highlight for other listing)
       var activeItem = document.getElementsByClassName("is-active");
@@ -409,13 +410,13 @@ map.on("load", function(e) {
         activeItem[0].classList.remove("is-active");
       }
 
-      var heading_Element = document.getElementById("heading" + current_feature.properties.id);
-      if (heading_Element) {
-        heading_Element.classList.add("is-active");
+      var headingElement = document.getElementById("heading" + currentFeature.properties.id);
+      if (headingElement) {
+        headingElement.classList.add("is-active");
       }
-      var collapse_Element = document.getElementById("collapse" + current_feature.properties.id);
-      if (collapse_Element) {
-        $(collapse_Element).collapse("show");
+      var collapseElement = document.getElementById("collapse" + currentFeature.properties.id);
+      if (collapseElement) {
+        $(collapseElement).collapse("show");
       }
 
     });
