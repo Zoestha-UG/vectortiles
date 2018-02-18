@@ -30,7 +30,7 @@ var stores2 = (function() {
 var map = new mapboxgl.Map({
 
   container: "map",
-  style: "https://leipzig-einkaufen.de/json/style-local.json",
+  style: "https://leipzig-einkaufen.de/json/style-3d.json",
 
   center: [12.3722, 51.3272],
   zoom: 11,
