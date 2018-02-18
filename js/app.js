@@ -178,8 +178,8 @@ function buildLocationList(data) {
       var linkBody = cardBody.appendChild(document.createElement("a"));
       linkBody.textContent = prop.url;
       linkBody.href = prop.url;
-      linkBody.target = '_blank';
-      linkBody.title = prop.name;      
+      linkBody.target = "_blank";
+      linkBody.title = prop.name;
 
       // Add an event listener for the links in the sidebar listing
       link.addEventListener("click", function(e) {
