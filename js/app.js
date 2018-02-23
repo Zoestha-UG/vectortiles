@@ -17,7 +17,7 @@ var stores2 = (function() {
     "async": false,
     "global": false,
     "url": "https://leipzig-einkaufen.de/location.json",
-    "url": "http://localhost/vectortiles/location.json",
+    //"url": "http://localhost/vectortiles/location.json",
     "dataType": "json",
     "success": function(data) {
       stores2 = data;
