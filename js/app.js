@@ -17,7 +17,7 @@ var stores2 = (function() {
     "async": false,
     "global": false,
     "url": "https://leipzig-einkaufen.de/location.json",
-    //'url': "http://localhost/vectortiles/location.json",
+    "url": "http://localhost/vectortiles/location.json",
     "dataType": "json",
     "success": function(data) {
       stores2 = data;
@@ -30,7 +30,7 @@ var stores2 = (function() {
 var map = new mapboxgl.Map({
 
   container: "map",
-  style: "https://leipzig-einkaufen.de/json/style-3d.json",
+  style: "https://leipzig-einkaufen.de/json/style-local.json",
 
   center: [12.3722, 51.3272],
   zoom: 11,
