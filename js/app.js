@@ -16,8 +16,8 @@ var stores2 = (function() {
   $.ajax({
     "async": false,
     "global": false,
-    "url": "https://leipzig-einkaufen.de/location.json",
-    //"url": "http://localhost/vectortiles/location.json",
+    //"url": "https://leipzig-einkaufen.de/location.json",
+    "url": "http://localhost/vectortiles/museen.json",
     "dataType": "json",
     "success": function(data) {
       stores2 = data;
@@ -30,7 +30,8 @@ var stores2 = (function() {
 var map = new mapboxgl.Map({
 
   container: "map",
-  style: "https://leipzig-einkaufen.de/json/style-local.json",
+  //style: "https://leipzig-einkaufen.de/json/style-local.json",
+  style: "http://localhost/vectortiles/json/style-local.json",
 
   center: [12.3722, 51.3272],
   zoom: 11,
@@ -246,7 +247,7 @@ function filterOnRoute() {
 
   var mapDirectionsSource = map.getSource("directions");
   var radius = 0.6;
-  var unit = 'kilometers';
+  var unit = "kilometers";
 
   //var distDuration = mapDirections.getDistanceAndDuration();
 
@@ -259,7 +260,7 @@ function filterOnRoute() {
   });
 
   // update bufferedTraceSource
-  map.getSource('bufferedTraceSource').setData(bufferedLinestring);
+  map.getSource("bufferedTraceSource").setData(bufferedLinestring);
 
   // Get locations rendered on the map
   var features = map.queryRenderedFeatures({
@@ -287,7 +288,7 @@ function displayDirectionControls() {
 
     map.setLayoutProperty("directions-origin-point", "visibility", "visible");
     map.setLayoutProperty("directions-destination-point", "visibility", "visible");
-    map.setLayoutProperty("directions-origin-label", 'visibility', "visible");
+    map.setLayoutProperty("directions-origin-label", "visibility", "visible");
     map.setLayoutProperty("directions-destination-label", "visibility", "visible");
 
     map.setLayoutProperty("directions-hover-point", "visibility", "visible");
@@ -300,16 +301,16 @@ function displayDirectionControls() {
     // reinitialize ptsWithin
     ptsWithin = null;
 
-    map.setLayoutProperty('bufferedTraceLayer', 'visibility', 'none');
-    map.setLayoutProperty('directions-origin-point', 'visibility', 'none');
-    map.setLayoutProperty('directions-destination-point', 'visibility', 'none');
-    map.setLayoutProperty('directions-origin-label', 'visibility', 'none');
-    map.setLayoutProperty('directions-destination-label', 'visibility', 'none');
+    map.setLayoutProperty("bufferedTraceLayer", "visibility", "none");
+    map.setLayoutProperty("directions-origin-point", "visibility", "none");
+    map.setLayoutProperty("directions-destination-point", "visibility", "none");
+    map.setLayoutProperty("directions-origin-label", "visibility", "none");
+    map.setLayoutProperty("directions-destination-label", "visibility", "none");
 
-    map.setLayoutProperty('directions-hover-point', 'visibility', 'none');
-    map.setLayoutProperty('directions-waypoint-point', 'visibility', 'none');
-    map.setLayoutProperty('directions-route-line', 'visibility', 'none');
-    map.setLayoutProperty('directions-route-line-alt', 'visibility', 'none');
+    map.setLayoutProperty("directions-hover-point", "visibility", "none");
+    map.setLayoutProperty("directions-waypoint-point", "visibility", "none");
+    map.setLayoutProperty("directions-route-line", "visibility", "none");
+    map.setLayoutProperty("directions-route-line-alt", "visibility", "none");
 
     var features = map.queryRenderedFeatures({
       layers: ["locations"]
@@ -511,11 +512,11 @@ map.on("load", function(e) {
 });
 
 // Direction event listener
-mapDirections.on('route', function(e) {
+mapDirections.on("route", function(e) {
   filterOnRoute();
 });
 
 // Display Direction
-$('#btnDisplayControls').on('click', function(e) {
+$("#btnDisplayControls").on("click", function(e) {
   displayDirectionControls();
 })

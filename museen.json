@@ -1,0 +1,703 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.379893, 51.340291]
+      },
+      "properties": {
+        "id": 0,
+        "name": "Ägyptisches Museum -  Georg Steindorff - der Universität Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Goethestr. 2",
+        "url": "http://www.gko.uni-leipzig.de/aegyptisches-museum/",
+        "telephone": "0341 9737015",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.378390, 51.340612]
+      },
+      "properties": {
+        "id": 1,
+        "name": "Antikenmuseum der Stadt Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Nikolaikirchhof 2",
+        "url": "http://antik.gko.uni-leipzig.de/",
+        "telephone": "0341 9730700",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.372447, 51.339245]
+      },
+      "properties": {
+        "id": 2,
+        "name": "Bach-Museum Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Thomaskirchhof 15",
+        "url": "http://www.bachmuseumleipzig.de",
+        "telephone": "0341 91370",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.369829, 51.342167]
+      },
+      "properties": {
+        "id": 3,
+        "name": "Der Bundesbeauftragte für die Stasi-Unterlagen (BStU) Außenstelle Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Dittrichring 24",
+        "url": "https://www.bstu.bund.de/DE/InDerRegion/Leipzig/_node.html",
+        "telephone": "0341 22470",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.396973, 51.321842]
+      },
+      "properties": {
+        "id": 4,
+        "name": "Deutsches Buch- und Schriftmuseum der Deutschen Nationalbibliothek",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04103",
+        "streetAddress": "Deutscher Pl. 1",
+        "url": "http://www.dnb.de/",
+        "telephone": "0341 22710",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.356869, 51.339741]
+      },
+      "properties": {
+        "id": 5,
+        "name": "Deutsches Kleingärtnermuseum",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Aachener Str. 7",
+        "url": "http://www.kleingarten-museum.de/",
+        "telephone": "0341 21111",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.375147, 51.323881]
+      },
+      "properties": {
+        "id": 6,
+        "name": "Ehemalige zentrale Hinrichtungsstätte der DDR",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04275",
+        "streetAddress": "Arndtstr. 48",
+        "url": "http://www.runde-ecke-leipzig.de/index.php?id=72",
+        "telephone": "0341 9612443",
+        "Categories": "Museen",
+        "image": ""
+      }
+    }, {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.412667, 51.312411]
+      },
+      "properties": {
+        "id": 7,
+        "name": "Forum 1813 am Völkerschlachtdenkmal",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04299",
+        "streetAddress": "Prager Str",
+        "url": "http://www.stadtgeschichtliches-museum-leipzig.de/",
+        "telephone": "0341 2416870",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.365860, 51.334526]
+      },
+      "properties": {
+        "id": 8,
+        "name": "Galerie für Zeitgenössische Kunst Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04107",
+        "streetAddress": "Karl-Tauchnitz Str. 9-11",
+        "url": "https://gfzk.de",
+        "telephone": "0341 140810",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.379150, 51.338491]
+      },
+      "properties": {
+        "id": 9,
+        "name": "Galerie im Neuen Augusteum",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Augustusplatz 10",
+        "url": "https://www.uni-leipzig.de/kustodie/",
+        "telephone": "0341 9730170",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.370044, 51.342301]
+      },
+      "properties": {
+        "id": 10,
+        "name": "Gedenkstätte Museum in der Runden Ecke Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Dittrichring 24",
+        "url": "http://www.runde-ecke-leipzig.de/",
+        "telephone": "0341 9612443",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.421843, 51.246368]
+      },
+      "properties": {
+        "id": 11,
+        "name": "Der Bergbau-Technik-Park",
+        "description": "",
+        "addressLocality": "Großpösna",
+        "addressRegion": "saxony",
+        "postalCode": "04463",
+        "streetAddress": "Am Westufer 2",
+        "url": "http://bergbau-technik-park.de/park/",
+        "telephone": "0342 971401",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.387897, 51.337181]
+      },
+      "properties": {
+        "id": 12,
+        "name": "GRASSI Museum für Angewandte Kunst",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04103",
+        "streetAddress": "Johannisplatz 5-11",
+        "url": "http://www.grassimuseum.de/",
+        "telephone": "0341 2229100",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.387897, 51.337181]
+      },
+      "properties": {
+        "id": 13,
+        "name": "GRASSI Museum für Musikinstrumente der Universität Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04103",
+        "streetAddress": "Johannisplatz 5-11",
+        "url": "http://www.grassimuseum.de/",
+        "telephone": "0341 9730750",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.387897, 51.337181]
+      },
+      "properties": {
+        "id": 14,
+        "name": "GRASSI Museun für Völkerkunde zu Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04103",
+        "streetAddress": "Johannisplatz 5",
+        "url": "http://www.grassimuseum.de/",
+        "telephone": "0341 9731900",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3526823, 51.3467294]
+      },
+      "properties": {
+        "id": 15,
+        "name": "Kindermuseum im Stadtgeschichtlichen Museum",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Böttchergäßchen 3",
+        "url": "http://www.stadtgeschichtliches-museum-leipzig.de/besuch/unsere-haeuser/kindermuseum/",
+        "telephone": "0341 965130",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.380301, 51.341712]
+      },
+      "properties": {
+        "id": 16,
+        "name": "Kustodie - Kunstsammlung der Universität Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Ritterstr. 26",
+        "url": "https://www.uni-leipzig.de/kustodie/",
+        "telephone": "0341 9730170",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.3833683, 51.3361072]
+      },
+      "properties": {
+        "id": 17,
+        "name": "Mendelssohn-Haus Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04103",
+        "streetAddress": "Goldschmidtstr. 12",
+        "url": "https://www.mendelssohn-stiftung.de/",
+        "telephone": "0341 1270294",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.375513, 51.342321]
+      },
+      "properties": {
+        "id": 18,
+        "name": "Museum der bildenden Künste Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Katharinenstr. 10",
+        "url": "https://mdbk.de/",
+        "telephone": "0341 216990",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.375513, 51.342321]
+      },
+      "properties": {
+        "id": 19,
+        "name": "Museum für Druckkunst Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Nonnenstr. 38",
+        "url": "http://www.druckkunst-museum.de/de/",
+        "telephone": "0341 231620",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.646523, 51.391922]
+      },
+      "properties": {
+        "id": 20,
+        "name": "Museum im Stasibunker",
+        "description": "",
+        "addressLocality": "Machern",
+        "addressRegion": "saxony",
+        "postalCode": "04827",
+        "streetAddress": "Lübschützer Teiche",
+        "url": "http://runde-ecke-leipzig.de/?id=253",
+        "telephone": "0341 9612443",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.372831, 51.341091]
+      },
+      "properties": {
+        "id": 21,
+        "name": "Museum zum Arabischen Coffe Baum",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Kleine Fleischergasse 4",
+        "url": "http://www.coffe-baum.de/museum/index.php",
+        "telephone": "0341 9610061",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.370816, 51.344969]
+      },
+      "properties": {
+        "id": 22,
+        "name": "Naturkundemuseum",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Lortzingstr. 3",
+        "url": "https://naturkundemuseum.leipzig.de/",
+        "telephone": "0341 982210",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.354981, 51.336886]
+      },
+      "properties": {
+        "id": 23,
+        "name": "Sächsisches Psychiatriemuseum",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Mainzer Str. 7",
+        "url": "http://www.psychiatriemuseum.de/",
+        "telephone": "0341 14061413",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.519432, 51.293190]
+      },
+      "properties": {
+        "id": 24,
+        "name": "Sanitäts- und Lazarettmuseum Seifertshain",
+        "description": "",
+        "addressLocality": "Großpösna",
+        "addressRegion": "saxony",
+        "postalCode": "04463",
+        "streetAddress": "Pfarrgasse 2",
+        "url": "http://www.sanitaetsmuseum1813.de/",
+        "telephone": "0342 9714010",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.362727, 51.359214]
+      },
+      "properties": {
+        "id": 25,
+        "name": "Schillerhaus Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04155",
+        "streetAddress": "Menckestr. 42",
+        "url": "http://www.leipzig-gohlis.de/schillerhaus/",
+        "telephone": "0341 5662170",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.391115, 51.340934]
+      },
+      "properties": {
+        "id": 26,
+        "name": "Schumann-Haus Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04103",
+        "streetAddress": "Inselstr. 18",
+        "url": "http://www.schumann-verein.de/",
+        "telephone": "0341 13939620",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.345625, 51.351455]
+      },
+      "properties": {
+        "id": 27,
+        "name": "Sportmuseum Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04105",
+        "streetAddress": "Am Sportforum 10",
+        "url": "http://www.stadtgeschichtliches-museum-leipzig.de/besuch/unsere-haeuser/sportmuseum/",
+        "telephone": "0341 2689777",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.375194, 51.340706]
+      },
+      "properties": {
+        "id": 28,
+        "name": "Stadtgeschichtliches Museum im Alten Rathaus",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Markt 1",
+        "url": "http://www.stadtgeschichtliches-museum-leipzig.de/",
+        "telephone": "0341 965130",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.376189, 51.341818]
+      },
+      "properties": {
+        "id": 29,
+        "name": "Stadtgeschichtliches Museum / Haus Böttchergäßchen",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04109",
+        "streetAddress": "Böttchergäßchen 3",
+        "url": "http://www.stadtgeschichtliches-museum-leipzig.de/besuch/unsere-haeuser/haus-boettchergaesschen/",
+        "telephone": "0341 96 51 340 ",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.388798, 51.278253]
+      },
+      "properties": {
+        "id": 30,
+        "name": "Verband Jahrfeier Völkerschlacht bei Leipzig 1813",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04275",
+        "streetAddress": "Karl-Liebknecht-Str. 123",
+        "url": "http://www.leipzig1813.com/",
+        "telephone": "0341 96 51 340",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.413195, 51.312723]
+      },
+      "properties": {
+        "id": 31,
+        "name": "Völkerschlachtdenkmal",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04299",
+        "streetAddress": "Str. des 18. Oktober 100",
+        "url": "https://www.voelkerschlachtdenkmal.de/",
+        "telephone": "0341 2416870",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.375674, 51.339878]
+      },
+      "properties": {
+        "id": 32,
+        "name": "Zeitgeschichtliches Forum Leipzig",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04299",
+        "streetAddress": "Grimmaische Str. 6",
+        "url": "https://www.hdg.de/zeitgeschichtliches-forum/",
+        "telephone": "0341 22200",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.387719, 51.287453]
+      },
+      "properties": {
+        "id": 33,
+        "name": "Zinnfigurenmuseum im Torhaus Dölitz",
+        "description": "",
+        "addressLocality": "Leipzig",
+        "addressRegion": "saxony",
+        "postalCode": "04279",
+        "streetAddress": "Helenenstr. 24",
+        "url": "http://www.torhaus-doelitz.eu/",
+        "telephone": "0341 3389107",
+        "Categories": "Museen",
+        "image": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.421843, 51.246368]
+      },
+      "properties": {
+        "id": 34,
+        "name": "Der Bergbau-Technik-Park",
+        "description": "",
+        "addressLocality": "Großpösna",
+        "addressRegion": "saxony",
+        "postalCode": "04463",
+        "streetAddress": "Am Westufer 2",
+        "url": "http://bergbau-technik-park.de/park/",
+        "telephone": "0342 971401",
+        "Categories": "Museen",
+        "image": ""
+      }
+    }
+  ]
+}
