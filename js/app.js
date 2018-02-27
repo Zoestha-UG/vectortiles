@@ -16,8 +16,8 @@ var stores2 = (function() {
   $.ajax({
     "async": false,
     "global": false,
-    //"url": "https://leipzig-einkaufen.de/location.json",
-    "url": "http://localhost/vectortiles/museen.json",
+    "url": "https://leipzig-einkaufen.de/location.json",
+    //"url": "http://localhost/vectortiles/museen.json",
     "dataType": "json",
     "success": function(data) {
       stores2 = data;
@@ -30,8 +30,8 @@ var stores2 = (function() {
 var map = new mapboxgl.Map({
 
   container: "map",
-  //style: "https://leipzig-einkaufen.de/json/style-local.json",
-  style: "http://localhost/vectortiles/json/style-local.json",
+  style: "https://leipzig-einkaufen.de/json/style-local.json",
+  //style: "http://localhost/vectortiles/json/style-local.json",
 
   center: [12.3722, 51.3272],
   zoom: 11,
