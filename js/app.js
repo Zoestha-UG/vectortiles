@@ -199,7 +199,7 @@ function buildLocationList(data) {
       cardBody.textContent = prop.description;
       cardBody.appendChild(document.createElement("br"));
       var linkBody = cardBody.appendChild(document.createElement("a"));
-      linkBody.textContent = prop.url;
+      linkBody.textContent = prop.name;
       linkBody.href = prop.url;
       linkBody.target = "_blank";
       linkBody.title = prop.name;
