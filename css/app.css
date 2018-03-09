@@ -1,7 +1,6 @@
 body {
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Open Sans', 'Helvetica Neue', Sans-serif;
-	/*font: 300 15px/20px 'Open Sans', 'Helvetica Neue', Sans-serif;*/
 	margin: 0;
 	padding: 0;
 }
@@ -102,7 +101,7 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 
 .headings {
 	background-color: #F1F1F1;
-	background-image: url(../media/Headline_path.png);
+	background-image: url(../../media/Headline_path.png);
 	background-repeat: no-repeat;
 	font-style: italic;
 	margin: 0;

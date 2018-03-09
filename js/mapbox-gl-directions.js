@@ -40,7 +40,7 @@ EventEmitter.defaultMaxListeners = 10;
 // that to be increased. Set to zero for unlimited.
 EventEmitter.prototype.setMaxListeners = function(n) {
   if (!isNumber(n) || n < 0 || isNaN(n))
-    throw TypeError('n must be a positive number');
+    throw TypeError("n must be a positive number");
   this._maxListeners = n;
   return this;
 };
@@ -136,11 +136,11 @@ EventEmitter.prototype.addListener = function(type, listener) {
 
     if (m && m > 0 && this._events[type].length > m) {
       this._events[type].warned = true;
-      console.error('(node) warning: possible EventEmitter memory ' +
-                    'leak detected. %d listeners added. ' +
-                    'Use emitter.setMaxListeners() to increase limit.',
+      console.error("(node) warning: possible EventEmitter memory " +
+                    "leak detected. %d listeners added. " +
+					"Use emitter.setMaxListeners() to increase limit.",
                     this._events[type].length);
-      if (typeof console.trace === 'function') {
+      if (typeof console.trace === "function") {
         // not supported in IE 10
         console.trace();
       }

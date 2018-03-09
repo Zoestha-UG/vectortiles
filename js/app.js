@@ -76,8 +76,6 @@ var filterEl = document.getElementById("feature-filter");
 var listings = document.getElementById("listings");
 var txtCategories = document.getElementById("txtCategories");
 
-// Empty marker array
-//var mapMarkers = [];
 // Empty Geojson Data
 var bufferedLinestring = {
 	"id": "0",
@@ -90,7 +88,6 @@ var bufferedLinestring = {
 };
 
 // Functions
-
 function normalize(string) {
 	return string.trim().toLowerCase();
 }
@@ -211,7 +208,9 @@ function buildLocationList(data) {
 
 				var popUps = document.getElementsByClassName("mapboxgl-popup");
 				// Check if there is already a popup on the map and if so, remove it
-				if (popUps[0]) popUps[0].parentNode.removeChild(popUps[0]);
+				if (popUps[0]) {
+					popUps[0].parentNode.removeChild(popUps[0]);
+				}
 
 				// 1. Close all other popups and display popup for clicked store
 				createPopUp(clickedListing);
