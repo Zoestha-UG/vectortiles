@@ -32,9 +32,9 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 
 @media only screen and (max-width: 991px) {
 	body > div > div.container-fluid.top-header > div.col-sm-8 {
-		text-align: right;
 		padding-right: 8px;
 		padding-top: 14px;
+		text-align: right;
 
 	}
 }
@@ -56,15 +56,15 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 	border-bottom-color: black;
 	border-bottom-width: 1px;
 	background-color: white;
-	text-transform: uppercase;
+	color: #000000;
 	font-family: 'Open Sans', 'Helvetica Neue', Sans-serif;
 	font-weight: 600;
-	width: 100%;
-	min-height: 58px;
-	line-height: 9px;
 	font-size: 14px;
-	color: #000000;
+	min-height: 58px;
+	line-height: 9px;	
 	letter-spacing: 1px;
+	text-transform: uppercase;
+	width: 100%;
 }
 
 .navbar-nav {
@@ -83,9 +83,11 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 	}
 }
 
-div.nav-link,
-a.nav-link {
-	color: black !important;
+
+#navbarResponsive > ul > li > div > div > strong,
+#navbarResponsive > ul > li > a > strong,
+.li.nav-item a.nav-link.black{
+	color: black;
 }
 
 .img-leipzig-einkaufen {
@@ -621,17 +623,16 @@ div.mapboxgl-popup-content > h4 {
 
 .seofooter-statement{
 	border-bottom: 1px solid #000000;
-	padding-bottom: 62px;
-	font-weight: 300;
 	font-size: 14px;
+	font-weight: 300;
 	letter-spacing: 0.57px;	
 	line-height: 19px;
+	padding-bottom: 62px;
 }
 
 .card-columns {
-	padding-top: 32px;
 	padding-bottom: 62px;
-	
+	padding-top: 32px;	
 }
 @media (min-width: 768px) {
 	.card-columns {
@@ -678,8 +679,8 @@ div.mapboxgl-popup-content > h4 {
 }
 
 .mapbox-directions-component-keyline {
-	box-shadow: none;
 	border-radius: 0;
+	box-shadow: none;
 }
 .mapbox-directions-profile{
 	margin-top: 3px;
