@@ -6436,7 +6436,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
  // substack/brfs#39
-var tmpl = (0, _lodash2.default)("<div class='mapbox-directions-component mapbox-directions-inputs'>\n  <div class='mapbox-directions-component-keyline'>\n    <div class='mapbox-directions-origin'>\n      <label class='mapbox-form-label'>\n        <span class='directions-icon directions-icon-depart'></span>\n      </label>\n      <div id='mapbox-directions-origin-input'></div>\n    </div>\n\n    <button\n      class='directions-icon directions-icon-reverse directions-reverse js-reverse-inputs'\n      title='Reverse origin &amp; destination'>\n    </button>\n\n    <div class='mapbox-directions-destination'>\n      <label class='mapbox-form-label'>\n        <span class='directions-icon directions-icon-arrive'></span>\n      </label>\n      <div id='mapbox-directions-destination-input'></div>\n    </div>\n  </div>\n\n  <div class='mapbox-directions-profile mapbox-directions-component-keyline mapbox-directions-clearfix'><input\n      id='mapbox-directions-profile-driving-traffic'\n      type='radio'\n      name='profile'\n      <% if (profile === 'driving-traffic') { %>checked<% } %>\n    />\n    <label for='mapbox-directions-profile-driving-traffic'>Traffic</label>\n    <input\n      id='mapbox-directions-profile-driving'\n      type='radio'\n      name='profile'\n      <% if (profile === 'driving') { %>checked<% } %>\n    />\n    <label for='mapbox-directions-profile-driving'>Driving</label>\n    <input\n      id='mapbox-directions-profile-walking'\n      type='radio'\n      name='profile'\n      <% if (profile === 'walking') { %>checked<% } %>\n    />\n    <label for='mapbox-directions-profile-walking'>Walking</label>\n    <input\n      id='mapbox-directions-profile-cycling'\n      type='radio'\n      name='profile'\n      <% if (profile === 'cycling') { %>checked<% } %>\n    />\n    <label for='mapbox-directions-profile-cycling'>Cycling</label>\n  </div>\n</div>\n");
+var tmpl = (0, _lodash2.default)("<div class='mapbox-directions-component mapbox-directions-inputs'>\n  <div class='mapbox-directions-component-keyline'>\n    <div class='mapbox-directions-origin'>\n      <label class='mapbox-form-label'>\n        <span class='directions-icon directions-icon-depart' style='background-color:#93AFD7;' ></span>\n      </label>\n      <div id='mapbox-directions-origin-input'></div>\n    </div>\n\n    <button\n      class='directions-icon directions-icon-reverse directions-reverse js-reverse-inputs'\n      title='Reverse origin &amp; destination'>\n    </button>\n\n    <div class='mapbox-directions-destination'>\n      <label class='mapbox-form-label'>\n        <span class='directions-icon directions-icon-arrive' style='background-color:#608BC7;'></span>\n      </label>\n      <div id='mapbox-directions-destination-input'></div>\n    </div>\n  </div>\n\n  <div class='mapbox-directions-profile mapbox-directions-component-keyline mapbox-directions-clearfix'> <input\n      id='mapbox-directions-profile-driving'\n      type='radio'\n      name='profile'\n      <% if (profile === 'driving') { %>checked<% } %>\n    />\n    <label for='mapbox-directions-profile-driving'>Driving</label>\n    <input\n      id='mapbox-directions-profile-walking'\n      type='radio'\n      name='profile'\n      <% if (profile === 'walking') { %>checked<% } %>\n    />\n    <label for='mapbox-directions-profile-walking'>Walking</label>\n    <input\n      id='mapbox-directions-profile-cycling'\n      type='radio'\n      name='profile'\n      <% if (profile === 'cycling') { %>checked<% } %>\n    />\n    <label for='mapbox-directions-profile-cycling'>Cycling</label>\n  </div>\n</div>\n");
 
 /**
  * Inputs controller
@@ -7407,7 +7407,7 @@ var style = [{
     'line-join': 'round'
   },
   'paint': {
-    'line-color': '#3bb2d0',
+    'line-color': '#608BC7',
     'line-width': 4
   },
   'filter': ['all', ['in', '$type', 'LineString'], ['in', 'route', 'selected']]
@@ -7444,7 +7444,7 @@ var style = [{
   'source': 'directions',
   'paint': {
     'circle-radius': 6,
-    'circle-color': '#8a8bc9'
+    'circle-color': '#608BC7'
   },
   'filter': ['all', ['in', '$type', 'Point'], ['in', 'id', 'waypoint']]
 }, {
@@ -7453,7 +7453,7 @@ var style = [{
   'source': 'directions',
   'paint': {
     'circle-radius': 18,
-    'circle-color': '#3bb2d0'
+    'circle-color': '#93AFD7'
   },
   'filter': ['all', ['in', '$type', 'Point'], ['in', 'marker-symbol', 'A']]
 }, {
@@ -7475,7 +7475,7 @@ var style = [{
   'source': 'directions',
   'paint': {
     'circle-radius': 18,
-    'circle-color': '#8a8bc9'
+    'circle-color': '#608BC7'
   },
   'filter': ['all', ['in', '$type', 'Point'], ['in', 'marker-symbol', 'B']]
 }, {
