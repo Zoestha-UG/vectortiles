@@ -1,13 +1,61 @@
-body{font-family: 'Source Sans Pro', sans-serif; font-size: 13px; color: #919191;}
-#fof{display:block; width:100%; margin:100px 0; line-height:1.6em; text-align:center;}
-#fof .hgroup{text-transform:uppercase;}
-#fof .hgroup h1{margin-bottom:25px; font-size:80px;}
-#fof .hgroup h1 span{display:inline-block; margin-left:5px; padding:2px; border:1px solid #CCCCCC; overflow:hidden;}
-#fof .hgroup h1 span strong{display:inline-block; padding:0 20px 20px; border:1px solid #CCCCCC; font-weight:normal;}
-#fof .hgroup h2{font-size:60px;}
-#fof .hgroup h2 span{display:block; font-size:30px;}
-#fof p{margin:25px 0 0 0; padding:0; font-size:16px;}
-#fof p:first-child{margin-top:0;}
+body {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Open Sans', 'Helvetica Neue', Sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#fof {
+	display: block;
+	line-height: 1.6em;
+	margin: 100px 0;
+	text-align: center;
+	width: 100%;
+}
+
+#fof .hgroup {
+	text-transform: uppercase;
+}
+
+#fof .hgroup h1 {
+	font-size: 80px;
+	margin-bottom: 25px;
+}
+
+#fof .hgroup h1 span {
+	border: 1px solid #CCCCCC;
+	display: inline-block;
+	margin-left: 5px;
+	overflow: hidden;
+	padding: 2px;
+}
+
+#fof .hgroup h1 span strong {
+	border: 1px solid #CCCCCC;
+	display: inline-block;
+	font-weight: normal;
+	padding: 0 20px 20px;
+}
+
+#fof .hgroup h2 {
+	font-size: 60px;
+}
+
+#fof .hgroup h2 span {
+	display: block;
+	font-size: 30px;
+}
+
+#fof p {
+	margin: 25px 0 0 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+#fof p:first-child {
+	margin-top: 0;
+}
+
 div.wrapper {
 	display: block;
 	width: 100%;
@@ -15,6 +63,7 @@ div.wrapper {
 	padding: 0;
 	text-align: left;
 }
+
 .clear::after {
 	content: ".";
 	display: block;
@@ -23,11 +72,18 @@ div.wrapper {
 	visibility: hidden;
 	line-height: 0;
 }
+
 .row2 {
 	color: #979797;
 	background-color: #FFFFFF;
 }
-div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, div.wrapper h6 {
+
+div.wrapper h1,
+div.wrapper h2,
+div.wrapper h3,
+div.wrapper h4,
+div.wrapper h5,
+div.wrapper h6 {
 	margin: 0 0 15px 0;
 	padding: 0;
 	font-size: 20px;
