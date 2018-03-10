@@ -195,11 +195,14 @@ function buildLocationList(data) {
 			cardBody.className = "card-body";
 			cardBody.textContent = prop.description;
 			cardBody.appendChild(document.createElement("br"));
-			var linkBody = cardBody.appendChild(document.createElement("a"));
-			linkBody.textContent = prop.name;
-			linkBody.href = prop.url;
-			linkBody.target = "_blank";
-			linkBody.title = prop.name;
+			
+			if (prop.url) {
+				var linkBody = cardBody.appendChild(document.createElement("a"));
+				linkBody.textContent = prop.name;
+				linkBody.href = prop.url;
+				linkBody.target = "_blank";
+				linkBody.title = prop.name;
+			}
 
 			// Add an event listener for the links in the sidebar listing
 			link.addEventListener("click", function (e) {
