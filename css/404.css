@@ -1,28 +1,22 @@
-body {
-	-webkit-font-smoothing: antialiased;
-	font-family: 'Open Sans', 'Helvetica Neue', Sans-serif;
-	margin: 0;
-	padding: 0;
-}
 
-#fof {
-	display: block;
-	line-height: 1.6em;
-	margin: 100px 0;
+
+
+
+.fof {
+	margin-top: 100px;
 	text-align: center;
-	width: 100%;
 }
 
-#fof .hgroup {
+.hgroup {
 	text-transform: uppercase;
 }
 
-#fof .hgroup h1 {
+.fof .hgroup h1{
 	font-size: 80px;
 	margin-bottom: 25px;
 }
 
-#fof .hgroup h1 span {
+.fof .hgroup h1 span {
 	border: 1px solid #CCCCCC;
 	display: inline-block;
 	margin-left: 5px;
@@ -30,63 +24,35 @@ body {
 	padding: 2px;
 }
 
-#fof .hgroup h1 span strong {
+.fof .hgroup h1 span strong {
 	border: 1px solid #CCCCCC;
 	display: inline-block;
 	font-weight: normal;
 	padding: 0 20px 20px;
 }
 
-#fof .hgroup h2 {
+.fof .hgroup h2 {
 	font-size: 60px;
+	font-weight: 400;
 }
 
-#fof .hgroup h2 span {
+.fof .hgroup h2 span {
 	display: block;
 	font-size: 30px;
 }
 
-#fof p {
+.fof p {
+	font-size: 16px;
 	margin: 25px 0 0 0;
 	padding: 0;
-	font-size: 16px;
 }
 
-#fof p:first-child {
+.fof p:first-child {
 	margin-top: 0;
 }
 
-div.wrapper {
-	display: block;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-}
-
-.clear::after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-}
 
 .row2 {
-	color: #979797;
 	background-color: #FFFFFF;
-}
-
-div.wrapper h1,
-div.wrapper h2,
-div.wrapper h3,
-div.wrapper h4,
-div.wrapper h5,
-div.wrapper h6 {
-	margin: 0 0 15px 0;
-	padding: 0;
-	font-size: 20px;
-	font-weight: normal;
-	line-height: normal;
+	color: #979797;
 }

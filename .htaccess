@@ -1,5 +1,5 @@
 RewriteEngine on
-ErrorDocument 404 http://leipzig-einkaufen.de/404.html
+ErrorDocument 404 https://leipzig-einkaufen.de/404.html
 
 #Force non-www in a Generic Way
 RewriteEngine on
