@@ -138,7 +138,7 @@ function colorLocationList(data) {
 			var cardTitle = cardHeader.getElementsByClassName("title");
 			cardTitle[0].style.color = "#608BC7";
 
-		})
+		});
 	}
 }
 
@@ -241,7 +241,7 @@ function buildLocationList(data) {
 
 	// Populate features for the listing overlay.
 	if (ptsWithin) {
-		colorLocationList(ptsWithin["features"]);
+		colorLocationList(ptsWithin.features);
 	}
 }
 
@@ -327,7 +327,7 @@ function displayDirectionControls() {
 
 
 // Call buildlist function on initialization
-buildLocationList(stores2["features"]);
+buildLocationList(stores2.features);
 
 // Load map
 map.on("load", function (e) {
@@ -499,4 +499,4 @@ mapDirections.on("route", function (e) {
 // Display Direction
 $("#btnDisplayControls").on("click", function (e) {
 	displayDirectionControls();
-})
+});
