@@ -1,0 +1,8 @@
+# Rule 1
+User-agent: *
+Disallow: /.git/
+Disallow: /.gitignore
+
+
+# Sitemap
+Sitemap: https://leipzig-einkaufen.de/sitemap.xml

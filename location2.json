@@ -1,0 +1,69 @@
+{
+	"@graph": [
+        {
+			"@context": "http://schema.org",
+			"@type": "LocalBusiness",
+			"address": 
+            {
+				"@type": "PostalAddress",
+				"addressLocality": "Leipzig",
+				"addressRegion": "saxony",
+				"postalCode": "04275",
+				"streetAddress": "Karl-Liebknecht-Str. 62"
+			},
+			"description": "This is your business description.",
+			"name": "Café Maître & Pâtisserie",
+            "url": "www.cafe-maitre.de/",
+			"geo": 
+            {
+				"@type": "GeoCoordinates",
+				"latitude": "12.3410598",
+				"longitude": "51.3253279"
+			}
+		},
+        {
+			"@context": "http://schema.org",
+			"@type": "LocalBusiness",
+			"address": 
+            {
+				"@type": "PostalAddress",
+				"addressLocality": "Leipzig",
+				"addressRegion": "saxony",
+				"postalCode": "04229",
+				"streetAddress": "Holbeinstr. 29"
+			},
+			"description": "This is your business description.",
+			"name": "RöstGut",
+            "url": "",
+            "telephone": "0341 580 967 58",
+			"geo": 
+            {
+				"@type": "GeoCoordinates",
+				"latitude": "12.3591760",
+				"longitude": "51.3429270"
+			}
+		},
+        {
+			"@context": "http://schema.org",
+			"@type": "LocalBusiness",
+			"address": 
+            {
+				"@type": "PostalAddress",
+				"addressLocality": "Leipzig",
+				"addressRegion": "saxony",
+				"postalCode": "04229",
+				"streetAddress": "Könneritzstr. 3"
+			},
+			"description": "<b>La Chocolaterie</b><br />Könneritzstr. 3, 04229 Leipzig.",
+			"name": "La Chocolaterie",
+            "url": "https://la-chocolaterie.de",
+            "telephone": "0341 5611268",
+			"geo": 
+            {
+				"@type": "GeoCoordinates",
+				"latitude": "12.3668595",
+				"longitude": "51.316116"
+			}
+		}
+    ]
+}

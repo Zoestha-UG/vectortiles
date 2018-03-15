@@ -332,6 +332,7 @@ buildLocationList(stores2["features"]);
 // Load map
 map.on("load", function (e) {
 
+	//map.loadImage('http://localhost/vectortiles/media/diagonal-noise.png', function(error, image) {
 	map.loadImage("https://leipzig-einkaufen.de/media/diagonal-noise.png", function (error, image) {
 
 		if (error) throw error;
@@ -487,29 +488,6 @@ map.on("load", function (e) {
 			txtCategories.value = value;
 
 		});
-
-		/*    filterEl.addEventListener("keyup", function(e) {
-
-		      var value = normalize(e.target.value);
-
-		      // Filter visible features that don't match the input value.
-		      var filtered = locations.filter(function(feature) {
-
-		        var name = normalize(feature.properties.name);
-		        var Categories = normalize(feature.properties.Categories);
-		        return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
-		      });
-
-		      // Populate the sidebar with filtered results
-		      buildLocationList(filtered);
-
-		      // Set the filter to populate features into the layer.
-		      map.setFilter("locations", ["in", "name"].concat(filtered.map(function(feature) {
-		        return feature.properties.name;
-		      })));
-
-		    });*/
-
 	});
 });
 
