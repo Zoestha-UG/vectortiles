@@ -26,6 +26,14 @@ var stores2 = (function () {
 	return stores2;
 })();
 
+// Set bounds to New York, New York
+var bounds = [
+    [12.179, 51.227], // Southwest coordinates
+    [12.6, 51.459]  // Northeast coordinates
+];
+
+//12.179, 51.227, 12.6, 51.459 
+
 // declare map
 var map = new mapboxgl.Map({
 
@@ -37,7 +45,8 @@ var map = new mapboxgl.Map({
 	zoom: 11,
 	attributionControl: true,
 	hash: false,
-	maxZoom: 14.9
+	maxZoom: 14.9,
+	maxBounds: bounds // Sets bounds as max
 });
 
 /*Declare MapDirections*/
