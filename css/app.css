@@ -5,13 +5,13 @@ body {
 	padding: 0;
 }
 
-body > div > div.container-fluid.top-header {
+body>div>div.container-fluid.top-header {
 	height: 204px;
 	margin: 0 auto;
 }
 
 @media only screen and (max-width: 768px) {
-	body > div > div.container-fluid.top-header {
+	body>div>div.container-fluid.top-header {
 		display: none;
 	}
 }
@@ -20,21 +20,20 @@ body > div > div.container-fluid.top-header {
 	height: 220px;
 }
 
-body > div > div.container-fluid.top-header > div.col-sm-8 {
+body>div>div.container-fluid.top-header>div.col-sm-8 {
 	font-style: italic;
 	padding: 41px 56px 0 54px;
 }
 
-body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
+body>div>div.container-fluid.top-header>div.col-sm-8>h1 {
 	font-weight: 300;
 }
 
 @media only screen and (max-width: 991px) {
-	body > div > div.container-fluid.top-header > div.col-sm-8 {
+	body>div>div.container-fluid.top-header>div.col-sm-8 {
 		padding-right: 8px;
 		padding-top: 14px;
 		text-align: right;
-
 	}
 }
 
@@ -60,7 +59,7 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 	font-weight: 600;
 	font-size: 14px;
 	min-height: 58px;
-	line-height: 9px;	
+	line-height: 9px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	width: 100%;
@@ -71,7 +70,7 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 	text-align: center;
 }
 
-.navbar-nav > li {
+.navbar-nav>li {
 	float: none;
 	display: inline-block;
 }
@@ -82,10 +81,9 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 	}
 }
 
-
-#navbarResponsive > ul > li > div > div > strong,
-#navbarResponsive > ul > li > a > strong,
-.li.nav-item a.nav-link.black{
+#navbarResponsive>ul>li>div>div>strong,
+#navbarResponsive>ul>li>a>strong,
+.li.nav-item a.nav-link.black {
 	color: black;
 }
 
@@ -94,7 +92,6 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 	height: 24px;
 	padding-right: 10px;
 	position: relative;
-
 }
 
 /*headings*/
@@ -117,7 +114,7 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 	}
 }
 
-.headings > .headingTitle {
+.headings>.headingTitle {
 	color: #000000;
 	font-size: 34px;
 	font-weight: 300;
@@ -136,13 +133,13 @@ body > div > div.container-fluid.top-header > div.col-sm-8 > h1 {
 }
 
 active,
-.show > .btn-secondary.dropdown-toggle {
+.show>.btn-secondary.dropdown-toggle {
 	box-shadow: none !important;
 	border-style: none !important;
 	-webkit-box-shadow: none !important;
 }
 
-.show > .btn-secondary.dropdown-toggle {
+.show>.btn-secondary.dropdown-toggle {
 	border-style: none !important;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
@@ -180,7 +177,7 @@ active,
 }
 
 #feature-filter,
-#feature-filter > div > button {
+#feature-filter>div>button {
 	color: white;
 	display: inline-block;
 }
@@ -226,14 +223,12 @@ active,
 	box-sizing: border-box;
 }
 
-
 .listings {
 	height: 100%;
 	overflow: auto;
 	padding-bottom: 60px;
 	padding-right: 18px;
 }
-
 
 .listings .title {
 	color: black;
@@ -285,7 +280,7 @@ a.title.is-active,
 	padding-top: 4px;
 }
 
-.listings .card-body > a {
+.listings .card-body>a {
 	color: #0047ab;
 	font-weight: 600;
 }
@@ -334,14 +329,14 @@ a.title.is-active,
 	width: 180px;
 }
 
-div.mapboxgl-popup-content > h3 {
+div.mapboxgl-popup-content>h3 {
 	color: #000000;
 	font-size: 14px;
 	font-weight: bold;
 	letter-spacing: 0.5px;
 }
 
-div.mapboxgl-popup-content > h4 {
+div.mapboxgl-popup-content>h4 {
 	font-family: 'PT Serif', serif;
 	font-size: 14px;
 	font-style: italic;
@@ -396,7 +391,6 @@ div.mapboxgl-popup-content > h4 {
 	-moz-column-count: 2;
 	-ms-column-count: 2;
 	column-count: 2;
-
 	display: block;
 	font-size: 16px;
 	font-weight: 400;
@@ -409,7 +403,7 @@ div.mapboxgl-popup-content > h4 {
 
 /*body>div>div.row.my-4.twocolumn>p*/
 
-.subscribtion > a {
+.subscribtion>a {
 	color: #0047ab;
 	font-size: 18px;
 	letter-spacing: 0.5px;
@@ -421,7 +415,6 @@ div.mapboxgl-popup-content > h4 {
 	margin-left: 2px;
 	max-width: 123px;
 	padding-bottom: 12px;
-
 }
 
 /*Button*/
@@ -430,8 +423,6 @@ div.mapboxgl-popup-content > h4 {
 	background: #6b7381;
 	color: #bdc1c8;
 }
-
-
 
 .btn-toggle {
 	background: #bdc1c8;
@@ -443,7 +434,6 @@ div.mapboxgl-popup-content > h4 {
 	padding: 0;
 	position: relative;
 	width: 3rem;
-
 }
 
 .btn-toggle:focus,
@@ -480,7 +470,7 @@ div.mapboxgl-popup-content > h4 {
 	right: -4rem;
 }
 
-.btn-toggle > .handle {
+.btn-toggle>.handle {
 	-webkit-transition: left 0.25s;
 	-o-transition: left 0.25s;
 	background: #fff;
@@ -499,7 +489,7 @@ div.mapboxgl-popup-content > h4 {
 	transition: background-color 0.25s;
 }
 
-.btn-toggle.active > .handle {
+.btn-toggle.active>.handle {
 	left: 1.6875rem;
 	-webkit-transition: left 0.25s;
 	-o-transition: left 0.25s;
@@ -513,7 +503,6 @@ div.mapboxgl-popup-content > h4 {
 .btn-toggle.active:after {
 	opacity: 1;
 }
-
 
 .btn-toggle.btn-xs:before,
 .btn-toggle.btn-xs:after {
@@ -574,7 +563,7 @@ div.mapboxgl-popup-content > h4 {
 	right: 0;
 }
 
-.btn-toggle.btn-xs > .handle {
+.btn-toggle.btn-xs>.handle {
 	position: absolute;
 	top: 0.125rem;
 	left: 0.125rem;
@@ -593,7 +582,7 @@ div.mapboxgl-popup-content > h4 {
 	transition: background-color 0.25s;
 }
 
-.btn-toggle.btn-xs.active > .handle {
+.btn-toggle.btn-xs.active>.handle {
 	left: 1.125rem;
 	-webkit-transition: left 0.25s;
 	-o-transition: left 0.25s;
@@ -608,31 +597,31 @@ div.mapboxgl-popup-content > h4 {
 	opacity: 1;
 }
 
-
 .btn-toggle.btn-xs.btn-xs:before,
 .btn-toggle.btn-xs.btn-xs:after {
 	display: none;
 }
 
-
 /* Cards Area*/
+
 .seofooter {
 	background-color: #D9D9D9;
 }
 
-.seofooter-statement{
+.seofooter-statement {
 	border-bottom: 1px solid #000000;
 	font-size: 14px;
 	font-weight: 300;
-	letter-spacing: 0.57px;	
+	letter-spacing: 0.57px;
 	line-height: 19px;
 	padding-bottom: 62px;
 }
 
 .card-columns {
 	padding-bottom: 62px;
-	padding-top: 32px;	
+	padding-top: 32px;
 }
+
 @media (min-width: 768px) {
 	.card-columns {
 		column-count: 4;
@@ -640,6 +629,7 @@ div.mapboxgl-popup-content > h4 {
 }
 
 /* Large devices (desktops, 992px and up) */
+
 @media (min-width: 992px) {
 	.card-columns {
 		column-count: 4;
@@ -660,32 +650,32 @@ div.mapboxgl-popup-content > h4 {
 	border-radius: 0;
 }
 
-.card-columns .card-body{
+.card-columns .card-body {
 	padding: 0.25rem;
 }
 
 .card-columns .card-title {
 	font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
 	margin-bottom: 0;
 }
 
 .card-columns .card-text {
 	font-family: 'PT Serif', serif;
-    font-size: 14px;
-    font-style: italic;    
+	font-size: 14px;
+	font-style: italic;
 }
 
 .mapbox-directions-component-keyline {
 	border-radius: 0;
 	box-shadow: none;
 }
-.mapbox-directions-profile{
+
+.mapbox-directions-profile {
 	margin-top: 3px;
 }
-.mapbox-directions-profile label{
-	margin-bottom: 0;
-	
-}
 
+.mapbox-directions-profile label {
+	margin-bottom: 0;
+}
