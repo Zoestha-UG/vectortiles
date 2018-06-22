@@ -7,7 +7,7 @@
 	text-transform: uppercase;
 }
 
-.fof .hgroup classH1{
+.fof .hgroup classH1 {
 	font-size: 80px;
 	margin-bottom: 25px;
 }
@@ -46,7 +46,6 @@
 .fof p:first-child {
 	margin-top: 0;
 }
-
 
 .row2 {
 	background-color: #FFFFFF;
