@@ -1,5 +1,6 @@
-/*global $ */
-$(window).on("scroll", function(event) {
+/*global: $, mapboxgl, MapboxDirections, turf*/
+
+$(window).on("scroll", function() {
   var scrollValue = $(window).scrollTop();
   if (scrollValue > 220) {
     $(".navbar").addClass("affix");
@@ -9,8 +10,8 @@ $(window).on("scroll", function(event) {
 });
 
 /*Load location (stores2)*/
-var stores2 = function loadStoreLocation() {
-  stores2 = null;
+function loadLocations() {
+  locations = null;
   $.ajax({
     async: false,
     global: false,
@@ -18,12 +19,13 @@ var stores2 = function loadStoreLocation() {
     //"url": "http://localhost/vectortiles/museen.json",
     dataType: "json",
     success: function(data) {
-      stores2 = data;
+      locations = data;
     }
   });
-  return stores2;
-}();
+  return locations;
+}
 
+var stores2 = loadLocations();
 // Set bounds to Leipzig, Germany
 var bounds = [
   [12.179, 51.227], // Southwest coordinates
@@ -75,11 +77,6 @@ var directionControl = document.getElementsByClassName(
 directionControl["0"].hidden = true;
 var ptsWithin = null;
 
-// Create a popup (but don't add it to the map yet)
-var popup = new mapboxgl.Popup({
-  closeButton: false
-});
-
 var filterEl = document.getElementById("feature-filter");
 var listingsEl = document.getElementById("listings");
 var txtCategoriesEl = document.getElementById("txtCategories");
@@ -122,12 +119,13 @@ function getUniqueFeatures(array, comparatorProperty) {
   // or duplicated across tile boundaries and, as a result, features may appear
   // multiple times in query results.
   var uniqueFeatures = array.filter(function(el) {
-    if (existingFeatureKeys[el.properties[comparatorProperty]]) {
+    if (existingFeatureKeys[el.properties[comparatorProperty]])
+    {
       return false;
-    } else {
-      existingFeatureKeys[el.properties[comparatorProperty]] = true;
-      return true;
     }
+    existingFeatureKeys[el.properties[comparatorProperty]] = true;
+    return true;
+
   });
 
   return uniqueFeatures;
@@ -347,6 +345,9 @@ buildLocationList(stores2.features);
 // Load map
 map.on("load", function(e) {
   //map.loadImage('http://localhost/vectortiles/media/diagonal-noise.png', function(error, image) {
+
+  //var storesLocations = loadStoreLocation();
+
   map.loadImage(
     "https://leipzig-einkaufen.de/media/diagonal-noise.png",
     function(error, image) {
@@ -459,11 +460,11 @@ map.on("load", function(e) {
           filterEl.value = "";
 
           // Store the current features in sn `locations_on_map` variable to later use for filtering on `keyup`.
-          locations = features;
+          //locations = features;
         }
       });
 
-      map.on("mousemove", "locations", function(e) {
+      map.on("mousemove", "locations", function() {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = "pointer";
       });
@@ -510,11 +511,11 @@ map.on("load", function(e) {
 });
 
 // Direction event listener
-mapDirections.on("route", function(e) {
+mapDirections.on("route", function() {
   filterOnRoute();
 });
 
 // Display Direction
-$("#btnDisplayControls").on("click", function(e) {
+$("#btnDisplayControls").on("click", function() {
   displayDirectionControls();
 });
