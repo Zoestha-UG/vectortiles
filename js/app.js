@@ -11,7 +11,7 @@ $(window).on("scroll", function() {
 
 /*Load location (stores2)*/
 function loadLocations() {
-  locations = null;
+  var locations = null;
   $.ajax({
     async: false,
     global: false,
@@ -471,7 +471,7 @@ map.on("load", function(e) {
 
       map.on("mouseleave", "locations", function() {
         map.getCanvas().style.cursor = "";
-        popup.remove();
+        //popup.remove();
       });
 
       $(".dropdown-item").click(function() {
