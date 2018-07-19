@@ -346,12 +346,10 @@ buildLocationList(stores2.features);
 map.on("load", function(e) {
   //map.loadImage('http://localhost/vectortiles/media/diagonal-noise.png', function(error, image) {
 
-  //var storesLocations = loadStoreLocation();
-
   map.loadImage(
     "https://leipzig-einkaufen.de/media/diagonal-noise.png",
     function(error, image) {
-      if (error) throw error;
+      if (error) { throw error; }
       map.addImage("background_pattern", image);
     }
   );
@@ -360,7 +358,7 @@ map.on("load", function(e) {
   map.loadImage(
     "https://leipzig-einkaufen.de/media/Marker_with_Shadow.png",
     function(error, image) {
-      if (error) throw error;
+      if (error) {throw error;}
       map.addImage("marker_z", image);
 
       // Add the stores2 (locations_source) to the map
