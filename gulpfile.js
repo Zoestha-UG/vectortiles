@@ -6,7 +6,7 @@ const prettier = require('gulp-prettier');
 
 gulp.task('pretty', function(){
   return gulp.src('js/app.js')
-    .pipe(prettier({ singleQuote: true }))
+    .pipe(prettier({ singleQuote: false }))
     .pipe(gulp.dest('dist/'))
 });
 
