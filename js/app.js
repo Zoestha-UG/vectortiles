@@ -9,7 +9,7 @@ $(window).on("scroll", function(event) {
 });
 
 /*Load location (stores2)*/
-var stores2 = (function() {
+var stores2 = function loadStoreLocation() {
   stores2 = null;
   $.ajax({
     async: false,
@@ -22,15 +22,13 @@ var stores2 = (function() {
     }
   });
   return stores2;
-})();
+}();
 
-// Set bounds to New York, New York
+// Set bounds to Leipzig, Germany
 var bounds = [
   [12.179, 51.227], // Southwest coordinates
   [12.6, 51.459] // Northeast coordinates
 ];
-
-//12.179, 51.227, 12.6, 51.459
 
 // declare map
 var map = new mapboxgl.Map({
@@ -47,7 +45,6 @@ var map = new mapboxgl.Map({
 });
 
 /*Declare MapDirections*/
-
 var mapDirections = new MapboxDirections();
 /*MapDirections Settings*/
 mapDirections.accessToken =
@@ -84,8 +81,8 @@ var popup = new mapboxgl.Popup({
 });
 
 var filterEl = document.getElementById("feature-filter");
-var listings = document.getElementById("listings");
-var txtCategories = document.getElementById("txtCategories");
+var listingsEl = document.getElementById("listings");
+var txtCategoriesEl = document.getElementById("txtCategories");
 
 // Empty Geojson Data
 var bufferedLinestring = {
@@ -99,7 +96,7 @@ var bufferedLinestring = {
 };
 
 // Functions
-function normalize(string) {
+function normalizeString(string) {
   return string.trim().toLowerCase();
 }
 
@@ -156,14 +153,14 @@ function colorLocationList(data) {
 
 function buildLocationList(data) {
   // Iterate through the list of stores
-  listings.innerHTML = "";
+  listingsEl.innerHTML = "";
   if (data.length) {
     data.forEach(function(feature) {
-      // Shorten data.feature.properties to just `prop` so we're not writing this long form over and over again.
+      // Shorten feature.properties to just `prop` so we're not writing this long form over and over again.
       var prop = feature.properties;
 
       // Select the listing container in the HTML and append a div  with the class 'item' for each store
-      var card = listings.appendChild(document.createElement("div"));
+      var card = listingsEl.appendChild(document.createElement("div"));
       card.className = "item card cardList";
       card.id = prop.id;
 
@@ -240,7 +237,7 @@ function buildLocationList(data) {
   } else {
     var empty = document.createElement("p");
     empty.textContent = "Ziehen Sie die Karte, um die Ergebnisse zu füllen";
-    listings.appendChild(empty);
+    listingsEl.appendChild(empty);
 
     // remove features filter
     map.setFilter("locations", ["has", "Categories"]);
@@ -477,14 +474,14 @@ map.on("load", function(e) {
       });
 
       $(".dropdown-item").click(function() {
-        var value = normalize($(this).text());
+        var value = normalizeString($(this).text());
 
         var filtered = map.querySourceFeatures("locations_source");
         if (value !== "alle") {
           // Filter visible features that don't match the input value.
           filtered = filtered.filter(function(feature) {
-            var name = normalize(feature.properties.name);
-            var Categories = normalize(feature.properties.Categories);
+            var name = normalizeString(feature.properties.name);
+            var Categories = normalizeString(feature.properties.Categories);
             return name.indexOf(value) > -1 || Categories.indexOf(value) > -1;
           });
         }
@@ -506,7 +503,7 @@ map.on("load", function(e) {
           )
         );
 
-        txtCategories.value = value;
+        txtCategoriesEl.value = value;
       });
     }
   );
