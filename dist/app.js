@@ -98,9 +98,10 @@ function normalizeString(string) {
 }
 
 function createPopUp(currentFeature) {
-  new mapboxgl.Popup({
-    closeOnClick: true
-  })
+  new mapboxgl
+    .Popup({
+      closeOnClick: true
+    })
     .setLngLat(currentFeature.geometry.coordinates)
     .setHTML(
       "<h3>" +
@@ -189,7 +190,7 @@ function buildLocationList(data) {
 
       if (prop.image) {
         var cardImg = cardCollapse.appendChild(document.createElement("img"));
-        cardImg.className = "img-responsive img-listing lazyload";
+        cardImg.className = "img-responsive img-listing lazyload";		
         cardImg.src = prop.image;
         cardImg.alt = prop.name;
         cardImg.title = prop.name;
@@ -206,7 +207,7 @@ function buildLocationList(data) {
         linkBody.href = prop.url;
         linkBody.target = "_blank";
         linkBody.title = prop.name;
-        linkBody.rel = "noopener";
+        linkBody.rel="noopener";
       }
 
       // Add an event listener for the links in the sidebar listing
