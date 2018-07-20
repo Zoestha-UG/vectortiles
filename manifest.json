@@ -5,36 +5,36 @@
     "scope": "/",
     "display": "browser",
     "start_url": "https://leipzig-einkaufen.de/",
-    "short_name": "Leipzig Einkauf",
+    "short_name": "LE Einkauf",
     "theme_color": "#0047ab",
     "description": "Schöne Einkaufsmöglichkeiten in Leipzig: Läden mit guten Produkten, nachhaltig, wertvoll, ethisch-sozial, bio, vegan. Jetzt entdecken!",
     "orientation": "any",
-    "background_color": "transparent",
+    "background_color": "#0047ab",
     "related_applications": [],
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "/PWAprojects/images/favicon-32x32.png",
+            "src": "PWAprojects/images/favicon-32x32.png",
             "type": "image/png",
             "sizes": "32x32"
         },
         {
-            "src": "/PWAprojects/images/ico/apple-icon.png",
+            "src": "PWAprojects/images/ico/apple-icon.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/PWAprojects/images/ico/apple-icon-152x152.png",
+            "src": "PWAprojects/images/ico/apple-icon-152x152.png",
             "sizes": "152x152",
             "type": "image/png"
         },
         {
-            "src": "/PWAprojects/images/ico/apple-icon-180x180.png",
+            "src": "PWAprojects/images/ico/apple-icon-180x180.png",
             "sizes": "180x180",
             "type": "image/png"
         },
         {
-            "src": "/PWAprojects/images/ico/apple-icon-precomposed.png",
+            "src": "PWAprojects/images/ico/apple-icon-precomposed.png",
             "sizes": "192x192",
             "type": "image/png"
         }
