@@ -190,7 +190,7 @@ function buildLocationList(data) {
 
       if (prop.image) {
         var cardImg = cardCollapse.appendChild(document.createElement("img"));
-        cardImg.className = "img-responsive img-listing";
+        cardImg.className = "img-responsive img-listing lazyload";		
         cardImg.src = prop.image;
         cardImg.alt = prop.name;
         cardImg.title = prop.name;
