@@ -98,7 +98,7 @@ function normalizeString(string) {
 }
 
 function createPopUp(currentFeature) {
-  mapboxgl
+  new mapboxgl
     .Popup({
       closeOnClick: true
     })
@@ -207,10 +207,11 @@ function buildLocationList(data) {
         linkBody.href = prop.url;
         linkBody.target = "_blank";
         linkBody.title = prop.name;
+        linkBody.rel="noopener";
       }
 
       // Add an event listener for the links in the sidebar listing
-      link.addEventListener("click", function() {
+      link.addEventListener("click", {passive: true}, function() {
         // Update the currentFeature to the store associated with the clicked link
         var clickedListing = stores2.features[this.dataPosition];
 

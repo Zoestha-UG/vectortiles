@@ -49,7 +49,7 @@
     "openmaptiles": {
       "type": "vector",
       "tiles": ["https://Leipzig-einkaufen.de/tileserver/tileserver.php?/LE/{z}/{x}/{y}.pbf"],
-      "attribution": "<a href=\"http://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"http://www.openstreetmap.org/about/\" target=\"_blank\">&copy; OpenStreetMap contributors</a>" 
+      "attribution": "<a href=\"http://www.openmaptiles.org/\" target=\"_blank\" rel=\"noopener\">&copy; OpenMapTiles</a> <a href=\"http://www.openstreetmap.org/about/\" target=\"_blank\" rel=\"noopener\">&copy; OpenStreetMap contributors</a>"
     }
   },
   "sprite": "https://Leipzig-einkaufen.de/json/sprite",
@@ -1175,7 +1175,7 @@
         ]
       }
     },
-	{
+    {
       "id": "tunnel_path_pedestrian",
       "type": "line",
       "metadata": {},
@@ -1293,7 +1293,7 @@
         }
       }
     },
-	{
+    {
       "id": "road_link_casing",
       "type": "line",
       "metadata": {},

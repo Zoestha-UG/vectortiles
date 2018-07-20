@@ -19,11 +19,11 @@ gulp.task('css', function(){
 });
 
 gulp.task('js', function(){
-  return gulp.src(['js/mapbox-gl-directions.js','js/*.js'])
+  return gulp.src(['js/mapbox-gl-directions.js', 'js/rrssb.min.js','dist/app.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('app.min.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/js'))
 });
 
-gulp.task('default', [ 'css', 'js', 'pretty' ]);
+gulp.task('default', [ 'pretty', 'css', 'js']);

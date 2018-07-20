@@ -18,7 +18,7 @@
         "openmaptiles": {
       "type": "vector",
       "tiles": ["https://zoestha.de/vectortiles/tileserver/tileserver.php?/LE/{z}/{x}/{y}.pbf"],
-      "attribution": "<a href=\"http://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"http://www.openstreetmap.org/about/\" target=\"_blank\">&copy; OpenStreetMap contributors</a>" 
+      "attribution": "<a href=\"http://www.openmaptiles.org/\" target=\"_blank\" rel=\"noopener\">&copy; OpenMapTiles</a> <a href=\"http://www.openstreetmap.org/about/\" target=\"_blank\" rel=\"noopener\">&copy; OpenStreetMap contributors</a>"
     },
     "hillshading": {
       "type": "raster",
