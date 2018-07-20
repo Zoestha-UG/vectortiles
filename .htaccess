@@ -15,7 +15,8 @@ RewriteRule ^ %1 [R=301,L]
 
 #Force HTTPS
 RewriteCond %{HTTPS} !on
-RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]{3}$
+RewriteCond %{HTTP_HOST} !=localhost
+#RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]{3}$
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 
 # Note: It’s also recommended to enable HTTP Strict Transport Security (HSTS)
