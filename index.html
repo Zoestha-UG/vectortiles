@@ -44,11 +44,14 @@
         <!--link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"-->
         <!--link rel="stylesheet" href="css/app.css" /-->
         <!--link rel="stylesheet" href="css/rrssb.css" /-->
-        <link rel="stylesheet" href="build/css/app.min.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400i"/>
+        <link rel="preload" href="build/css/app.min.css" as="style"/>
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style"/>
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600" as="style"/>
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400i" as="style"/>
         <script type="text/javascript" id="cookiebanner" src="https://cdn.jsdelivr.net/gh/dobarkod/cookie-banner@1.2.2/dist/cookiebanner.min.js"></script>
+
+        <!-- Preload main javascript file -->
+        <script rel="preload" src="build/js/app.min.js" as="script"></script>
 
         <!-- Facebook open Graph -->
         <meta property="og:type" content="website">
@@ -452,7 +455,7 @@
             <!-- /.container -->
         </footer>
 
-        <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css"/>
+        <link rel="preload" rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css"/ as="style">
 
         <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js" async></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.47.0/mapbox-gl.js"></script>
@@ -469,7 +472,8 @@
         
         
         <!--script src="js/app.js"></script-->
-        
+
         <script src="build/js/app.min.js"></script>
+
     </body>
 </html>
