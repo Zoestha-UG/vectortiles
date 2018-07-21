@@ -6,12 +6,19 @@ const prettier = require("gulp-prettier");
 const minify = require("gulp-minify");
 const image = require("gulp-image");
 
+var htmlmin = require("gulp-htmlmin");
+
+gulp.task("minify", function() {
+  return gulp.src("*.html")
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest("dist"));
+});
+
 gulp.task("image", function () {
   gulp.src("./media/thumbs_Ori_size/*")
     .pipe(image())
     .pipe(gulp.dest("./media/thumbs"));
 });
-
 
 gulp.task("pretty", function(){
   return gulp.src("js/app.js")
@@ -41,4 +48,4 @@ gulp.task("js", function(){
     .pipe(gulp.dest("build/js"))
 });
 
-gulp.task("default", [ "pretty", "compress", "css", "js", "image"]);
+gulp.task("default", [ "minify", "pretty", "compress", "css", "js", "image"]);
