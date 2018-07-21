@@ -15,7 +15,10 @@
             gtag("config", "UA-58252505-2");
         </script>
 
-        <link rel="manifest" href="manifest.json"></link>
+        <link rel="preload" href="build/css/app.min.css" as="style"/>
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style"/>
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600" as="style"/>
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400i" as="style"/>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,22 +35,21 @@
         <link rel="icon" type="image/png" href="favicon-32x32.png">
         <link rel="alternate" hreflang="x-default" href="https://leipzig-einkaufen.de"/>
         <link rel="alternate" hreflang="de" href="https://leipzig-einkaufen.de/">
-
         <link rel="apple-touch-icon" href="ico/apple-icon.png">
         <link rel="apple-touch-icon" sizes="152x152" href="ico/apple-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-icon-180x180.png">
         <link rel="apple-touch-icon" sizes="192x192" href="ico/apple-icon-precomposed.png">
 
-        <!-- Bootstrap core CSS -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="build/css/app.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400i" />
 
-        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css" type="text/css"/>
-        <!--link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"-->
-        <!--link rel="stylesheet" href="css/app.css" /-->
-        <!--link rel="stylesheet" href="css/rrssb.css" /-->
-        <link rel="preload" href="build/css/app.min.css" as="style"/>
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style"/>
-        <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600" as="style"/>
-        <link rel="preload" href="https://fonts.googleapis.com/css?family=PT+Serif:400i" as="style"/>
+        <!-- manifest -->
+        <link rel="manifest" href="manifest.json"></link>
+
+        <!-- Cookiebanner -->
         <script type="text/javascript" id="cookiebanner" src="https://cdn.jsdelivr.net/gh/dobarkod/cookie-banner@1.2.2/dist/cookiebanner.min.js"></script>
 
         <!-- Facebook open Graph -->
@@ -452,7 +454,8 @@
             <!-- /.container -->
         </footer>
 
-        <link rel="preload" rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css"/ as="style">
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css" type="text/css"/>
+        <link rel="stylesheet" rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css"/>
 
         <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js" async></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.47.0/mapbox-gl.js"></script>
