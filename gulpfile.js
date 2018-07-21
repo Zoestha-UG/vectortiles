@@ -4,6 +4,13 @@ var concat = require("gulp-concat");
 var sourcemaps = require("gulp-sourcemaps");
 const prettier = require("gulp-prettier");
 const minify = require("gulp-minify");
+const image = require("gulp-image");
+
+gulp.task("image", function () {
+  gulp.src("./media/thumbs_Ori_size/*")
+    .pipe(image())
+    .pipe(gulp.dest("./media/thumbs"));
+});
 
 
 gulp.task("pretty", function(){
@@ -34,4 +41,4 @@ gulp.task("js", function(){
     .pipe(gulp.dest("build/js"))
 });
 
-gulp.task("default", [ "pretty", "compress", "css", "js"]);
+gulp.task("default", [ "pretty", "compress", "css", "js", "image"]);
