@@ -5,7 +5,7 @@
     "scope": "/",
     "display": "browser",
     "start_url": "https://leipzig-einkaufen.de/",
-    "short_name": "LE Einkauf",
+    "short_name": "LE_Einkauf",
     "theme_color": "#0047ab",
     "description": "Schöne Einkaufsmöglichkeiten in Leipzig: Läden mit guten Produkten, nachhaltig, wertvoll, ethisch-sozial, bio, vegan. Jetzt entdecken!",
     "orientation": "any",
