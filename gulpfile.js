@@ -8,28 +8,28 @@ const image = require("gulp-image");
 
 var htmlmin = require("gulp-htmlmin");
 
-gulp.task("minify", function() {
-  return gulp.src("*.html")
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest("dist"));
-});
-
-gulp.task("image", function () {
-  gulp.src("./media/thumbs_Ori_size/*")
-    .pipe(image())
-    .pipe(gulp.dest("./media/thumbs"));
-});
-
 gulp.task("pretty", function(){
   return gulp.src("js/app.js")
     .pipe(prettier({ singleQuote: false }))
-    .pipe(gulp.dest("dist/"))
+    .pipe(gulp.dest("dist"))
 });
 
 gulp.task("compress", function() {
   gulp.src(["js/app.js"])
     .pipe(minify())
     .pipe(gulp.dest("dist"))
+});
+
+gulp.task("minify", function() {
+  return gulp.src("*.html")
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest("build"));
+});
+
+gulp.task("image", function () {
+  gulp.src("./media/thumbs_Ori_size/*")
+    .pipe(image())
+    .pipe(gulp.dest("./media/thumbs"));
 });
 
 gulp.task("css", function(){
@@ -48,4 +48,5 @@ gulp.task("js", function(){
     .pipe(gulp.dest("build/js"))
 });
 
-gulp.task("default", [ "minify", "pretty", "compress", "css", "js", "image"]);
+//gulp.task("default", ["pretty", "compress", "minify", "image", "css", "js"]);
+gulp.task("default", ["pretty", "compress", "minify", "css", "js"]);

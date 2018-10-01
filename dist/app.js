@@ -31,12 +31,27 @@ var bounds = [
   [12.179, 51.227], // Southwest coordinates
   [12.6, 51.459] // Northeast coordinates
 ];
-
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2hldWIiLCJhIjoiWGtobTNPNCJ9.v2JwlNSGBm_KxJUKE_WLig';
 // declare map
+var map = new mapboxgl.Map({
+  container: "map",
+ // style: "https://leipzig-einkaufen.de/json/style-local.json",
+  style: "http://localhost/vectortiles/json/style-local.json",
+  // style: "mapbox://styles/sheub/cjk46bdbx1ijd2rqlapjwhvtx",
+  //style: "mapbox://styles/sheub/cjiiex8lj1lnv2so3ampx1483",  
+  //style: "mapbox://styles/sheub/cjk6lp2096l222rscgzygdxq4",
+
+  center: [12.3722, 51.3272],
+  zoom: 11,
+  //attributionControl: true,
+  hash: false//,
+  //maxZoom: 14.9,
+  //maxBounds: bounds // Sets bounds as max
+});
+
 // var map = new mapboxgl.Map({
-//   container: "map",
-//   style: "https://leipzig-einkaufen.de/json/style-local.json",
-//   //style: "http://localhost/vectortiles/json/style-local.json",
+//   container: 'map',
+//   style: 'mapbox://styles/mapbox/light-v9',
 
 //   center: [12.3722, 51.3272],
 //   zoom: 11,
@@ -45,19 +60,6 @@ var bounds = [
 //   maxZoom: 14.9,
 //   maxBounds: bounds // Sets bounds as max
 // });
-
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2hldWIiLCJhIjoiWGtobTNPNCJ9.v2JwlNSGBm_KxJUKE_WLig';
-var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/light-v9',
-
-  center: [12.3722, 51.3272],
-  zoom: 11,
-  attributionControl: true,
-  hash: false,
-  maxZoom: 14.9,
-  maxBounds: bounds // Sets bounds as max
-});
 
 /*Declare MapDirections*/
 var mapDirections = new MapboxDirections();
@@ -426,7 +428,7 @@ map.on("load", function (e) {
   });
 
   // Add Fullscreen control to the map.
-  map.addControl(new mapboxgl.FullscreenControl());
+  //map.addControl(new mapboxgl.FullscreenControl());
 
   // Add geolocate control to the map.
   map.addControl(
