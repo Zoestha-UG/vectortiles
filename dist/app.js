@@ -35,8 +35,8 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2hldWIiLCJhIjoiWGtobTNPNCJ9.v2JwlNSGBm_KxJUK
 // declare map
 var map = new mapboxgl.Map({
   container: "map",
- // style: "https://leipzig-einkaufen.de/json/style-local.json",
-  style: "http://localhost/vectortiles/json/style-local.json",
+  style: "https://leipzig-einkaufen.de/json/style-local.json",
+  // style: "http://localhost/vectortiles/json/style-local.json",
   // style: "mapbox://styles/sheub/cjk46bdbx1ijd2rqlapjwhvtx",
   //style: "mapbox://styles/sheub/cjiiex8lj1lnv2so3ampx1483",  
   //style: "mapbox://styles/sheub/cjk6lp2096l222rscgzygdxq4",

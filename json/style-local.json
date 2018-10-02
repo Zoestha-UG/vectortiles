@@ -48,12 +48,13 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "tiles": ["https://Leipzig-einkaufen.de/tileserver/tileserver.php?/LE/{z}/{x}/{y}.pbf"],
+      "tiles": ["https://Leipzig-einkaufen.de/tileserver/LE/{z}/{x}/{y}.pbf"],
       "attribution": "<a href=\"http://www.openmaptiles.org/\" target=\"_blank\" rel=\"noopener\">&copy; OpenMapTiles</a> <a href=\"http://www.openstreetmap.org/about/\" target=\"_blank\" rel=\"noopener\">&copy; OpenStreetMap contributors</a>"
     }
   },
   "sprite": "https://Leipzig-einkaufen.de/json/sprite",
-  "glyphs": "https://free.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=pErAY63Zg9cVHhUnLbku",
+  "glyphs": "https://Leipzig-einkaufen.de/tileserver/fonts/{fontstack}/{range}.pbf",
+	
   "layers": [
     {
       "id": "background",
