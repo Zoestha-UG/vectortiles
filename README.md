@@ -67,6 +67,7 @@ For higher performance the .mbtile file has been extracted to .pbf files format.
 
 ```
 ./mb-util --image_format=pbf countries.mbtiles countries
+mbutil.mbtiles_to_disk('countries.mbtiles', 'countries', image_format='pbf')
 gzip -d -r -S .pbf *
 find . -type f -exec mv '{}' '{}'.pbf \;
 ```
