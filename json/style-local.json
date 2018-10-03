@@ -3855,8 +3855,7 @@
       ],
       "layout": {
         "text-font": [
-          "Open Sans Italic",
-          "Klokantech Noto Sans Italic"
+          "Open Sans Italic"
         ],
         "text-size": 14,
         "text-field": "{name:latin} {name:nonlatin}",
@@ -3891,8 +3890,7 @@
       ],
       "layout": {
         "text-font": [
-          "Open Sans Italic",
-          "Klokantech Noto Sans Italic"
+          "Open Sans Italic"
         ],
         "text-size": 14,
         "text-field": "{name:latin} {name:nonlatin}",
@@ -3927,8 +3925,7 @@
       ],
       "layout": {
         "text-font": [
-          "Open Sans Italic",
-          "Klokantech Noto Sans Italic"
+          "Open Sans Italic"
         ],
         "text-size": 14,
         "text-field": "{name:de} {name:nonlatin}",
@@ -4669,6 +4666,98 @@
         "text-color": "#765",
         "text-halo-width": 1
       }
+    },
+    {
+        "id": "building-3d",
+        "type": "fill-extrusion",
+        "source": "openmaptiles",
+        "source-layer": "building",
+        "minzoom": 14,
+        "filter": [
+            "all",
+            [
+                "!=",
+                "underground",
+                "true"
+            ]
+        ],
+        "layout": {},
+        "paint": {
+            "fill-extrusion-color": "hsl(40, 63%, 95%)",
+            "fill-extrusion-height": {
+                "base": 1,
+                "type": "exponential",
+                "property": "height",
+                "stops": [
+                    [
+                        {
+                            "zoom": 15,
+                            "value": 1
+                        },
+                        0
+                    ],
+                    [
+                        {
+                            "value": 1000,
+                            "zoom": 15
+                        },
+                        0
+                    ],
+                    [
+                        {
+                            "value": 1,
+                            "zoom": 16
+                        },
+                        1
+                    ],
+                    [
+                        {
+                            "value": 1000,
+                            "zoom": 16
+                        },
+                        1000
+                    ]
+                ],
+                "default": 10
+            },
+            "fill-extrusion-base": {
+                "base": 1,
+                "type": "exponential",
+                "property": "min_height",
+                "stops": [
+                    [
+                        {
+                            "zoom": 15,
+                            "value": 1
+                        },
+                        0
+                    ],
+                    [
+                        {
+                            "value": 1000,
+                            "zoom": 15
+                        },
+                        0
+                    ],
+                    [
+                        {
+                            "value": 1,
+                            "zoom": 16
+                        },
+                        1
+                    ],
+                    [
+                        {
+                            "value": 1000,
+                            "zoom": 16
+                        },
+                        1000
+                    ]
+                ],
+                "default": 0
+            },
+            "fill-extrusion-opacity": 0.66
+        }
     },
     {
       "id": "place-other",
