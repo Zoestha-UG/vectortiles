@@ -9,3 +9,6 @@ webfont-maki/LICENSE
 /.vscode/launch.json
 node_modules
 mymb
+/.php_cs.cache
+/.env.example
+/.jshintrc
