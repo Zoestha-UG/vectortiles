@@ -23,7 +23,7 @@ It can be hosted on a standard Apache+PHP web hosting.
 The pluggin *MapboxDirections* is used for the navigation. The filtering allong the Route is done with Turf.js:
 
 ```javascript
-  // buffer the route with a area of radius 'radius'
+  // buffer the route with an area of radius 'radius'
   var bufferedLinestring = turf.buffer(mapDirectionsSource._data.features[2].geometry, radius, {
     units: unit
   });
