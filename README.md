@@ -61,7 +61,7 @@ Filter the store list *within the map view*:
 https://www.mapbox.com/mapbox-gl-js/example/add-image/
 
 
-### Vectortiles in xyz format
+### Vectortiles in zxy format
 
 For higher performance the .mbtile file has been extracted to .pbf files format. This can be done using the python utility mb-util from mapbox, then the files must be gzip decompressed. The following commands lines will do the tricks.
 
