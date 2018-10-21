@@ -19,8 +19,8 @@ It can be hosted on a standard Apache+PHP web hosting.
 
 ### Map rendering and listing
 
-![Leipzig_Einkaufen_Map_List](https://github.com/sheub/vectortiles/blob/master/media/Leipzig_Einkaufen_Map_List.png)The map tiles are served with tileserver-php, the rendering is done using mapboxgl.js library. 
-The pluggin *MapboxDirections* is used for the the navigation.  The filtering allong the Route is done with Turf.js:
+![Leipzig_Einkaufen_Map_List](https://github.com/sheub/vectortiles/blob/master/media/Leipzig_Einkaufen_Map_List.png)The rendering is done using mapboxgl.js library. 
+The pluggin *MapboxDirections* is used for the navigation. The filtering allong the Route is done with Turf.js:
 
 ```javascript
   // buffer the route with a area of radius 'radius'
