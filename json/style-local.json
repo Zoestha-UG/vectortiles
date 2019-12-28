@@ -53,8 +53,8 @@
     }
   },
   "sprite": "https://leipzig-einkaufen.de/json/sprite",
-  "glyphs": "https://leipzig-einkaufen.de/fonts/{fontstack}/{range}.pbf",
-	
+  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=pErAY63Zg9cVHhUnLbku",
+
   "layers": [
     {
       "id": "background",
