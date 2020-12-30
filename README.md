@@ -82,4 +82,4 @@ Please feel free to send us your comments or any suggestions you may have to imp
 The original tiles of Leipzig-Germany have been purchased at https://openmaptiles.org/ . They are subject to license restriction (see [license](https://github.com/sheub/vectortiles/blob/master/LICENSE)).
 
 
-Copyright (c) 2018 Sébastien Barré, Licensed under BSD 3-Clause License.
+Copyright (c) 2018-2020 Zoestha-UG, Licensed under BSD 3-Clause License.
